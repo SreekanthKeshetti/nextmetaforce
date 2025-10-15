@@ -1,4 +1,4 @@
-import HeroSection from "../components/HeroSection";
+import HeroSection from "../components/Herosection";
 import CaseStudy from "../components/CaseStudy";
 import Industries from "../components/Industries";
 import NewForm from "../components/NewForm";
