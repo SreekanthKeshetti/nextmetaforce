@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import retailImg from "../assets/Reatilimage.jpg";
+import retailImg from "../assets/Retailimage.jpg";
 import healthImg from "../assets/health1.jpg";
 import finImage from "../assets/finance1.jpg";
 import manfacImage from "../assets/finan1.jpg";
