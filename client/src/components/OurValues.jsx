@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import forwardImg from "../assets/Thinkingforward.jpg";
-import integrity from "../assets/integrity.jpg";
+import integrity from "../assets/Integrity.jpg";
 import clientImg from "../assets/clientFirst.jpg";
 import peopleImg from "../assets/Meeting.jpg";
 import teamworkImg from "../assets/Teamwork.jpg";
