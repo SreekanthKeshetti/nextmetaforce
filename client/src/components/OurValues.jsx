@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import forwardImg from "../assets/Thinkingforward.jpg";
-import integrityImg from "../assets/integrity.jpg";
+import integrity from "../assets/integrity.jpg";
 import clientImg from "../assets/clientFirst.jpg";
 import peopleImg from "../assets/Meeting.jpg";
 import teamworkImg from "../assets/Teamwork.jpg";
@@ -13,7 +13,7 @@ const values = [
     text: "We embrace innovation and anticipate change to stay ahead in a fast-evolving world.",
   },
   {
-    src: integrityImg,
+    src: integrity,
     title: "Integrity",
     text: "We act with honesty, transparency, and accountability in all we do.",
   },
