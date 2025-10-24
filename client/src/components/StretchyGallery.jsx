@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import retailImg from "../assets/retail1.jpg";
 import finImg from "../assets/fin2.jpg";
-import manfacImg from "../assets/manfac2.jpg";
+import manfacImg from "../assets/CarFactory.jpg";
 import hospitalImg from "../assets/hospital1.jpg";
-import fashImg from "../assets/fash3.jpg";
+import fashImg from "../assets/fashionImage.avif";
 import logImg from "../assets/log1.jpg";
 
 const images = [
@@ -53,7 +53,7 @@ export default function StretchGallery() {
         {`
         /* === Stretchy Gallery Section === */
         .stretchy-gallery-container {
-          background: linear-gradient(to bottom, #f4f8ff, #ffffff);
+          // background: linear-gradient(to bottom, #f4f8ff, #ffffff);
           padding: 4rem 0;
         }
 
@@ -143,9 +143,9 @@ export default function StretchGallery() {
           transition: background 0.3s ease;
         }
 
-        .gallery-item:hover .overlay {
-          background: linear-gradient(to top, rgba(0, 157, 255, 0.7), transparent);
-        }
+        // .gallery-item:hover .overlay {
+        //   background: linear-gradient(to top, rgba(81, 183, 246, 0.7), transparent);
+        // }
 
         .overlay h2 {
           font-size: 1.2rem;

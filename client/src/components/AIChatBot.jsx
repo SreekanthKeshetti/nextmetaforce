@@ -16,22 +16,20 @@ export default function Chatbot() {
     },
   ]);
   const [showQuickReplies, setShowQuickReplies] = useState(true);
-  const [flow, setFlow] = useState(null); // current flow type
+  const [flow, setFlow] = useState(null);
   const [formData, setFormData] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const chatRef = useRef(null);
 
-  // Scroll to bottom whenever messages change
   useEffect(() => {
     if (chatRef.current)
       chatRef.current.scrollTop = chatRef.current.scrollHeight;
   }, [messages, isTyping]);
 
-  // Add bot message with typing effect
   const pushBot = async (text) => {
     setIsTyping(true);
-    await new Promise((r) => setTimeout(r, 600 + text.length * 20));
+    await new Promise((r) => setTimeout(r, 800 + text.length * 25));
     setIsTyping(false);
     setMessages((prev) => [...prev, { role: "bot", text }]);
   };
@@ -39,7 +37,6 @@ export default function Chatbot() {
   const pushUser = (text) =>
     setMessages((prev) => [...prev, { role: "user", text }]);
 
-  // Reset chat
   const resetChat = () => {
     setMessages([
       {
@@ -52,7 +49,6 @@ export default function Chatbot() {
     setFormData({});
   };
 
-  // Handle quick option
   const handleQuickOption = async (opt) => {
     pushUser(opt.label);
     setShowQuickReplies(false);
@@ -74,13 +70,36 @@ export default function Chatbot() {
     }
   };
 
-  // Handle input submission for flows
+  const validateInput = (value, step) => {
+    switch (step) {
+      case "name":
+        return /^[a-zA-Z\s]{3,50}$/.test(value);
+      case "email":
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      case "phone":
+        return /^[0-9]{10}$/.test(value);
+      default:
+        return true;
+    }
+  };
+
   const handleFlowInput = async (input) => {
-    pushUser(input);
-
     if (!flow) return;
-
     const currentStep = flow.step;
+
+    if (!validateInput(input, currentStep)) {
+      let errorMsg = "";
+      if (currentStep === "name")
+        errorMsg = "Please enter a valid name (letters only).";
+      else if (currentStep === "email")
+        errorMsg = "Please enter a valid email address.";
+      else if (currentStep === "phone")
+        errorMsg = "Please enter a valid 10-digit phone number.";
+      await pushBot(errorMsg);
+      return;
+    }
+
+    pushUser(input);
     const newFormData = { ...formData };
 
     switch (currentStep) {
@@ -176,36 +195,95 @@ export default function Chatbot() {
         }
         .chat-btn:hover { transform: scale(1.1); }
         .chat-popup {
-          position: fixed; bottom: 90px; right: 20px; width: 360px; max-height: 300px;
+          position: fixed; bottom: 90px; right: 20px; width: 360px; max-height: 400px;
           background: white; border-radius: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.3);
           display: flex; flex-direction: column; overflow: hidden; z-index: 1000;
         }
-        .chat-header { background: linear-gradient(to right, #42a5f5, #1a237e); color:white;
-          padding:0.75rem 1rem; display:flex; justify-content:space-between; align-items:center; font-weight:600; font-size:0.95rem;
+        .chat-header {
+          background: linear-gradient(to right, #42a5f5, #1a237e); color: white;
+          padding: 0.75rem 1rem; display: flex; justify-content: space-between;
+          align-items: center; font-weight: 600; font-size: 0.95rem;
         }
-        .chat-header button { background: rgba(255,255,255,0.3); border:none; padding:3px 8px; border-radius:6px; color:white; cursor:pointer; }
-        .chat-header button:hover { background: rgba(255,255,255,0.6); }
-        .chat-body { flex:1; padding:0.75rem; overflow-y:auto; display:flex; flex-direction:column; gap:0.5rem; background:#f5f7fa; }
-        .chat-body::-webkit-scrollbar { width:6px; }
-        .chat-body::-webkit-scrollbar-thumb { background:#90caf9; border-radius:3px; }
-        .message-user { align-self:flex-end; background: linear-gradient(to right, #42a5f5, #1a237e); color:white;
-          padding:0.5rem 0.75rem; border-radius:16px 16px 4px 16px; max-width:80%; word-break:break-word;
+        .chat-header button {
+          background: rgba(255,255,255,0.15);
+          border: 1px solid rgba(255,255,255,0.3);
+          padding: 5px 12px;
+          border-radius: 8px;
+          color: white;
+          cursor: pointer;
+          font-size: 0.85rem;
+          font-weight: 500;
+          transition: all 0.3s ease;
         }
-        .message-bot { align-self:flex-start; background:#e3f2fd; color:#212529;
-          padding:0.5rem 0.75rem; border-radius:16px 16px 16px 4px; max-width:80%; word-break:break-word;
+        .chat-header button:hover {
+          background: white;
+          color: #1a237e;
+          transform: scale(1.05);
+          box-shadow: 0 0 8px rgba(255,255,255,0.5);
         }
-        .typing-indicator { display:inline-block; width:30px; height:10px; position:relative; }
-        .typing-indicator span { display:inline-block; width:6px; height:6px; margin:0 2px; background:#90caf9; border-radius:50%; animation:bounce 1.4s infinite ease-in-out both; }
-        .typing-indicator span:nth-child(1){ animation-delay:0s; } .typing-indicator span:nth-child(2){ animation-delay:0.2s; } .typing-indicator span:nth-child(3){ animation-delay:0.4s; }
-        @keyframes bounce { 0%,80%,100%{transform:scale(0);} 40%{transform:scale(1);} }
-        .quick-replies { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem; }
-        .quick-chip { padding:0.45rem 0.8rem; border-radius:25px; background:linear-gradient(to right,#90caf9,#42a5f5); cursor:pointer; color:white; font-size:0.85rem; font-weight:500; border:none; transition:0.3s; }
-        .quick-chip:hover { background: linear-gradient(to right,#1a237e,#42a5f5); }
-        .form-chat { display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem; }
-        .form-chat input { padding:0.5rem 0.6rem; border-radius:6px; border:1px solid #90caf9; }
-        .form-chat button { align-self:flex-end; background: linear-gradient(to right,#42a5f5,#1a237e); color:white; border:none; padding:0.5rem 0.9rem; border-radius:6px; cursor:pointer; transition:0.3s; }
-        .form-chat button:hover { background: linear-gradient(to right,#1a237e,#42a5f5); }
-        @media (max-width: 768px) { .chat-popup { width:90%; right:5%; bottom:80px; } }
+        .chat-body {
+          flex: 1; padding: 0.75rem; overflow-y: auto;
+          display: flex; flex-direction: column; gap: 0.5rem; background: #f5f7fa;
+        }
+        .message-user {
+          align-self: flex-end; background: linear-gradient(to right, #42a5f5, #1a237e);
+          color: white; padding: 0.5rem 0.75rem; border-radius: 16px 16px 4px 16px;
+          max-width: 80%; word-break: break-word;
+        }
+        .message-bot {
+          align-self: flex-start; background: #e3f2fd; color: #212529;
+          padding: 0.5rem 0.75rem; border-radius: 16px 16px 16px 4px;
+          max-width: 80%; word-break: break-word;
+        }
+        .typing-indicator {
+          display: inline-block; width: 30px; height: 10px; position: relative;
+        }
+        .typing-indicator span {
+          display: inline-block; width: 6px; height: 6px; margin: 0 2px;
+          background: #90caf9; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both;
+        }
+        @keyframes bounce {
+          0%, 80%, 100% { transform: scale(0); }
+          40% { transform: scale(1); }
+        }
+        .quick-replies {
+          display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;
+          justify-content: flex-start;
+        }
+        .quick-chip {
+          padding: 0.5rem 0.9rem;
+          border-radius: 25px;
+          background: linear-gradient(to right, #42a5f5, #1a237e);
+          color: white;
+          cursor: pointer;
+          font-size: 0.85rem;
+          font-weight: 500;
+          border: none;
+          transition: 0.3s;
+        }
+        .quick-chip:hover {
+          background: linear-gradient(to right, #1a237e, #42a5f5);
+          transform: scale(1.05);
+        }
+        .form-chat {
+          display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;
+        }
+        .form-chat input {
+          padding: 0.5rem 0.6rem; border-radius: 6px; border: 1px solid #90caf9;
+        }
+        .form-chat button {
+          align-self: flex-end;
+          background: linear-gradient(to right, #42a5f5, #1a237e);
+          color: white;
+          border: none;
+          padding: 0.5rem 0.9rem;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .form-chat button:hover {
+          background: linear-gradient(to right, #1a237e, #42a5f5);
+        }
       `}</style>
 
       <button className="chat-btn" onClick={() => setIsOpen(!isOpen)}>
@@ -216,7 +294,7 @@ export default function Chatbot() {
         <div className="chat-popup">
           <div className="chat-header">
             <span>Nextmetaforce — Virtual Assistant</span>
-            <button onClick={resetChat}>Reset</button>
+            <button onClick={resetChat}>⟳ Reset</button>
           </div>
           <div ref={chatRef} className="chat-body">
             {messages.map((m, idx) => (

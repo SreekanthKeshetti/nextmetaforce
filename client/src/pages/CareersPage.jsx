@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { motion } from "framer-motion";
+import contactImage from "../assets/CareerPageImg.avif";
+
 import {
   FaUsers,
   FaLightbulb,
@@ -65,17 +67,31 @@ const CareersPage = () => {
 
 /* HERO SECTION */
 .careers-hero {
-  min-height: 80vh;
-  background: linear-gradient(135deg, #0d6efd, #4ab3ff);
-  background-size: 200% 200%;
-  animation: gradientMove 6s ease infinite;
+  background-image: url('${contactImage}');
+              background-size: 100%;
+              background-position: center;
+              height: 90vh;
+              display: flex;
+              align-items: center;
+              position: relative;
+              color: white;
+              padding: 20px;
 }
+              .careers-hero::before{
+              content: '';
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color: rgba(0,0,0,0.5);
+              }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+// @keyframes gradientMove {
+//   0% { background-position: 0% 50%; }
+//   50% { background-position: 100% 50%; }
+//   100% { background-position: 0% 50%; }
+// }
 
 /* TITLES */
 .section-title {
@@ -99,7 +115,7 @@ const CareersPage = () => {
 .value-card {
   transition: all 0.3s ease-in-out;
   border: 1px solid #e9f1ff;
-  background-color: #ffffff;
+  // background-color: #ffffff;
 }
 
 .value-card .icon {
@@ -138,7 +154,7 @@ const CareersPage = () => {
 
 /* CULTURE SECTION */
 .culture-section {
-  background-color: #ffffff;
+  // background-color: #ffffff;
 }
 
       `}
@@ -150,7 +166,7 @@ const CareersPage = () => {
           <div>
             <motion.h1
               initial={{ y: -30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              animate={{ y: 30, opacity: 1 }}
               transition={{ duration: 0.8 }}
               className="fw-bold display-5"
             >
@@ -158,7 +174,7 @@ const CareersPage = () => {
             </motion.h1>
             <motion.p
               initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              animate={{ y: 30, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
               className="lead mt-3"
             >
@@ -169,7 +185,7 @@ const CareersPage = () => {
         </section>
 
         {/* WHY WORK WITH US */}
-        <section className="py-5 bg-white">
+        <section className="py-5">
           <Container>
             <h2 className="text-center mb-5 section-title">Why Work With Us</h2>
             <Row className="g-4">
@@ -190,7 +206,7 @@ const CareersPage = () => {
         </section>
 
         {/* JOB OPENINGS */}
-        <section className="py-5 bg-light position-relative">
+        <section className="py-5  position-relative">
           <Container>
             <h2 className="text-center mb-5 section-title">Current Openings</h2>
             <Row className="g-4">

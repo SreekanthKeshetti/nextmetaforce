@@ -30,6 +30,7 @@ import {
 import founder1 from "../assets/1.jpg";
 import founder2 from "../assets/2.jpg";
 import founder3 from "../assets/3.jpg";
+import ValuesGallery from "./OurValues";
 
 const AboutUs = () => {
   const founders = [
@@ -108,31 +109,59 @@ const AboutUs = () => {
     },
   ];
 
+  //old values
+  // const coreValues = [
+  //   {
+  //     icon: <FaHandshake color="#f94144" size={28} />, // Updated Icon
+  //     title: "Client-Centricity",
+  //     desc: "We co-create solutions that drive measurable business outcomes.",
+  //   },
+  //   {
+  //     icon: <FaUserGraduate color="#f3722c" size={28} />, // Updated Icon
+  //     title: "Employee Empowerment",
+  //     desc: "Learning, inclusion, and ownership are core to our culture.",
+  //   },
+  //   {
+  //     icon: <FaLeaf color="#f9c74f" size={28} />, // Updated Icon
+  //     title: "Work-Life Harmony",
+  //     desc: "We support balance, flexibility and wellbeing for long-term excellence.",
+  //   },
+  //   {
+  //     icon: <FaLightbulb color="#90be6d" size={28} />, // Updated Icon (emphasizing innovation)
+  //     title: "Integrity & Innovation",
+  //     desc: "Ethical adoption of technology with purposeful impact.",
+  //   },
+  //   {
+  //     icon: <FaBullseye color="#577590" size={28} />, // Updated Icon
+  //     title: "Precision & Purpose",
+  //     desc: "Every solution is intentional, scalable and measurable.",
+  //   },
+  // ];
   const coreValues = [
     {
-      icon: <FaHandshake color="#f94144" size={28} />, // Updated Icon
-      title: "Client-Centricity",
-      desc: "We co-create solutions that drive measurable business outcomes.",
+      icon: <FaLightbulb color="#f94144" size={28} />, // Forward Thinking
+      title: "Forward Thinking",
+      desc: "We embrace innovation and anticipate change to stay ahead in a fast-evolving world.",
     },
     {
-      icon: <FaUserGraduate color="#f3722c" size={28} />, // Updated Icon
-      title: "Employee Empowerment",
-      desc: "Learning, inclusion, and ownership are core to our culture.",
+      icon: <FaShieldAlt color="#f3722c" size={28} />, // Integrity
+      title: "Integrity",
+      desc: "We act with honesty, transparency, and accountability in all we do.",
     },
     {
-      icon: <FaLeaf color="#f9c74f" size={28} />, // Updated Icon
-      title: "Work-Life Harmony",
-      desc: "We support balance, flexibility and wellbeing for long-term excellence.",
+      icon: <FaHandshake color="#f9c74f" size={28} />, // Client–Centric
+      title: "Client–Centric",
+      desc: "Our clients’ success drives every decision and every solution we create.",
     },
     {
-      icon: <FaLightbulb color="#90be6d" size={28} />, // Updated Icon (emphasizing innovation)
-      title: "Integrity & Innovation",
-      desc: "Ethical adoption of technology with purposeful impact.",
+      icon: <FaUserGraduate color="#90be6d" size={28} />, // People First
+      title: "People First",
+      desc: "We value, empower, and nurture our people to reach their full potential.",
     },
     {
-      icon: <FaBullseye color="#577590" size={28} />, // Updated Icon
-      title: "Precision & Purpose",
-      desc: "Every solution is intentional, scalable and measurable.",
+      icon: <FaUsers color="#577590" size={28} />, // Teamwork
+      title: "Teamwork",
+      desc: "Collaboration and trust fuel our shared success and collective growth.",
     },
   ];
 
@@ -174,7 +203,7 @@ const AboutUs = () => {
         <div className="vision-content">
           <h2 className="vision-main-new">Our Vision</h2>
           <p className="vision-sub-new">
-            Empowering innovation through creativity, technology, and
+            Empowering innovation through creativity, technology and
             collaboration to build a better digital future.
           </p>
         </div>
@@ -245,9 +274,9 @@ const AboutUs = () => {
         </Row>
       </Container>
 
-      {/* Core Values (horizontal cards) */}
+      {/*
       <Container className="values-wrap mt-5">
-        <Row className="text-center mb-4">
+         <Row className="text-center mb-4">
           <Col>
             <h2
               style={{
@@ -274,13 +303,12 @@ const AboutUs = () => {
               ></span>
             </h2>
           </Col>
-        </Row>
-
-        <Row className="values-row g-4 justify-content-center">
+        </Row> */}
+      {/*  old values
+ <Row className="values-row g-4 justify-content-center">
           {coreValues.map((v, i) => (
             <Col key={i} xs={12} md={6} lg={4} className="d-flex">
               <Card className="value-card flex-fill text-center border-0">
-                {/* NEW: Icon with circle wrapper for core values too */}
                 <div className="value-icon-wrapper">
                   <div className="value-icon-circle">{v.icon}</div>
                 </div>
@@ -290,8 +318,11 @@ const AboutUs = () => {
             </Col>
           ))}
         </Row>
+ 
       </Container>
+      */}
 
+      {/* <ValuesGallery /> */}
       {/* Promise */}
       <Container className="promise-wrap mt-5 mb-5">
         <Row className="text-center">
@@ -316,7 +347,7 @@ const AboutUs = () => {
     /* NEW Vision Styles */
     .vision-wrap-new {
       position: relative;
-      background-color: #f9fafb;
+      // background-color: #f9fafb;
       padding: 120px 20px;
       text-align: center;
       overflow: hidden;
@@ -349,8 +380,8 @@ const AboutUs = () => {
 
     /* Heading styles (UPDATED FOR MORE IMPACT) */
     .vision-main-new {
-      font-size: 3.2rem; /* Larger font size */
-      font-weight: 800; /* Bolder */
+      font-size: 2.2rem; /* Larger font size */
+      font-weight: 600; /* Bolder */
       color: #002d62; /* A deep, rich blue */
       margin-bottom: 25px; /* More space */
       text-transform: uppercase; /* Make it all caps for impact */
@@ -362,7 +393,7 @@ const AboutUs = () => {
     .vision-sub-new {
       font-size: 1.35rem; /* Slightly larger */
       color: #2c3e50; /* Darker, more serious tone */
-      max-width: 800px; /* Wider subtitle */
+      max-width: 1200px; /* Wider subtitle */
       margin: 0 auto;
       line-height: 1.7; /* Improved readability */
       font-weight: 500; /* A bit heavier than normal */
@@ -391,7 +422,9 @@ const AboutUs = () => {
     }
 
     /* Who we are - founders */
-    .who-wrap { padding: 60px 20px; background: #f8fbff; }
+    .who-wrap { padding: 60px 20px; 
+    // background: #f8fbff;
+     }
     .who-desc { max-width: 900px; margin: 0 auto 30px; color: #333; line-height: 1.6; }
     .founders-row { margin-top: 10px; }
     .founder-card {
@@ -449,11 +482,13 @@ const AboutUs = () => {
     .fade-item.visible { opacity: 1; transform: translateY(0); }
 
     /* Core values as horizontal cards */
-    .values-wrap { padding: 40px 12px; background: #f8fbff; }
+    .values-wrap { padding: 40px 12px;
+    //  background: #f8fbff;
+      }
     .values-row { align-items: center; }
     .value-card {
       padding: 20px 16px;
-      background: #eaf1f8;
+      // background: #eaf1f8;
       border-radius: 12px;
       display: flex;
       flex-direction: column;
@@ -474,7 +509,7 @@ const AboutUs = () => {
       width: 60px; /* Slightly smaller circle for values */
       height: 60px;
       border-radius: 50%;
-      background-color: #eaf1f8; /* Match card background initially */
+      // background-color: #eaf1f8; /* Match card background initially */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -499,8 +534,8 @@ const AboutUs = () => {
 
     /* responsive adjustments */
     @media (max-width: 991px) {
-      .vision-main-new { font-size: 2.8rem; padding: 0 10px; } /* Adjusted for new larger size */
-      .vision-sub-new { font-size: 1.2rem; padding: 0 10px; } /* Adjusted for new larger size */
+      .vision-main-new { font-size: 2.2rem; padding: 0 10px; } /* Adjusted for new larger size */
+      .vision-sub-new { font-size: 1rem; padding: 0 10px; } /* Adjusted for new larger size */
       .founder-img { height: 220px; }
     }
     @media (max-width: 768px) {
@@ -509,7 +544,7 @@ const AboutUs = () => {
     }
     @media (max-width: 576px) {
       .vision-main-new { font-size: 2.2rem; } /* Adjusted for new larger size */
-      .vision-sub-new { font-size: 1.1rem; } /* Adjusted for new larger size */
+      .vision-sub-new { font-size: 1rem; } /* Adjusted for new larger size */
       .vision-wrap-new { padding: 80px 15px; }
       .card-icon-circle { width: 60px; height: 60px; }
       .value-icon-circle { width: 50px; height: 50px; }

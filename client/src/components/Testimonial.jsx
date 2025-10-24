@@ -60,11 +60,11 @@ const Testimonials = () => {
       <style>
         {`
           body {
-            background-color: #f8f9fa;
+            // background-color: #f8f9fa;
           }
           .testimonials-section {
             padding: 5rem 0;
-            background-color: #f8f9fa;
+            // background-color: #f8f9fa;
           }
 
           // /* Heading underline */

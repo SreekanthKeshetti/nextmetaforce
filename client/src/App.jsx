@@ -9,21 +9,48 @@ import SolutionsPage from "./pages/SolutionsPage";
 import NewNavbar from "./components/NewNavbarr";
 import Footer from "./components/Footer";
 import CareersPage from "./pages/CareersPage";
-
+import ThemeToggle from "./components/ThemeToggle";
+import AIChatBot from "../src/components/AIChatBot";
+import DigitalTransformation from "../src/pages/DigitalTransformation";
+import SoftwareDevelopment from "../src/pages/SoftwareDevelopment";
+import ITConsulting from "../src/pages/ITConsulting";
+import TrainingEnablement from "../src/pages/TrainingEnablement";
+import CloudAI from "../src/pages/CloudAI";
+import AdvancedTechnologies from "../src/pages/AdvancedTechnologies";
 function App() {
   return (
     <div className="App">
       {/* <MyNavbar /> */}
+      {/* <ThemeToggle /> */}
       <NewNavbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route
+          path="/services/digital-transformation"
+          element={<DigitalTransformation />}
+        />
+        <Route
+          path="/services/software-development"
+          element={<SoftwareDevelopment />}
+        />
+        <Route path="/services/it-consulting" element={<ITConsulting />} />
+        <Route path="/services/cloud-ai" element={<CloudAI />} />
+        <Route
+          path="/services/training-enablement"
+          element={<TrainingEnablement />}
+        />
+        <Route
+          path="/services/advanced-technologies"
+          element={<AdvancedTechnologies />}
+        />
         <Route path="/contact" element={<ContactUsPage />} />
         <Route path="/solutions" element={<SolutionsPage />} />
         <Route path="/careers" element={<CareersPage />} />
       </Routes>
       {/* <AIChatBot /> */}
+      <AIChatBot />
       <Footer />
     </div>
   );

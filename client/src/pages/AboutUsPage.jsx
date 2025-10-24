@@ -6,6 +6,7 @@ import StretchyGallery from "../components/StretchyGallery";
 import NewForm from "../components/NewForm";
 import backgroundImage from "../assets/building.jpg";
 import AboutUs from "../components/AboutUs";
+import ValuesGallery from "../components/OurValues";
 
 function AboutUsPage() {
   return (
@@ -93,7 +94,9 @@ function AboutUsPage() {
       <AboutUs />
       {/* <Lists /> */}
       <AboutUsInfo />
-      <StretchyGallery />
+      <ValuesGallery />
+
+      {/* <StretchyGallery /> */}
       <Testimonial />
       <NewForm />
     </>

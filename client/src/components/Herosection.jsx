@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Button } from "react-bootstrap";
+import backgroundImage from "../assets/SolutionImg.jpg";
 
 export default function HeroSection() {
   return (
@@ -7,13 +8,16 @@ export default function HeroSection() {
       <style>
         {`
     .hero-section {
-  background: url("https://images.unsplash.com/photo-1518770660439-4636190af475") 
-              center center/cover no-repeat;
-  min-height: 70vh;
+  // background: url("https://images.unsplash.com/photo-1518770660439-4636190af475") 
+  //             center center/cover no-repeat;
+  background-image: url(${backgroundImage}); 
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+              background-size: cover;
+
 }
 
 /* Dark overlay for better text visibility */

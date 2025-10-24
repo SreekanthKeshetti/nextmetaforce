@@ -189,11 +189,11 @@ const ScrollContactSection = ({
 
         <style jsx="true">{`
           .scroll-contact-section {
-            background-color: #f5f7fa;
+            // background-color: #f5f7fa;
           }
           .contact-box {
-            background: #fff;
-            box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.08);
+            // background: #fff;
+            box-shadow: 20px 20px 20px 40px rgba(0, 0, 0, 0.08);
             border-radius: 12px;
             padding: 3rem;
           }
@@ -237,7 +237,7 @@ const ScrollContactSection = ({
             background: #eee;
           }
           .scroll-form-wrapper::-webkit-scrollbar-thumb {
-            background-color: #999;
+            // background-color: #999;
             border-radius: 4px;
           }
 

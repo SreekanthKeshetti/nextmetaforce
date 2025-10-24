@@ -7,7 +7,7 @@ function Footer() {
       <style>
         {`
         .footer {
-          background-color: #f5f7f8ff;
+          // background-color: #f5f7f8ff;
           color: var(--text-light);
           padding: 60px 0;
           font-family: "Inter", sans-serif;

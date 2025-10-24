@@ -1,0 +1,215 @@
+/* theme.css - place this in your global CSS import (index.css or main.css) */
+
+/* ---------------------
+   Design: Professional corporate dark
+   Strategy:
+   - Use CSS variables for colors
+   - Provide default light variables and dark overrides under [data-theme="dark"]
+   - Provide utility classes for components (card, section, form) using variables
+   - Add high-specificity rules to override Bootstrap where needed
+   --------------------- */
+
+/* Light theme (default) */
+:root {
+  --nmf-bg: #ffffff;
+  --nmf-surface: #ffffff;
+  --nmf-muted-surface: #f7f9fb;
+  --nmf-text: #0f1724;
+  --nmf-muted-text: #475569;
+  --nmf-primary: #0b5cff; /* accent */
+  --nmf-border: rgba(15, 23, 36, 0.08);
+  --nmf-card-shadow: 0 6px 18px rgba(11, 92, 255, 0.06);
+  --nmf-form-bg: #ffffff;
+  --nmf-inset: rgba(2, 6, 23, 0.03);
+  --nmf-link: var(--nmf-primary);
+  --nmf-input-border: rgba(15, 23, 36, 0.12);
+  /* --nmf-container: red; */
+}
+
+/* Dark theme overrides */
+html[data-theme="dark"] {
+  --nmf-bg: linear-gradient(90deg, #d5e1ef, #1a41f3); /* deep navy */
+  --nmf-surface: #93aeec; /* darker card surfaces */
+  --nmf-muted-surface: #0b1320;
+  --nmf-text: white; /* light text */
+  --nmf-muted-text: white;
+  --nmf-primary: #66a3ff; /* lighter blue accent */
+  --nmf-border: rgba(255, 255, 255, 0.06);
+  --nmf-card-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  --nmf-form-bg: #94b0e8;
+  --nmf-inset: rgba(255, 255, 255, 0.02);
+  --nmf-link: var(--nmf-primary);
+  --nmf-input-border: rgba(255, 255, 255, 0.08);
+  /* --nmf-container: green; */
+}
+
+/* Apply global page background & text */
+html,
+body {
+  background: var(--nmf-bg) !important;
+  color: var(--nmf-text) !important;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a {
+  color: var(--nmf-link);
+}
+a:hover {
+  opacity: 0.95;
+  text-decoration: underline;
+}
+
+/* Bootstrap element overrides (cards, navbars, sections, footers) */
+/* Cards */
+.card,
+.nmf-card {
+  background: var(--nmf-surface) !important;
+  color: var(--nmf-text) !important;
+  border: 1px solid var(--nmf-border) !important;
+  box-shadow: var(--nmf-card-shadow);
+}
+
+/* Cards with muted background */
+.nmf-card--muted {
+  background: var(--nmf-muted-surface) !important;
+}
+
+/* Sections (hero, large blocks) */
+.nmf-section {
+  background: var(--nmf-bg) !important;
+  color: var(--nmf-text) !important;
+  border-top: 1px solid transparent;
+}
+
+/* Navbar */
+.navbar,
+.nmf-navbar {
+  /* background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.03) 100%
+    ),
+    var(--nmf-surface) !important; */
+  color: var(--nmf-text) !important;
+  border-bottom: 1px solid var(--nmf-border);
+}
+
+/* Forms */
+.form-control,
+input,
+textarea,
+select {
+  background: var(--nmf-form-bg) !important;
+  color: var(--nmf-text) !important;
+  border: 1px solid var(--nmf-input-border) !important;
+  box-shadow: none !important;
+}
+
+/* Inputs placeholder color */
+.form-control::placeholder {
+  color: var(--nmf-muted-text);
+  opacity: 0.7;
+}
+
+/* Form group backgrounds */
+.nmf-form {
+  background: var(--nmf-surface);
+  border: 1px solid var(--nmf-border);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--nmf-primary) !important;
+  border-color: var(--nmf-primary) !important;
+  color: #fff !important;
+}
+.btn-outline-primary {
+  border-color: var(--nmf-primary) !important;
+  color: var(--nmf-primary) !important;
+}
+
+/* Footer */
+.footer,
+.nmf-footer {
+  background: var(--nmf-surface) !important;
+  color: var(--nmf-muted-text) !important;
+  border-top: 1px solid var(--nmf-border);
+}
+
+/* Utility classes for quick replacement of inline hex backgrounds */
+.bg-nmf-surface {
+  background: var(--nmf-surface) !important;
+  color: var(--nmf-text) !important;
+}
+.bg-nmf-muted {
+  background: var(--nmf-muted-surface) !important;
+  color: var(--nmf-text) !important;
+}
+.text-nmf {
+  color: var(--nmf-text) !important;
+}
+.text-muted-nmf {
+  color: var(--nmf-muted-text) !important;
+}
+
+/* Specificity helpers to override more stubborn rules (be careful) */
+body .card {
+  background: var(--nmf-surface) !important;
+  color: var(--nmf-text) !important;
+}
+
+/* Small components */
+.badge,
+.nmf-badge {
+  background: rgba(11, 92, 255, 0.12);
+  color: var(--nmf-primary);
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Inputs focus */
+.form-control:focus {
+  border-color: var(--nmf-primary) !important;
+  box-shadow: 0 0 0 0.15rem rgba(11, 92, 255, 0.15);
+}
+
+/* Tables */
+.table,
+.table td,
+.table th {
+  background: transparent;
+  color: var(--nmf-text);
+  border-color: var(--nmf-border);
+}
+
+/* Images and cards with background images: add an overlay helper */
+.nmf-surface-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+  border-radius: inherit;
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+}
+
+/* Make sure modals inherit theme */
+.modal-content {
+  background: var(--nmf-surface) !important;
+  color: var(--nmf-text) !important;
+  border: 1px solid var(--nmf-border) !important;
+}
+/* .container,
+.nmf-container {
+  background: var(--nmf-container);
+} */
+
+/* Helpers to convert inline hex backgrounds: you should replace inline styles with classes:
+   Example: <div style={{backgroundColor: '#ffffff'}}> => <div className="bg-nmf-surface">
+*/

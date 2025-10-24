@@ -156,7 +156,7 @@ export default function CaseStudy() {
     <>
       <style>{`
         .case-study-section { 
-          background: #f8f9fa; 
+          // background: #f8f9fa; 
           padding: 5rem 0; 
         }
         .case-study-container {
@@ -191,7 +191,7 @@ export default function CaseStudy() {
           gap: 3rem; 
           align-items: start; 
           padding: 4rem 8% 4rem 8%; 
-          background-color: #ffffff; 
+          // background-color: #ffffff; 
           margin-bottom: 2rem; 
           box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
           border-radius: 10px; 
@@ -201,7 +201,7 @@ export default function CaseStudy() {
         }
         .case-study-row:nth-child(even) {
           grid-template-areas: "text image"; 
-          background-color: #f6f7fbff; 
+          // background-color: #f6f7fbff; 
         }
         .case-study-row:nth-child(odd) {
           grid-template-areas: "image text"; 
@@ -253,8 +253,12 @@ export default function CaseStudy() {
 
         .technologies-list, .team-members { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; }
         .technology, .team-member { padding: 8px 18px; border-radius: 25px; font-size: 0.9rem; font-weight: 500; }
-        .technology { background-color: #e0f2fe; color: #0d2d62; } 
-        .team-member { background-color: #edf2fe; color: #0d2d62; } 
+        .technology {
+          background-color: #e0f2fe; 
+         color: #0d2d62; } 
+        .team-member {
+         background-color: #edf2fe;
+          color: #0d2d62; } 
 
         @media (max-width: 992px) {
           .case-study-row { 
@@ -303,26 +307,26 @@ export default function CaseStudy() {
                   <h4>Result</h4>
                   <p>{study.result}</p>
                 </div>
-                <h4>Technologies Used</h4>
+                {/* <h4>Technologies Used</h4>
                 <div className="technologies-list">
                   {study.technologies.map((tech, idx) => (
                     <span key={idx} className="technology">
                       {tech}
                     </span>
                   ))}
-                </div>
-                {study.team && study.team.length > 0 && (
-                  <>
-                    <h4>Team Members</h4>
-                    <div className="team-members">
-                      {study.team.map((member, idx) => (
-                        <span key={idx} className="team-member">
-                          {member}
-                        </span>
-                      ))}
-                    </div>
-                  </>
-                )}
+                </div> */}
+                {/* {study.team && study.team.length > 0 && (
+                  // <>
+                  //   <h4>Team Members</h4>
+                  //   <div className="team-members">
+                  //     {study.team.map((member, idx) => (
+                  //       <span key={idx} className="team-member">
+                  //         {member}
+                  //       </span>
+                  //     ))}
+                  //   </div>
+                  // </>
+                )} */}
               </div>
             </div>
           ))}

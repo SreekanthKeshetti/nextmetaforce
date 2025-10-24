@@ -151,7 +151,7 @@ function ServicesCarousel() {
         }
 
         .services-carousel-section .service-card .card-body {
-          background: #fff;
+          // background: #fff;
           color: #333;
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;

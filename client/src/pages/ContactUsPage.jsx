@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import contactImage from "../assets/contact.jpg";
-import Footer from "../components/Footer";
+import contactImage from "../assets/ContactUs.jpg";
 import LocationsMap from "../components/Locations";
 
 function ContactUsPage() {
@@ -79,8 +78,9 @@ function ContactUsPage() {
         {`
           /* Hero Section */
           .contact-hero-section {
+          
             background-image: url('${contactImage}');
-            background-size: cover;
+            background-size: 75%;
             background-position: center;
             height: 90vh;
             display: flex;
@@ -88,6 +88,7 @@ function ContactUsPage() {
             position: relative;
             color: white;
             padding: 20px;
+            transform: scaleX(-1);
           }
 
           .contact-hero-section::before {
@@ -109,20 +110,24 @@ function ContactUsPage() {
             font-size: 2rem;
             font-weight: 600;
             margin-bottom: 10px;
+                        transform: scaleX(-1)
+
           }
 
           .hero-subheading {
             font-size: 1.25rem;
             font-weight: 400;
+                        transform: scaleX(-1)
+
           }
 
           /* Contact Section */
           .bg-custom-gray {
-            background-color: #e9ecef;
+            // background-color: #e9ecef;
           }
 
           .contact-card {
-            background-color: white;
+            // background-color: white;
             border-radius: 1rem;
             box-shadow: 0 4px 30px rgba(0,0,0,0.1);
             padding: 2rem;

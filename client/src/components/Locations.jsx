@@ -122,7 +122,7 @@ const Locations = () => {
   font-weight: 600;
   color: #333;
   margin-top: 4px;
-  background: #fff;
+   background: #fff;
   padding: 2px 6px;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -153,7 +153,7 @@ const Locations = () => {
 
     
     `}</style>
-      <section className="py-5 bg-light">
+      <section className="py-5 ">
         <Container>
           {/* Wrapper for "Our Global Presence" to center the inline-block h2 */}
           <div className="text-center">

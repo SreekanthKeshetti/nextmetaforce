@@ -27,9 +27,9 @@ function Consulting() {
                 <span className="underline"></span>
               </h2>
               <p className="consulting-text">
-                When it comes to leveraging a consulting and solutions PARTNER,
+                When it comes to leveraging a consulting and solutions partner,
                 you need a visionary with experience whose primary focus is
-                delivering OUTCOMES and BUSINESS VALUE to your company.
+                delivering outcomes and business value to your company.
               </p>
               <Link to="/about" className="know-us-button">
                 Know Us
@@ -42,7 +42,7 @@ function Consulting() {
       <style jsx="true">{`
         .consulting-section {
           padding: 80px 0;
-          background-color: #f8f9fa;
+          // background-color: #f8f9fa;
           position: relative;
           overflow: hidden;
         }
@@ -82,7 +82,7 @@ function Consulting() {
           font-family: "Montserrat", sans-serif;
           font-size: 1.5rem;
           font-weight: 500;
-          color: #343a40;
+          // color: #343a40;
           position: relative;
           display: inline-block;
           margin-bottom: 20px;
@@ -102,7 +102,7 @@ function Consulting() {
           font-family: "Poppins", sans-serif;
           font-size: 1.1rem;
           line-height: 1.5;
-          color: #555;
+          // color: #555;
           margin-bottom: 25px;
         }
 
