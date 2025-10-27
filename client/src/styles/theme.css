@@ -24,11 +24,13 @@
   --nmf-link: var(--nmf-primary);
   --nmf-input-border: rgba(15, 23, 36, 0.12);
   /* --nmf-container: red; */
+  /* --bg-secondary: #a4bcd4ff; */
 }
 
 /* Dark theme overrides */
 html[data-theme="dark"] {
   --nmf-bg: linear-gradient(90deg, #d5e1ef, #1a41f3); /* deep navy */
+  /* --bg-secondary: #161b22; */
   --nmf-surface: #93aeec; /* darker card surfaces */
   --nmf-muted-surface: #0b1320;
   --nmf-text: white; /* light text */

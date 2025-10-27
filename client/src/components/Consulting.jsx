@@ -38,11 +38,12 @@ function Consulting() {
           </Row>
         </Container>
       </section>
+      {/* for this color we need to create a variable with a name and use it */}
 
       <style jsx="true">{`
         .consulting-section {
           padding: 80px 0;
-          // background-color: #f8f9fa;
+          background-color: var(--bg-secondary);
           position: relative;
           overflow: hidden;
         }
