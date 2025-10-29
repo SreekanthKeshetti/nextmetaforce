@@ -1,5 +1,5 @@
 import React from "react";
-import consultingImg from "../assets/2.jpg";
+import consultingImg from "../assets/IT&Recruitment.jpg";
 import { FaUserTie } from "react-icons/fa";
 
 const ITConsulting = () => {
@@ -9,14 +9,24 @@ const ITConsulting = () => {
         .service-hero {
           background-image: url(${consultingImg});
           background-size: cover;
-          background-position: center;
-          min-height: 80vh;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          color: #fff;
+          // background-position: center;
+          // min-height: 80vh;
+          // position: relative;
+          // display: flex;
+          // align-items: center;
+          // justify-content: center;
+          // text-align: center;
+          // color: #fff;
+           background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
         }
         .service-hero::after {
           content: "";
@@ -32,21 +42,21 @@ const ITConsulting = () => {
       <div className="service-hero">
         <div className="hero-content">
           <h1 className="Business-title">IT Consulting and Recruitment</h1>
-          <p className="lead mt-3">
+          {/* <p className="lead mt-3">
             Your Force Multiplier for IT Talent and Strategy.
-          </p>
+          </p> */}
         </div>
       </div>
 
       <div className="container py-5">
-        {/* <div className="text-center mb-4">
-          <FaUserTie size={50} color="#4285f4" />
+        <div className="text-center mb-4">
+          {/* <FaUserTie size={50} color="#4285f4" /> */}
           <h2 className="mt-3">IT Consulting and Recruitment</h2>
           <p className="text-muted">
             Bridge the gap between your technology goals and your team's
             capabilities.
           </p>
-        </div> */}
+        </div>
 
         <div className="mt-4">
           <p>

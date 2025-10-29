@@ -1,5 +1,5 @@
 import React from "react";
-import cloudImg from "../assets/1.jpg";
+import cloudImg from "../assets/CloudandAI.webp";
 import { FaCloud } from "react-icons/fa";
 
 const CloudAI = () => {
@@ -9,14 +9,24 @@ const CloudAI = () => {
         .service-hero {
           background-image: url(${cloudImg});
           background-size: cover;
-          background-position: center;
-          min-height: 80vh;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          color: #fff;
+          // background-position: center;          
+          // min-height: 100vh;
+          // position: relative;
+          // display: flex;
+          // align-items: center;
+          // justify-content: center;
+          // text-align: center;
+          // color: #fff;
+           background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
         }
         .service-hero::after {
           content: "";
@@ -38,7 +48,7 @@ const CloudAI = () => {
 
       <div className="container py-5">
         <div className="text-center mb-4">
-          <FaCloud size={50} color="#00bcd4" />
+          {/* <FaCloud size={50} color="#00bcd4" /> */}
           <h2 className="mt-3">Cloud and AI</h2>
           <p className="text-muted">
             Harness the combined power of Cloud and AI.

@@ -27,7 +27,7 @@ function AboutUsPage() {
           .hero-section {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: 90vh;
             overflow: hidden;
             display: flex;
             justify-content: center;

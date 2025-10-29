@@ -81,25 +81,28 @@ function ContactUsPage() {
           
             background-image: url('${contactImage}');
             background-size: 75%;
-            background-position: center;
             height: 90vh;
+            position: relative;
+            // transform: scaleX(-1);
+             background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
             display: flex;
             align-items: center;
-            position: relative;
+            justify-content: center;
+            text-align: center;
             color: white;
-            padding: 20px;
-            transform: scaleX(-1);
           }
 
-          .contact-hero-section::before {
-            content: '';
-            position: absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            background-color: rgba(0,0,0,0.5);
-          }
+          // .contact-hero-section::before {
+          //   content: '';
+          //   position: absolute;
+          //   top:0;
+          //   left:0;
+          //   width:100%;
+          //   height:100%;
+          //   background-color: rgba(0,0,0,0.5);
+          // }
 
           .hero-content {
             position: relative;
@@ -110,14 +113,14 @@ function ContactUsPage() {
             font-size: 2rem;
             font-weight: 600;
             margin-bottom: 10px;
-                        transform: scaleX(-1)
+                        // transform: scaleX(-1)
 
           }
 
           .hero-subheading {
             font-size: 1.25rem;
             font-weight: 400;
-                        transform: scaleX(-1)
+                        // transform: scaleX(-1)
 
           }
 
@@ -237,10 +240,10 @@ function ContactUsPage() {
         <Container className="hero-content">
           <Row>
             <Col>
-              <h1 className="hero-heading">Let's Connect!</h1>
+              {/* <h1 className="hero-heading">Let's Connect!</h1>
               <p className="hero-subheading">
                 We're ready to turn your vision to value.
-              </p>
+              </p> */}
             </Col>
           </Row>
         </Container>

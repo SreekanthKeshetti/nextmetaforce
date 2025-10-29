@@ -696,7 +696,7 @@ const ServicesPage = () => {
           }
 
           .cta-section {
-            background: #554ecd;
+            background: linear-gradient(90deg, #009dff86, #0055ffbb);
             padding: 60px 20px;
             text-align: center;
             border-radius: 12px;
@@ -742,7 +742,7 @@ const ServicesPage = () => {
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;

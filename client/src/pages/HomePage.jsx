@@ -171,53 +171,53 @@ import NewForm from "../components/NewForm";
 
 function HomePage() {
   const heroRef = useRef(null);
-  // const nextSectionRef = useRef(null);
-  // const [isAutoScrolling, setIsAutoScrolling] = useState(false);
+  const nextSectionRef = useRef(null);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
 
-  // useEffect(() => {
-  //   let lastScrollY = window.scrollY; // keep track of scroll direction
+  useEffect(() => {
+    let lastScrollY = window.scrollY; // keep track of scroll direction
 
-  //   const handleScroll = () => {
-  //     if (!heroRef.current || !nextSectionRef.current || isAutoScrolling)
-  //       return;
+    const handleScroll = () => {
+      if (!heroRef.current || !nextSectionRef.current || isAutoScrolling)
+        return;
 
-  //     const heroHeight = heroRef.current.offsetHeight;
-  //     const scrollY = window.scrollY;
-  //     const scrollingDown = scrollY > lastScrollY;
-  //     lastScrollY = scrollY;
+      const heroHeight = heroRef.current.offsetHeight;
+      const scrollY = window.scrollY;
+      const scrollingDown = scrollY > lastScrollY;
+      lastScrollY = scrollY;
 
-  //     // Going DOWN — from hero to manifesto
-  //     if (
-  //       scrollingDown &&
-  //       scrollY > heroHeight * 0.1 &&
-  //       scrollY < heroHeight * 0.8
-  //     ) {
-  //       setIsAutoScrolling(true);
-  //       nextSectionRef.current.scrollIntoView({ behavior: "smooth" });
+      // Going DOWN — from hero to manifesto
+      if (
+        scrollingDown &&
+        scrollY > heroHeight * 0.1 &&
+        scrollY < heroHeight * 0.8
+      ) {
+        setIsAutoScrolling(true);
+        nextSectionRef.current.scrollIntoView({ behavior: "smooth" });
 
-  //       setTimeout(() => {
-  //         setIsAutoScrolling(false);
-  //       }, 1200);
-  //     }
+        setTimeout(() => {
+          setIsAutoScrolling(false);
+        }, 1200);
+      }
 
-  //     // Going UP — from manifesto back to hero
-  //     if (
-  //       !scrollingDown &&
-  //       scrollY < heroHeight * 0.7 &&
-  //       scrollY > heroHeight * 0.1
-  //     ) {
-  //       setIsAutoScrolling(true);
-  //       heroRef.current.scrollIntoView({ behavior: "smooth" });
+      // Going UP — from manifesto back to hero
+      if (
+        !scrollingDown &&
+        scrollY < heroHeight * 0.7 &&
+        scrollY > heroHeight * 0.1
+      ) {
+        setIsAutoScrolling(true);
+        heroRef.current.scrollIntoView({ behavior: "smooth" });
 
-  //       setTimeout(() => {
-  //         setIsAutoScrolling(false);
-  //       }, 1200);
-  //     }
-  //   };
+        setTimeout(() => {
+          setIsAutoScrolling(false);
+        }, 1200);
+      }
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [isAutoScrolling]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isAutoScrolling]);
 
   return (
     <>
@@ -241,10 +241,9 @@ function HomePage() {
       </section>
 
       {/* Manifesto / Next Section */}
-      {/* <div ref={nextSectionRef}>
+      <div ref={nextSectionRef}>
         <ServicesSection />
-      </div> */}
-      <ServicesSection />
+      </div>
       <Consulting />
       <ServiceCards />
       <ServicesCarousel />

@@ -1,5 +1,5 @@
 import React from "react";
-import advancedImg from "../assets/1.jpg";
+import advancedImg from "../assets/cloudAi.webp";
 import { FaCube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -9,15 +9,25 @@ const AdvancedTechnologies = () => {
       <style>{`
         .service-hero {
           background-image: url(${advancedImg});
-          background-size: cover;
-          background-position: center;
-          min-height: 80vh;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          color: #fff;
+          // background-size: cover;
+          // background-position: center;
+          // min-height: 80vh;
+          // position: relative;
+          // display: flex;
+          // align-items: center;
+          // justify-content: center;
+          // text-align: center;
+          // color: #fff;
+           background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            // overflow: hidden;
         }
         .service-hero::after {
           content: "";
@@ -35,20 +45,20 @@ const AdvancedTechnologies = () => {
           <h1 className="Business-title">
             Advanced Technologies – Blockchain / Web3 / IoT
           </h1>
-          <p className="lead mt-3">Pioneering the Next Digital Frontier.</p>
+          {/* <p className="lead mt-3">Pioneering the Next Digital Frontier.</p> */}
         </div>
       </div>
 
       <div className="container py-5">
-        {/*<div className="text-center mb-4">
-          <FaCube size={50} color="#ff7043" />
+        <div className="text-center mb-4">
+          {/* <FaCube size={50} color="#ff7043" /> */}
           <h2 className="mt-3">
             Advanced Technologies – Blockchain / Web3 / IoT
           </h2>
           <p className="text-muted">
             Build decentralized, connected, and intelligent systems.
           </p>
-        </div> */}
+        </div>
 
         <div className="mt-4">
           <p>
@@ -77,7 +87,7 @@ const AdvancedTechnologies = () => {
           </ul>
         </div>
       </div>
-      <div className="text-center mt-5">
+      {/* <div className="text-center mt-5">
         <Link to="/services" className="btn btn-outline-primary">
           ← Back to Services
         </Link>
@@ -86,7 +96,7 @@ const AdvancedTechnologies = () => {
         <a href="/services" className="btn btn-outline-primary">
           ← Back to Services
         </a>
-      </div>
+      </div> */}
     </>
   );
 };

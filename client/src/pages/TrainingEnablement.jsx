@@ -1,5 +1,5 @@
 import React from "react";
-import trainingImg from "../assets/1.jpg";
+import trainingImg from "../assets/ITTraining.jpg";
 import { FaChalkboardTeacher } from "react-icons/fa";
 
 const TrainingEnablement = () => {
@@ -9,14 +9,24 @@ const TrainingEnablement = () => {
         .service-hero {
           background-image: url(${trainingImg});
           background-size: cover;
-          background-position: center;
-          min-height: 80vh;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          color: #fff;
+          // background-position: center;
+          // min-height: 80vh;
+          // position: relative;
+          // display: flex;
+          // align-items: center;
+          // justify-content: center;
+          // text-align: center;
+          // color: #fff;
+           background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
         }
         .service-hero::after {
           content: "";
@@ -32,18 +42,18 @@ const TrainingEnablement = () => {
       <div className="service-hero">
         <div className="hero-content">
           <h1 className="Business-title">Training and Enablement</h1>
-          <p className="lead mt-3">Empower Your Team for the Digital Age.</p>
+          {/* <p className="lead mt-3">Empower Your Team for the Digital Age.</p> */}
         </div>
       </div>
 
       <div className="container py-5">
-        {/* <div className="text-center mb-4">
-          <FaChalkboardTeacher size={50} color="#9c27b0" />
+        <div className="text-center mb-4">
+          {/* <FaChalkboardTeacher size={50} color="#9c27b0" /> */}
           <h2 className="mt-3">Training and Enablement</h2>
           <p className="text-muted">
             Transform your workforce from users to innovators.
           </p>
-        </div> */}
+        </div>
 
         <div className="mt-4">
           <p>

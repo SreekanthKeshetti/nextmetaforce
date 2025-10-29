@@ -117,7 +117,9 @@ export default function ValuesGallery() {
           transition: background 0.3s ease;
         }
         .gallery-item:hover .overlay {
-          background: linear-gradient(to top, rgba(0, 157, 255, 0.7), transparent);
+          // background: linear-gradient(to top, rgba(0, 157, 255, 0.7), transparent);
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+
         }
         .overlay h2 {
           font-size: 1.2rem;

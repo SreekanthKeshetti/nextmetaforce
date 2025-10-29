@@ -61,7 +61,7 @@ export default function Industries() {
       <style>{`
         .customer-carousel {
           // background: linear-gradient(to right, #64b5f6, #3949ab);
-          background-color: #dedbdbff;
+          background-color: #eeeef03e;
           padding: 60px 0;
         }
 
@@ -128,16 +128,18 @@ export default function Industries() {
         .story-info h5 {
           font-size: 1.2rem;
           margin-bottom: 10px;
+          color:black;
         }
 
         .story-info p {
           font-size: 0.95rem;
           margin: 0;
+          color:black;
         }
 
         .story-card:hover .story-info {
           transform: translateY(0);
-          background: rgba(145, 177, 240, 0.68);
+          background: rgba(238, 240, 245, 0.68);
         }
       `}</style>
 

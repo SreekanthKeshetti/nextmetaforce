@@ -1,5 +1,5 @@
 import React from "react";
-import softwareImg from "../assets/1.jpg";
+import softwareImg from "../assets/SoftwareDevelopment.jpg";
 import { FaCode } from "react-icons/fa";
 
 const SoftwareDevelopment = () => {
@@ -8,16 +8,26 @@ const SoftwareDevelopment = () => {
       <style>{`
         .service-hero {
           background-image: url(${softwareImg});
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          min-height: 80vh;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          color: #fff;
+          // background-size: cover;
+          // background-position: center;
+          // background-repeat: no-repeat;
+          // min-height: 80vh;
+          // position: relative;
+          // display: flex;
+          // align-items: center;
+          // justify-content: center;
+          // text-align: center;
+          // color: #fff;
+           background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
         }
         .service-hero::after {
           content: "";
@@ -40,19 +50,19 @@ const SoftwareDevelopment = () => {
           <h1 className="Business-title">
             Software Development and Implementation
           </h1>
-          <p className="lead mt-3">Build the Future, Code by Code.</p>
+          {/* <p className="lead mt-3">Build the Future, Code by Code.</p> */}
         </div>
       </div>
 
       {/* Content */}
       <div className="container py-5">
-        {/* <div className="text-center mb-4">
-          <FaCode size={50} color="#34a853" />
+        <div className="text-center mb-4">
+          {/* <FaCode size={50} color="#34a853" /> */}
           <h2 className="mt-3">Software Development and Implementation</h2>
           <p className="text-muted">
             From visionary concept to robust, scalable software.
           </p>
-        </div> */}
+        </div>
 
         <div className="mt-4">
           <p>
