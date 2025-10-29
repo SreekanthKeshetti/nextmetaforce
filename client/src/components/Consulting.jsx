@@ -43,7 +43,8 @@ function Consulting() {
       <style jsx="true">{`
         .consulting-section {
           padding: 80px 0;
-          background-color: var(--bg-secondary);
+          // background-color: var(--bg-secondary);
+          background-color: #f9f9f9ff;
           position: relative;
           overflow: hidden;
         }

@@ -225,14 +225,14 @@ function HomePage() {
       <section className="hero-section" ref={heroRef}>
         <video className="video-background" autoPlay loop muted playsInline>
           <source src={videoBackground} type="video/mp4" />
-          Your browser does not support the video tag.
+          {/* Your browser does not support the video tag. */}
         </video>
 
         <div className="grid-overlay"></div>
 
         <div className="hero-content">
           <h1 className="hero-title">
-            Welcome to Our <span className="gradient-text">Business</span>
+            Redefining possibilities through next- gen tech
           </h1>
           <p className="hero-subtitle">Where Innovation meets purpose.</p>
         </div>
@@ -275,7 +275,7 @@ function HomePage() {
           left: 0;
           width: 100%;
           height: 100%;
-          // background: url("https://cdn.ranosys.com/wp-content/uploads/2024/10/grid-slide.png")
+          background: url("https://cdn.ranosys.com/wp-content/uploads/2024/10/grid-slide.png")
             repeat;
           mix-blend-mode: overlay;
           z-index: 1;
@@ -301,10 +301,10 @@ function HomePage() {
         }
 
         .hero-subtitle {
-          font-weight: 450;
+          font-weight: 500;
           font-size: 1.5rem;
           margin-bottom: 2rem;
-          color: #ca9a29ff;
+          color: #d48223ff;
         }
 
         @media (max-width: 768px) {

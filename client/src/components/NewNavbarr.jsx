@@ -77,7 +77,8 @@ export default function MyNavbar() {
   // Default non-scrolled links are white, scrolled are dark grey
   const getLinkColor = () => (scrolled ? "#333" : "#fff");
   const getHoverColor = () => "#679ef0ff"; // Bootstrap primary blue
-  const getActiveColor = () => "#f1b96eff"; // Active page color
+  // const getActiveColor = () => "#f1b96eff"; // Active page color
+  const getActiveColor = () => "#d48223ff";
 
   return (
     <>

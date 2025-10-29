@@ -97,7 +97,7 @@ function AboutUsPage() {
       <ValuesGallery />
 
       {/* <StretchyGallery /> */}
-      <Testimonial />
+      {/* <Testimonial /> */}
       <NewForm />
     </>
   );
