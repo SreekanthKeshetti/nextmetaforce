@@ -120,12 +120,12 @@ const CustomCursor = () => {
             transform: translate3d(0, 0, 0);
           }
 
-          .custom-cursor.hover {
-            width: 28px;
-            height: 28px;
-            background-color: #ffffff;
-            box-shadow: 0 0 25px #ffffff, 0 0 45px #ffffff;
-          }
+          // .custom-cursor.hover {
+          //   width: 28px;
+          //   height: 28px;
+          //   background-color: #ffffff;
+          //   box-shadow: 0 0 25px #ffffff, 0 0 45px #ffffff;
+          // }
         `}
       </style>
 

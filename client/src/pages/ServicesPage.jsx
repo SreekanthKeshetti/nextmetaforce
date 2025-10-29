@@ -616,6 +616,12 @@ const ServicesPage = () => {
             border-radius: 2px;
             margin: 8px auto 0;
           }
+             .subTitle{
+          font-size: 1.25rem;
+          margin-bottom: 2rem;
+          color: #f5f4f4ff;
+          }
+            
 
           .why-grid {
             display: grid;
@@ -782,7 +788,7 @@ const ServicesPage = () => {
           <div className="hero-overlay"></div>
           <div className="hero-content">
             <h1 className="Business-title">Business Services</h1>
-            <p className="lead mt-3">
+            <p className=" subTitle">
               We provide comprehensive solutions to help your business thrive in
               a competitive market.
             </p>

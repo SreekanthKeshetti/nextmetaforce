@@ -18,12 +18,13 @@ import TrainingEnablement from "../src/pages/TrainingEnablement";
 import CloudAI from "../src/pages/CloudAI";
 import AdvancedTechnologies from "../src/pages/AdvancedTechnologies";
 import CustomCursor from "./components/CustomCursor";
+import OrbitAnimation from "./components/OrbitAnimation";
 function App() {
   return (
     <div className="App">
       {/* <MyNavbar /> */}
       {/* <ThemeToggle /> */}
-      {/* <CustomCursor /> */}
+      <CustomCursor />
       <NewNavbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -53,6 +54,7 @@ function App() {
       </Routes>
       {/* <AIChatBot /> */}
       <AIChatBot />
+      <OrbitAnimation />
       <Footer />
     </div>
   );

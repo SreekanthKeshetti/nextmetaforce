@@ -299,8 +299,8 @@ export default function TechnologyPractice() {
         {`
         /* ===== Section ===== */
         .section-title {
-          font-size: 2rem;
-          font-weight: 700;
+          font-size: 1.5rem;
+          font-weight: 500;
           color: #222;
           text-transform: uppercase;
           position: relative;
@@ -463,7 +463,7 @@ export default function TechnologyPractice() {
             viewport={{ once: true }}
             variants={sectionVariants}
           >
-            <p>
+            {/* <p>
               As a leading technology staffing firm, we leverage our extensive
               experience to connect visionary clients with exceptional talent.
               Our expertise allows us to attract and retain top professionals
@@ -471,7 +471,7 @@ export default function TechnologyPractice() {
               targeted approach, flexible services, and an unwavering reputation
               for excellence, we are the ideal partner for organizations seeking
               seasoned technology experts.
-            </p>
+            </p> */}
           </motion.div>
 
           <Row className="g-4 justify-content-center align-items-stretch">

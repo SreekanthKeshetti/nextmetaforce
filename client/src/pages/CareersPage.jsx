@@ -168,7 +168,7 @@ const CareersPage = () => {
               initial={{ y: -30, opacity: 0 }}
               animate={{ y: 30, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="fw-bold display-5"
+              className="fw-normal"
             >
               Join Our Mission
             </motion.h1>

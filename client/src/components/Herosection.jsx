@@ -35,7 +35,7 @@ export default function HeroSection() {
           }
         .title{
            font-weight: 600;
-           font-size: 3rem;
+           font-size: 2.5rem;
           }
           .subtitle{
           font-size: 1.25rem;
