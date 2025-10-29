@@ -3,7 +3,7 @@ import forwardImg from "../assets/Thinkingforward.jpg";
 import integrity from "../assets/Integrity.jpg";
 import clientImg from "../assets/ClientCentric.avif";
 import peopleImg from "../assets/Meeting.jpg";
-import teamworkImg from "../assets/Teamwork.avif";
+import teamworkImg from "../assets/TeamWork.avif";
 import { Link } from "react-router-dom";
 
 const values = [
