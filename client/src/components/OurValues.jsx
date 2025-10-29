@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import forwardImg from "../assets/Thinkingforward.jpg";
 import integrity from "../assets/Integrity.jpg";
-import clientImg from "../assets/clientFirst.jpg";
+import clientImg from "../assets/ClientCentric.avif";
 import peopleImg from "../assets/Meeting.jpg";
-import teamworkImg from "../assets/Teamwork.jpg";
+import teamworkImg from "../assets/Teamwork.avif";
 import { Link } from "react-router-dom";
 
 const values = [

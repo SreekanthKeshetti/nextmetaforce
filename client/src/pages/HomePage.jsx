@@ -171,53 +171,53 @@ import NewForm from "../components/NewForm";
 
 function HomePage() {
   const heroRef = useRef(null);
-  const nextSectionRef = useRef(null);
-  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
+  // const nextSectionRef = useRef(null);
+  // const [isAutoScrolling, setIsAutoScrolling] = useState(false);
 
-  useEffect(() => {
-    let lastScrollY = window.scrollY; // keep track of scroll direction
+  // useEffect(() => {
+  //   let lastScrollY = window.scrollY; // keep track of scroll direction
 
-    const handleScroll = () => {
-      if (!heroRef.current || !nextSectionRef.current || isAutoScrolling)
-        return;
+  //   const handleScroll = () => {
+  //     if (!heroRef.current || !nextSectionRef.current || isAutoScrolling)
+  //       return;
 
-      const heroHeight = heroRef.current.offsetHeight;
-      const scrollY = window.scrollY;
-      const scrollingDown = scrollY > lastScrollY;
-      lastScrollY = scrollY;
+  //     const heroHeight = heroRef.current.offsetHeight;
+  //     const scrollY = window.scrollY;
+  //     const scrollingDown = scrollY > lastScrollY;
+  //     lastScrollY = scrollY;
 
-      // Going DOWN — from hero to manifesto
-      if (
-        scrollingDown &&
-        scrollY > heroHeight * 0.1 &&
-        scrollY < heroHeight * 0.8
-      ) {
-        setIsAutoScrolling(true);
-        nextSectionRef.current.scrollIntoView({ behavior: "smooth" });
+  //     // Going DOWN — from hero to manifesto
+  //     if (
+  //       scrollingDown &&
+  //       scrollY > heroHeight * 0.1 &&
+  //       scrollY < heroHeight * 0.8
+  //     ) {
+  //       setIsAutoScrolling(true);
+  //       nextSectionRef.current.scrollIntoView({ behavior: "smooth" });
 
-        setTimeout(() => {
-          setIsAutoScrolling(false);
-        }, 1200);
-      }
+  //       setTimeout(() => {
+  //         setIsAutoScrolling(false);
+  //       }, 1200);
+  //     }
 
-      // Going UP — from manifesto back to hero
-      if (
-        !scrollingDown &&
-        scrollY < heroHeight * 0.7 &&
-        scrollY > heroHeight * 0.1
-      ) {
-        setIsAutoScrolling(true);
-        heroRef.current.scrollIntoView({ behavior: "smooth" });
+  //     // Going UP — from manifesto back to hero
+  //     if (
+  //       !scrollingDown &&
+  //       scrollY < heroHeight * 0.7 &&
+  //       scrollY > heroHeight * 0.1
+  //     ) {
+  //       setIsAutoScrolling(true);
+  //       heroRef.current.scrollIntoView({ behavior: "smooth" });
 
-        setTimeout(() => {
-          setIsAutoScrolling(false);
-        }, 1200);
-      }
-    };
+  //       setTimeout(() => {
+  //         setIsAutoScrolling(false);
+  //       }, 1200);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isAutoScrolling]);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [isAutoScrolling]);
 
   return (
     <>
@@ -234,14 +234,17 @@ function HomePage() {
           <h1 className="hero-title">
             Redefining possibilities through next- gen tech
           </h1>
-          <p className="hero-subtitle">Where Innovation meets purpose.</p>
+          <p className="hero-subtitle typing-text">
+            Where Innovation meets purpose.
+          </p>
         </div>
       </section>
 
       {/* Manifesto / Next Section */}
-      <div ref={nextSectionRef}>
+      {/* <div ref={nextSectionRef}>
         <ServicesSection />
-      </div>
+      </div> */}
+      <ServicesSection />
       <Consulting />
       <ServiceCards />
       <ServicesCarousel />
@@ -290,8 +293,8 @@ function HomePage() {
         }
 
         .hero-title {
-          font-weight: 600;
-          font-size: 2.5rem;
+          font-weight: 700;
+          font-size: 1.75rem;
           margin-bottom: 1rem;
         }
 
@@ -313,6 +316,34 @@ function HomePage() {
           }
           .hero-subtitle {
             font-size: 1rem;
+          }
+        }
+        .typing-text {
+          display: inline-block;
+          font-weight: 500;
+          font-size: 1.5rem;
+          color: #d48223;
+          white-space: nowrap;
+          overflow: hidden;
+          animation: typingLoop 7s steps(28, end) infinite;
+        }
+
+        /* ✨ Typing + fade + reset loop */
+        @keyframes typingLoop {
+          0% {
+            width: 0;
+            opacity: 1;
+          }
+          60% {
+            width: 100%;
+            opacity: 1;
+          }
+          80% {
+            opacity: 0;
+          }
+          100% {
+            width: 0;
+            opacity: 0;
           }
         }
       `}</style>

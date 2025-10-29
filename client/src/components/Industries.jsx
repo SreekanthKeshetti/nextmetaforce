@@ -60,13 +60,14 @@ export default function Industries() {
     <>
       <style>{`
         .customer-carousel {
-          background: linear-gradient(to right, #64b5f6, #3949ab);
+          // background: linear-gradient(to right, #64b5f6, #3949ab);
+          background-color: #dedbdbff;
           padding: 60px 0;
         }
 
         .customer-carousel h2 {
           font-size: 1.85rem;
-          color: #fff;
+          // color: #fff;
           margin: 0;
           text-align: center;
           position: relative;
@@ -116,9 +117,9 @@ export default function Industries() {
           bottom: 0;
           left: 0;
           width: 100%;
-          padding: 20px;
+          padding: 40px;
           color: #fff;
-          background: rgba(0,0,0,0);
+           background: rgba(0,0,0,0);
           transform: translateY(100%);
           transition: transform 0.5s ease, background 0.5s ease;
           z-index: 2;
@@ -136,7 +137,7 @@ export default function Industries() {
 
         .story-card:hover .story-info {
           transform: translateY(0);
-          background: rgba(0, 113, 206, 0.85);
+          background: rgba(145, 177, 240, 0.68);
         }
       `}</style>
 

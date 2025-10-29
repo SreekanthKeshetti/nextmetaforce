@@ -4,7 +4,7 @@ import retailImg from "../assets/retail1.jpg";
 import finImg from "../assets/fin2.jpg";
 import manfacImg from "../assets/CarFactory.jpg";
 import hospitalImg from "../assets/hospital1.jpg";
-import fashImg from "../assets/fashionImage.avif";
+import fashImg from "../assets/fashionImage.jpg";
 import logImg from "../assets/log1.jpg";
 
 const images = [

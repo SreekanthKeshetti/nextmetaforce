@@ -642,6 +642,7 @@ export default function HeroCoreBeliefs() {
   background: linear-gradient(to right, #f6a709, #f77102, #e6333f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size:2rem;
 }
 
 /* card design */

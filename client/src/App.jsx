@@ -17,11 +17,13 @@ import ITConsulting from "../src/pages/ITConsulting";
 import TrainingEnablement from "../src/pages/TrainingEnablement";
 import CloudAI from "../src/pages/CloudAI";
 import AdvancedTechnologies from "../src/pages/AdvancedTechnologies";
+import CustomCursor from "./components/CustomCursor";
 function App() {
   return (
     <div className="App">
       {/* <MyNavbar /> */}
       {/* <ThemeToggle /> */}
+      {/* <CustomCursor /> */}
       <NewNavbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
