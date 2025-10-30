@@ -150,6 +150,8 @@
 // }
 
 // export default Consulting;
+///////////////////////////////////////
+// Latest in use
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ConsultingImg from "../assets/ConsultingImg.jpg";
@@ -196,7 +198,8 @@ function Consulting() {
 
       <style jsx="true">{`
         .consulting-section {
-          padding: 100px 0;
+          // reducing the padding to 50px to redcue the gap between the section
+          padding: 50px 0;
           background-color: #f9f9f9;
           position: relative;
           overflow: hidden;

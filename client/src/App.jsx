@@ -54,7 +54,7 @@ function App() {
       </Routes>
       {/* <AIChatBot /> */}
       <AIChatBot />
-      <OrbitAnimation />
+      {/* <OrbitAnimation /> */}
       <Footer />
     </div>
   );

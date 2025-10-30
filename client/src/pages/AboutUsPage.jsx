@@ -7,6 +7,7 @@ import NewForm from "../components/NewForm";
 import backgroundImage from "../assets/building.jpg";
 import AboutUs from "../components/AboutUs";
 import ValuesGallery from "../components/OurValues";
+import WhoWeAre from "../components/WhoWeAre";
 
 function AboutUsPage() {
   return (
@@ -92,6 +93,7 @@ function AboutUsPage() {
 
       {/* Rest of the page */}
       <AboutUs />
+      <WhoWeAre />
       {/* <Lists /> */}
       <AboutUsInfo />
       <ValuesGallery />

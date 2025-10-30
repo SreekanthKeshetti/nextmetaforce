@@ -8,7 +8,7 @@ import image4 from "../assets/4.jpg";
 const services = [
   {
     id: 1,
-    title: "Managed IT Services",
+    title: "Digital Transformation",
     description:
       "We build fast, scalable, and responsive web applications tailored to your business needs.",
     image: image1,
@@ -22,7 +22,7 @@ const services = [
   },
   {
     id: 3,
-    title: "IT Consulting",
+    title: "IT Consulting & Recruitment",
     description:
       "Our designs focus on user-centric experiences that are both beautiful and functional.",
     image: image2,

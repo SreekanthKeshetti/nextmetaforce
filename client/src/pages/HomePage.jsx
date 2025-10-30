@@ -168,6 +168,7 @@ import Consulting from "../components/Consulting";
 import ServiceCards from "../components/ServiceCards";
 import ServicesCarousel from "../components/ServicesCarousel";
 import NewForm from "../components/NewForm";
+import OrbitTechAnimation from "../components/OrbitAnimation";
 
 function HomePage() {
   const heroRef = useRef(null);
@@ -248,6 +249,7 @@ function HomePage() {
       <ServiceCards />
       <ServicesCarousel />
       <NewForm />
+      {/* <OrbitTechAnimation /> */}
 
       <style jsx="true">{`
         .hero-section {

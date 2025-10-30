@@ -60,9 +60,10 @@ export default function Industries() {
     <>
       <style>{`
         .customer-carousel {
+        background:#7bb7eaa1;
           // background: linear-gradient(to right, #64b5f6, #3949ab);
-          background-color: #eeeef03e;
-          padding: 60px 0;
+          // background-color: #eeeef03e;
+           padding: 30px 0;
         }
 
         .customer-carousel h2 {
@@ -141,13 +142,16 @@ export default function Industries() {
           transform: translateY(0);
           background: rgba(238, 240, 245, 0.68);
         }
+          .titleText{
+          font-size:1.25rem !important;
+          }
       `}</style>
 
-      <section className="customer-carousel py-5">
+      <section className="customer-carousel pb-5">
         <Container>
           <Row className="align-items-center mb-4">
             <Col>
-              <h2 className="fw-bold">Customer Stories and Insights</h2>
+              <h3 className="titleText">Customer Stories and Insights</h3>
             </Col>
             <Col className="text-end">
               <button className="arrow-btn me-2" onClick={prev}>

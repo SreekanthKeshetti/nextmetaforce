@@ -54,7 +54,7 @@ export default function StretchGallery() {
         /* === Stretchy Gallery Section === */
         .stretchy-gallery-container {
           // background: linear-gradient(to bottom, #f4f8ff, #ffffff);
-          padding: 4rem 0;
+          // padding: 4rem 0;
         }
 
         /* Gallery header */
@@ -177,24 +177,41 @@ export default function StretchGallery() {
         }
 
         .talk-experts-button {
-          background: #f8f8f8;
-          color: #333;
-          border: 1.5px solid #333;
-          padding: 14px 28px;
-          font-size: 1.15rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          text-decoration: none;
-          display: inline-block;
-          border-radius: 6px;
+          // background: #f8f8f8;
+          // color: #333;
+          // border: 1.5px solid #333;
+          // padding: 14px 28px;
+          // font-size: 1.15rem;
+          // cursor: pointer;
+          // transition: all 0.3s ease;
+          // text-decoration: none;
+          // display: inline-block;
+          // border-radius: 6px;
+          // font-weight: 500;
+                    display: inline-block;
+          background-color: transparent;
+          border: 2px solid #ff6a00;
+          color: #ff6a00;
+          font-size: 1rem;
           font-weight: 500;
+          padding: 12px 28px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          border-radius: 30px;
+          transition: all 0.3s ease-in-out;
+          text-decoration: none;
+
         }
 
         .talk-experts-button:hover {
-          background-color: black !important;
-          color: white;
-          border-color: black;
-          box-shadow: 0 5px 20px rgba(0, 157, 255, 0.5);
+          // background-color: black !important;
+          // color: white;
+          // border-color: black;
+          // box-shadow: 0 5px 20px rgba(0, 157, 255, 0.5);
+                    background-color: #ff6a00;
+          color: white !important;
+          border-color: #ff6a00;
+
         }
 
         /* Responsive adjustments */

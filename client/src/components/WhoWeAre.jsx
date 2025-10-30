@@ -30,7 +30,6 @@ import {
 import founder1 from "../assets/1.jpg";
 import founder2 from "../assets/2.jpg";
 import founder3 from "../assets/3.jpg";
-import ValuesGallery from "./OurValues";
 import { motion } from "framer-motion";
 const AboutUs = () => {
   const founders = [
@@ -169,17 +168,8 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <section className="about-us-section">
+    <section className="about-us-section ">
       {/* Updated Vision Section */}
-      <section className="vision-wrap-new">
-        <div className="vision-content">
-          <h2 className="vision-main-new">Our Vision</h2>
-          <p className="vision-sub-new">
-            Empowering innovation through creativity, technology and
-            collaboration to build a better digital future.
-          </p>
-        </div>
-      </section>
 
       <Container className="who-wrap">
         <Row className="text-center mb-3">
@@ -214,196 +204,8 @@ const AboutUs = () => {
           ))}
         </Row>
       </Container>
-
-      {/* What We Do */}
-      {/* <Container className="what-wrap mt-5">
-        <Row className="text-center mb-3">
-          <Col>
-            <h2 className="section-heading">What We Do</h2>
-          </Col>
-        </Row>
-
-        <Row className="g-4">
-          {whatWeDoCards.map((card, idx) => (
-            <Col key={idx} xs={12} sm={6} lg={4}>
-              <div
-                ref={(el) => (elementsRef.current[idx] = el)}
-                className={`fade-item ${visible[idx] ? "visible" : ""}`}
-              >
-                <Card className="what-card h-100 border-0">
-                  <Card.Body>
-                    <div className="card-icon-wrapper">
-                      <div className="card-icon-circle">{card.icon}</div>
-                    </div>
-                    <Card.Title className="what-title">{card.title}</Card.Title>
-                    <Card.Text className="what-desc">{card.desc}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </div>
-            </Col>
-          ))}
-        </Row>
-      </Container> */}
-      {/* <Container className="what-wrap mt-5">
-        <Row className="text-center mb-4">
-          <Col>
-            <h2 className="section-heading">What We Do</h2>
-            <p className="what-intro">
-              Empowering enterprises through connected platforms, intelligent
-              automation, and cloud-native ecosystems that drive measurable
-              transformation.
-            </p>
-          </Col>
-        </Row>
-
-        <Row className="g-4 justify-content-center">
-          {whatWeDoCards.map((card, idx) => (
-            <Col key={idx} xs={12} sm={6} lg={4}>
-              <motion.div
-                ref={(el) => (elementsRef.current[idx] = el)}
-                className={`neo-card ${visible[idx] ? "visible" : ""}`}
-                initial={{ opacity: 0, y: 30 }}
-                animate={visible[idx] ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-              >
-                <div className="neo-card-inner">
-                  <div className="neo-icon">{card.icon}</div>
-                  <h5 className="neo-title">{card.title}</h5>
-                  <p className="neo-desc">{card.desc}</p>
-                </div>
-              </motion.div>
-            </Col>
-          ))}
-        </Row>
-
-        <style>{`
-    .what-intro {
-      color: #444;
-      font-size: 1.1rem;
-      max-width: 850px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
-    }
-
-    .neo-card {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
-    .neo-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .neo-card-inner {
-      background: radial-gradient(circle at top left, #ffffff 0%, #f7fbff 100%);
-      border-radius: 18px;
-      padding: 35px 25px;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      transition: all 0.4s ease;
-      height: 100%;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .neo-card-inner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 18px;
-      padding: 2px;
-      background: linear-gradient(120deg, #007bff, #00c6ff, #007bff);
-      background-size: 300% 300%;
-      animation: neonBorder 6s ease infinite;
-      mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    @keyframes neonBorder {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .neo-card-inner:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 15px 45px rgba(0, 123, 255, 0.2);
-    }
-    .neo-card-inner:hover::before {
-      opacity: 1;
-    }
-
-    .neo-icon {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #e9f5ff, #fdfdfd);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-
-    .neo-icon::after {
-      content: "";
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(from 0deg, #007bff, #00c6ff, #007bff);
-      animation: rotateGradient 6s linear infinite;
-      z-index: 0;
-      opacity: 0.3;
-    }
-
-    @keyframes rotateGradient {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .neo-icon svg {
-      position: relative;
-      z-index: 1;
-      transition: transform 0.4s ease, color 0.4s ease;
-    }
-
-    .neo-card-inner:hover .neo-icon svg {
-      transform: scale(1.15);
-      color: #007bff !important;
-    }
-
-    .neo-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #002b5b;
-      margin-bottom: 10px;
-      text-transform: capitalize;
-    }
-
-    .neo-desc {
-      color: #333;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      .neo-card-inner { padding: 25px 18px; }
-      .neo-icon { width: 70px; height: 70px; }
-    }
-  `}</style>
-      </Container> */}
-      {/* WHAT WE DO - Refined Glass Glow Design */}
-      <Container className="what-wrap mt-5 what-we-do-section">
+      {/* What we DO */}
+      <Container className="what-wrap what-we-do-section">
         <Row className="text-center mb-4">
           <Col>
             <h2 className="section-heading">What We Do</h2>
@@ -417,10 +219,10 @@ const AboutUs = () => {
 
         <Row className="g-4 justify-content-center">
           {whatWeDoCards.map((card, idx) => (
-            <Col key={idx} xs={12} sm={6} lg={4}>
+            <Col key={idx} xs={12} sm={6} lg={4} className="d-flex">
               <motion.div
                 ref={(el) => (elementsRef.current[idx] = el)}
-                className={`glow-card-wrapper fade-item ${
+                className={`glow-card-wrapper fade-item h-100 w-100 ${
                   visible[idx] ? "visible" : ""
                 }`}
                 initial={{ opacity: 0, y: 30 }}
@@ -438,7 +240,6 @@ const AboutUs = () => {
         </Row>
 
         <style>{`
-    /* Scoped styles only for What We Do section */
     .what-we-do-section .what-intro {
       color: #444;
       font-size: 1.1rem;
@@ -452,21 +253,27 @@ const AboutUs = () => {
       border-radius: 18px;
       padding: 2px;
       overflow: hidden;
-      background: linear-gradient(90deg, #00a8ff, #8c52ff, #00a8ff);
+      background: linear-gradient(120deg, #00a8ff, #7b2ff7, #00a8ff);
       background-size: 300% 300%;
-      animation: glowBorder 7s linear infinite;
+      animation: borderMove 6s linear infinite, pulse 3s ease-in-out infinite;
       transition: transform 0.4s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .what-we-do-section .glow-card-content {
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
       border-radius: 16px;
       padding: 35px 25px;
       text-align: center;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.04);
+      box-shadow: 0 6px 22px rgba(0,0,0,0.05);
       height: 100%;
-      transition: all 0.4s ease;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .what-we-do-section .glow-card-wrapper:hover {
@@ -474,13 +281,18 @@ const AboutUs = () => {
     }
 
     .what-we-do-section .glow-card-wrapper:hover .glow-card-content {
-      box-shadow: 0 10px 40px rgba(0, 168, 255, 0.2);
+      box-shadow: 0 12px 45px rgba(0, 168, 255, 0.25);
     }
 
-    @keyframes glowBorder {
+    @keyframes borderMove {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.4); }
     }
 
     .what-we-do-section .glow-icon {
@@ -492,15 +304,17 @@ const AboutUs = () => {
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #eef5ff, #ffffff);
+      background: linear-gradient(135deg, #f9fbff, #ffffff);
       box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
+      flex-shrink: 0;
     }
 
     .what-we-do-section .glow-card-wrapper:hover .glow-icon {
       background: linear-gradient(135deg, #007bff, #00c6ff);
       color: #fff !important;
-      transform: scale(1.1);
+      transform: scale(1.08);
+      box-shadow: 0 6px 25px rgba(0, 168, 255, 0.35);
     }
 
     .what-we-do-section .glow-title {
@@ -514,6 +328,8 @@ const AboutUs = () => {
       color: #333;
       font-size: 0.95rem;
       line-height: 1.6;
+      min-height: 60px;
+      margin-top: 10px;
     }
 
     @media (max-width: 768px) {
@@ -531,7 +347,7 @@ const AboutUs = () => {
 
       {/* <ValuesGallery /> */}
       {/* Promise */}
-      <Container className="promise-wrap mt-5 mb-5">
+      <Container className="promise-wrap mb-5">
         <Row className="text-center">
           <Col>
             <h2 className="section-heading">Our Promise</h2>
@@ -544,93 +360,17 @@ const AboutUs = () => {
           </Col>
         </Row>
       </Container>
-
       <style>{`
     .about-us-section {
       font-family: Arial, sans-serif;
       color: #000;
-    }
+    background: #ffffff6a
 
-    /* NEW Vision Styles */
-    .vision-wrap-new {
-      position: relative;
-      // background-color: #f9fafb;
-      padding: 120px 20px;
-      text-align: center;
-      overflow: hidden;
-
-      /* Subtle grid pattern background */
-      background-image:
-        linear-gradient(to right, #e0e0e0 1px, transparent 1px),
-        linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
-      background-size: 30px 30px;
-      background-position: center center;
-    }
-
-    /* Gradient overlay at bottom */
-    .vision-wrap-new::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 150px;
-      background: linear-gradient(to top, #c1e4ee, transparent);
-      z-index: 0; /* Stays behind text */
-    }
-
-    /* Content container with stacking context */
-    .vision-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Heading styles (UPDATED FOR MORE IMPACT) */
-    .vision-main-new {
-      font-size: 2.2rem; /* Larger font size */
-      font-weight: 600; /* Bolder */
-      color: #002d62; /* A deep, rich blue */
-      margin-bottom: 25px; /* More space */
-      text-transform: uppercase; /* Make it all caps for impact */
-      letter-spacing: 2px; /* Add some letter spacing */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    }
-
-    /* Subtitle styles (UPDATED FOR MORE IMPACT) */
-    .vision-sub-new {
-      font-size: 1.35rem; /* Slightly larger */
-      color: #2c3e50; /* Darker, more serious tone */
-      max-width: 1200px; /* Wider subtitle */
-      margin: 0 auto;
-      line-height: 1.7; /* Improved readability */
-      font-weight: 500; /* A bit heavier than normal */
-    }
-
-
-    /* Section heading */
-    .section-heading {
-      font-size:1.5rem;
-      color: #000;
-      font-weight: 600;
-      display: inline-block;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      position: relative;
-    }
-    .section-heading::after {
-      content: "";
-      position: absolute;
-      width: 50%;
-      height: 3px;
-      background: linear-gradient(90deg,#009dff,#0055ff);
-      bottom: -8px;
-      left: 25%;
-      border-radius: 2px;
     }
 
     /* Who we are - founders */
-    .who-wrap { padding: 60px 20px; 
-    // background: #f8fbff;
+    .who-wrap { padding: 30px 20px; 
+    //  background-color: #f9f9f9
      }
     .who-desc { max-width: 900px; margin: 0 auto 30px; color: #333; line-height: 1.6; }
     .founders-row { margin-top: 10px; }
@@ -685,8 +425,8 @@ const AboutUs = () => {
     .what-desc { color: #333; font-size: 0.95rem; line-height:1.5; }
 
     /* fade in */
-    .fade-item { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-    .fade-item.visible { opacity: 1; transform: translateY(0); }
+    // .fade-item { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    // .fade-item.visible { opacity: 1; transform: translateY(0); }
 
     /* Core values as horizontal cards */
     .values-wrap { padding: 40px 12px;
@@ -736,13 +476,12 @@ const AboutUs = () => {
     .value-desc { font-size: 0.95rem; color: #333; line-height: 1.5; }
 
 /* Promise */
-    .promise-wrap { padding: 40px 12px; }
+    .promise-wrap { padding: 20px 12px; }
     .promise-text { max-width: 900px; margin: 0 auto; font-style: italic; color: #333; line-height: 1.7; }
 
     /* responsive adjustments */
     @media (max-width: 991px) {
-      .vision-main-new { font-size: 2.2rem; padding: 0 10px; } /* Adjusted for new larger size */
-      .vision-sub-new { font-size: 1rem; padding: 0 10px; } /* Adjusted for new larger size */
+larger size */
       .founder-img { height: 220px; }
     }
     @media (max-width: 768px) {
@@ -750,9 +489,6 @@ const AboutUs = () => {
       .founder-card { width: 100%; }
     }
     @media (max-width: 576px) {
-      .vision-main-new { font-size: 2.2rem; } /* Adjusted for new larger size */
-      .vision-sub-new { font-size: 1rem; } /* Adjusted for new larger size */
-      .vision-wrap-new { padding: 80px 15px; }
       .card-icon-circle { width: 60px; height: 60px; }
       .value-icon-circle { width: 50px; height: 50px; }
     }

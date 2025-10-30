@@ -13,7 +13,7 @@ export default function MyNavbar() {
   const location = useLocation();
 
   const services = [
-    { path: "/services", label: "Managed IT Services" },
+    { path: "/services", label: "Digital Transformation" },
     { path: "/services", label: "Software Development" },
     { path: "/services", label: "IT Consulting" },
     { path: "/services", label: "Artificial Intelligence" },
@@ -251,7 +251,7 @@ export default function MyNavbar() {
           .dropdown-item-custom:hover { background: #f7fbff; color: ${getHoverColor()};
           text-decoration: none;
           }
-          .dropdown-item-custom.active { background: #e0efff; color: ${getActiveColor()}; font-weight: 600; }
+          // .dropdown-item-custom.active { background: #e0efff; color: ${getActiveColor()}; font-weight: 600; }
         }
       `}</style>
 

@@ -102,7 +102,8 @@ function ServicesCarousel() {
       <style jsx="true">{`
         /* Scoped to carousel section only */
         .services-carousel-section {
-          padding: 60px 20px;
+          // Removing the padding to remove the extra space between the components
+          // padding: 60px 20px;
           text-align: center;
         }
 

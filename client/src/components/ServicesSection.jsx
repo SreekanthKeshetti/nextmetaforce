@@ -621,7 +621,7 @@ export default function HeroCoreBeliefs() {
   background-image:
     linear-gradient(to right, rgba(0,0,0,0.12) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0,0,0,0.12) 1px, transparent 1px);
-  background-size: 3.5rem 3.5rem;
+  background-size: 2rem 2rem;
   opacity: 1;
   z-index: 0;
 }
@@ -673,9 +673,23 @@ export default function HeroCoreBeliefs() {
   font-size: 1.25rem;
   box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
 }
+  .quote-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #222;
+  max-width: 800px;
+  margin: 0.5rem auto 0 auto;
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(to right, #f6a709, #f77102, #e6333f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 /* quote styling */
-.quote-text {
+.BlackText{
   font-size: 1.25rem;
   font-weight: 500;
   color: #222;
@@ -684,10 +698,7 @@ export default function HeroCoreBeliefs() {
   line-height: 1.7;
   position: relative;
   z-index: 2;
-  background: linear-gradient(to right, #f6a709, #f77102, #e6333f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+};
         `}
       </style>
 
@@ -729,9 +740,10 @@ export default function HeroCoreBeliefs() {
           </Row>
 
           {/* Quote below cards */}
-          <p className="quote-text">
+          <p className="BlackText">
             “We’re not chasing the next trend – we’re creating the next force.{" "}
-            <br />
+          </p>
+          <p className="quote-text">
             <strong>NextMetaForce</strong> – Empowering the human side of
             transformation.”
           </p>

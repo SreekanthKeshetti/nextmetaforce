@@ -10,6 +10,7 @@ const caseStudies = [
   {
     id: 1,
     title: "Retail Solutions",
+
     challenge:
       "1. Provide comprehensive L2 and L3 support for all Salesforce applications. \n" +
       "2. Optimize existing application processes and code quality to improve system performance. \n" +
@@ -93,6 +94,8 @@ const caseStudies = [
   {
     id: 4,
     title: "Manufacturing & Logistics",
+    About:
+      "World leader in manufacturer of construction and mining equipment, diesel and natural gas engines, industrial gas turbines, and diesel-electric locomotives. The company operates globally through several primary segments, including Construction Industries, Resource Industries, and Energy & Transportation, and also provides financing services for its customers and dealers.",
     challenge:
       "1. Inefficient Order Sourcing: The evaluation and sourcing of dealer orders by the Product Group team was a manual, time-consuming process, often taking up to four days.\n" +
       "2. Rigid Legacy Systems: The in-house order management system was nearly 50 years old, with over 65% of its functionality unmodifiable, making new implementations and changes extremely challenging.\n" +
@@ -284,7 +287,7 @@ export default function CaseStudy() {
 
       <section className="case-study-section">
         <Container fluid className="case-study-container">
-          <div className="text-center mb-5">
+          <div className="text-center">
             <span className="case-study-title">Case Studies</span>
           </div>
 
@@ -300,6 +303,8 @@ export default function CaseStudy() {
               <div className="case-study-text">
                 <h3>{study.title}</h3>
                 <div className="scrollable-content">
+                  <h4>About Client</h4>
+                  <p>{study.About}</p>
                   <h4>Challenge</h4>
                   <p>{study.challenge}</p>
                   <h4>Solution</h4>
