@@ -1,5 +1,5 @@
 import React from "react";
-import digitalImg from "../assets/1.jpg"; // adjust path if needed
+import digitalImg from "../assets/Digital1.jpg"; // adjust path if needed
 import { FaDigitalTachograph } from "react-icons/fa";
 
 const DigitalTransformation = () => {

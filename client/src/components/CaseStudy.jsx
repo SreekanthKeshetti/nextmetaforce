@@ -10,6 +10,8 @@ const caseStudies = [
   {
     id: 1,
     title: "Retail Solutions",
+    About:
+      "The client is a leading global apparel and accessories retailer with a portfolio of iconic brands. Founded in 1969 and headquartered in the United States, the company operates internationally through its several distinct divisions, catering to a wide range of customers across multiple market segments.",
 
     challenge:
       "1. Provide comprehensive L2 and L3 support for all Salesforce applications. \n" +
@@ -41,6 +43,8 @@ const caseStudies = [
   {
     id: 2,
     title: "Healthcare Innovation",
+    About:
+      "The client is a major American drugstore chain providing a comprehensive range of health and wellness products, pharmacy services, and convenience items to communities across the United States.",
     challenge:
       "1. Handle all support tickets with an emphasis on automation to reduce manual administrative tasks. \n" +
       "2. Provide end-to-end support, including triage, resolution, configuration, maintenance, and release management for all severity levels. \n" +
@@ -66,6 +70,8 @@ const caseStudies = [
   {
     id: 3,
     title: "Financial Services",
+    About:
+      "The client is a major financial institution and one of the largest banks in Australasia. It provides a comprehensive suite of banking, wealth management, and financial services to retail, business, and institutional customers across Australia, New Zealand, and international markets.",
     challenge:
       "1. Improve accuracy in broker discount calculations. \n" +
       "2. Enhance broker visibility into client mortgage accounts, balances, terms, and rates. \n" +
@@ -128,6 +134,8 @@ const caseStudies = [
   {
     id: 5, // New ID for Media Solutions
     title: "Media Solutions",
+    About:
+      "The client is a leading provider of digital television entertainment and satellite services in the United States, delivering a wide array of programming and services to a substantial subscriber base nationwide.",
     challenge:
       "1. Implement a Sales Agent Portal to provide real-time, contextual customer data.\n" +
       "2. Enable more personalized sales conversations and tailored product recommendations.\n" +
@@ -229,8 +237,8 @@ export default function CaseStudy() {
           grid-area: text;
           align-self: start;
         }
-        .case-study-text h3 { font-size: 1.75rem; color: #1c3b70; margin-bottom: 1rem; }
-        .case-study-text h4 { font-size: 1.2rem; color: #0d2d62; margin-top: 1.5rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; }
+        .case-study-text h3 { font-size: 1.2rem; color: #1c3b70; margin-bottom: 1rem; }
+        .case-study-text h4 { font-size: 1rem; color: #0d2d62; margin-top: 1.5rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; }
         .case-study-text p { font-size: 1rem; line-height: 1.7; color: #444; white-space: pre-line; margin-bottom: 1rem; }
         
         .scrollable-content {
@@ -301,16 +309,16 @@ export default function CaseStudy() {
                 />
               </div>
               <div className="case-study-text">
-                <h3>{study.title}</h3>
+                <h3>{study.title}:</h3>
                 <div className="scrollable-content">
-                  <h4>About Client</h4>
+                  <h4>About Client:</h4>
                   <p>{study.About}</p>
-                  <h4>Challenge</h4>
+                  <h4>Challenge:</h4>
                   <p>{study.challenge}</p>
-                  <h4>Solution</h4>
+                  <h4>Solution:</h4>
                   <p>{study.solution}</p>
-                  <h4>Result</h4>
-                  <p>{study.result}</p>
+                  {/* <h4>Result:</h4>
+                  <p>{study.result}</p> */}
                 </div>
                 {/* <h4>Technologies Used</h4>
                 <div className="technologies-list">
