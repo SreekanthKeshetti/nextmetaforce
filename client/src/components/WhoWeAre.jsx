@@ -34,19 +34,19 @@ import { motion } from "framer-motion";
 const AboutUs = () => {
   const founders = [
     {
-      name: "Founder Name 1",
+      name: "Venkat Kazipeta",
       image: founder1,
-      bio: "Visionary leader with deep CRM & digital transformation experience.",
+      bio: "CEO&Founder",
     },
     {
-      name: "Founder Name 2",
+      name: "VenkataRaman Balakrishna",
       image: founder2,
-      bio: "Enterprise strategy expert focused on scalable solutions and delivery.",
+      bio: "Director",
     },
     {
-      name: "Founder Name 3",
+      name: "Karthik",
       image: founder3,
-      bio: "Operator & client-success leader championing measurable outcomes.",
+      bio: "Director",
     },
   ];
 

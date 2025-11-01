@@ -122,16 +122,19 @@ function Footer() {
                   <a href="/services#managed-it">Digital Transformation</a>
                 </li>
                 <li>
-                  <a href="/services#consulting">IT Consultancy</a>
+                  <a href="/services#consulting">Software Development</a>
                 </li>
                 <li>
-                  <a href="/services#software">Software Development</a>
-                </li>
-                <li>
-                  <a href="/services#ai">Artificial Intelligence</a>
+                  <a href="/services#software">IT Consulting</a>
                 </li>
                 <li>
                   <a href="/services#cloud">Cloud Solutions</a>
+                </li>
+                <li>
+                  <a href="/services#training">Training&Enablement</a>
+                </li>
+                <li>
+                  <a href="/services#ai">Artificial Intelligence</a>
                 </li>
               </ul>
 
@@ -196,19 +199,22 @@ function Footer() {
               <h5>Industries We Serve</h5>
               <ul>
                 <li>
-                  <a href="/industries/manufacturing">Manufacturing</a>
+                  <a href="/services">Retail & Consumer Goods</a>
                 </li>
                 <li>
-                  <a href="/industries/logistics">Logistics & Transport</a>
+                  <a href="/services">Finance</a>
                 </li>
                 <li>
-                  <a href="/industries/fashion">Fashion & Apparel</a>
+                  <a href="/services">Healthcare</a>
                 </li>
                 <li>
-                  <a href="/industries/retail">Retail & Consumer Goods</a>
+                  <a href="/services">Manufacturing</a>
                 </li>
                 <li>
-                  <a href="/industries/finance">Finance</a>
+                  <a href="/services">Fashion & Apparel</a>
+                </li>
+                <li>
+                  <a href="/services">Logistics & Transport</a>
                 </li>
               </ul>
 

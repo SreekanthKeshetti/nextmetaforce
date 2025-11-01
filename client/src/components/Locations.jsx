@@ -234,7 +234,7 @@ const locations = [
     address:
       "316 Gowra Palladium, Silpa Gram Craft Village, Hitech City, Hyderabad, Telangana 500081",
     phone: "+91 98765 43210",
-    email: "india.office@company.com",
+    email: "info@nextmetaforce.in",
     flag: "🇮🇳",
     coords: { top: "52%", left: "72%" },
   },
