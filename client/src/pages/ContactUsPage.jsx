@@ -851,7 +851,7 @@ function ContactUsPage() {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 90vh;
   position: relative;
   display: flex;
   align-items: center;

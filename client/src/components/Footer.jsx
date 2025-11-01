@@ -220,7 +220,7 @@ function Footer() {
 
               <div className="social-icons mt-3">
                 <a
-                  href="https://linkedin.com/company/nextmetaforce"
+                  href="https://www.linkedin.com/in/sreekanth-keshetti/"
                   target="_blank"
                   aria-label="LinkedIn"
                   rel="noopener noreferrer"

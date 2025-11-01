@@ -1,590 +1,789 @@
-//Final Code
 // import React from "react";
-// import { Container } from "react-bootstrap";
-// // import OldAboutUs from "../components/OldAboutUs";
+// import { Container, Row, Col, Card } from "react-bootstrap";
+// import {
+//   // Existing Fa Icons (keep if used elsewhere or still relevant for certain items)
+//   FaUsers,
+//   FaCogs,
+//   FaRocket, // Keeping for general use if needed, but not for "What We Do" primary now
+//   FaShieldAlt, // Keeping for general use if needed, but not for "What We Do" primary now
+//   FaBalanceScale, // Keeping for general use if needed, but not for "What We Do" primary now
 
-// export default function VisionSection() {
+//   // Specific Fa Icons for "What We Do"
+//   FaHandshake, // CRM Transformation, Client-Centricity
+//   FaLightbulb, // Digital Consulting, Integrity & Innovation
+//   FaCloudUploadAlt, // Industry Cloud Enablement
+//   FaRobot, // Next-Gen Technology Enablement
+//   FaLifeRing, // Managed Services & Support
+//   FaIndustry, // Manufacturing & Automotive Cloud
+//   FaMoneyBillWave, // Financial Services Cloud
+//   FaSignal, // Telecom Cloud
+//   FaHeartbeat, // Health Cloud
+//   FaHandsHelping, // Nonprofit Cloud
+//   FaLandmark, // Public Sector Cloud
+
+//   // Specific Fa Icons for "Core Values"
+//   FaUserGraduate, // Employee Empowerment
+//   FaLeaf, // Work-Life Harmony
+//   FaBullseye, // Precision & Purpose
+// } from "react-icons/fa";
+
+// import founder1 from "../assets/1.jpg";
+// import founder2 from "../assets/2.jpg";
+// import founder3 from "../assets/3.jpg";
+// import ValuesGallery from "./OurValues";
+// import { motion } from "framer-motion";
+// const AboutUs = () => {
+//   const founders = [
+//     {
+//       name: "Founder Name 1",
+//       image: founder1,
+//       bio: "Visionary leader with deep CRM & digital transformation experience.",
+//     },
+//     {
+//       name: "Founder Name 2",
+//       image: founder2,
+//       bio: "Enterprise strategy expert focused on scalable solutions and delivery.",
+//     },
+//     {
+//       name: "Founder Name 3",
+//       image: founder3,
+//       bio: "Operator & client-success leader championing measurable outcomes.",
+//     },
+//   ];
+
+//   const whatWeDoCards = [
+//     {
+//       icon: <FaHandshake size={28} color="#f94144" />, // Updated Icon
+//       title: "CRM Transformation",
+//       desc: "End-to-end strategy, implementation, and optimization across Salesforce, Oracle, and Microsoft Dynamics platforms.",
+//     },
+//     {
+//       icon: <FaLightbulb size={28} color="#f3722c" />, // Updated Icon
+//       title: "Digital Consulting & Implementation",
+//       desc: "Business-aligned roadmaps, platform integration, and scalable architecture for cloud-native and legacy environments.",
+//     },
+//     {
+//       icon: <FaCloudUploadAlt size={28} color="#f9c74f" />, // Updated Icon
+//       title: "Industry Cloud Enablement",
+//       desc: "Tailored solutions across verticals — Manufacturing, Financial Services, Telecom, Health, Nonprofit, Public Sector.",
+//     },
+//     {
+//       icon: <FaRobot size={28} color="#90be6d" />, // Updated Icon
+//       title: "Next-Gen Technology Enablement",
+//       desc: "AI, automation, smart city frameworks, and emerging tech to future-proof operations.",
+//     },
+//     {
+//       icon: <FaLifeRing size={28} color="#577590" />, // Updated Icon
+//       title: "Managed Services & Support",
+//       desc: "SLA-driven support, performance monitoring, and continuous improvement for long-term success.",
+//     },
+//     {
+//       icon: <FaIndustry size={28} color="#2b7a78" />, // Existing, good fit
+//       title: "Manufacturing & Automotive Cloud",
+//       desc: "Industry-specific cloud solutions for manufacturing, supply-chain and automotive operations.",
+//     },
+//     {
+//       icon: <FaMoneyBillWave size={28} color="#3a86ff" />, // Existing, good fit
+//       title: "Financial Services Cloud",
+//       desc: "Compliance-ready cloud workflows and customer 360 for banking & financial services.",
+//     },
+//     {
+//       icon: <FaSignal size={28} color="#ff6b6b" />, // Existing, good fit
+//       title: "Telecom Cloud",
+//       desc: "Network-aware, scalable cloud solutions for telecom providers and operators.",
+//     },
+//     {
+//       icon: <FaHeartbeat size={28} color="#ef476f" />, // Existing, good fit
+//       title: "Health Cloud",
+//       desc: "Secure patient-centric cloud solutions enabling interoperability and care workflows.",
+//     },
+//     {
+//       icon: <FaHandsHelping size={28} color="#06d6a0" />, // Existing, good fit
+//       title: "Nonprofit Cloud",
+//       desc: "Mission-driven cloud tools for fundraising, programs, and constituent engagement.",
+//     },
+//     {
+//       icon: <FaLandmark size={28} color="#9b5de5" />, // Existing, good fit
+//       title: "Public Sector Cloud",
+//       desc: "Governance-first cloud solutions for public sector, municipalities and agencies.",
+//     },
+//   ];
+
+//   const coreValues = [
+//     {
+//       icon: <FaLightbulb color="#f94144" size={28} />, // Forward Thinking
+//       title: "Forward Thinking",
+//       desc: "We embrace innovation and anticipate change to stay ahead in a fast-evolving world.",
+//     },
+//     {
+//       icon: <FaShieldAlt color="#f3722c" size={28} />, // Integrity
+//       title: "Integrity",
+//       desc: "We act with honesty, transparency, and accountability in all we do.",
+//     },
+//     {
+//       icon: <FaHandshake color="#f9c74f" size={28} />, // Client–Centric
+//       title: "Client–Centric",
+//       desc: "Our clients’ success drives every decision and every solution we create.",
+//     },
+//     {
+//       icon: <FaUserGraduate color="#90be6d" size={28} />, // People First
+//       title: "People First",
+//       desc: "We value, empower, and nurture our people to reach their full potential.",
+//     },
+//     {
+//       icon: <FaUsers color="#577590" size={28} />, // Teamwork
+//       title: "Teamwork",
+//       desc: "Collaboration and trust fuel our shared success and collective growth.",
+//     },
+//   ];
+
+//   const [visible, setVisible] = React.useState([]);
+//   const elementsRef = React.useRef([]);
+
+//   React.useEffect(() => {
+//     const obs = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             const i = elementsRef.current.indexOf(entry.target);
+//             if (i !== -1) {
+//               setVisible((prev) => {
+//                 const copy = [...prev];
+//                 copy[i] = true;
+//                 return copy;
+//               });
+//             }
+//           }
+//         });
+//       },
+//       { threshold: 0.18 }
+//     );
+
+//     // Filter out nulls if any refs are not set yet
+//     elementsRef.current.filter(Boolean).forEach((el) => obs.observe(el));
+
+//     return () => {
+//       elementsRef.current.filter(Boolean).forEach((el) => obs.unobserve(el));
+//       obs.disconnect();
+//     };
+//   }, []);
+
 //   return (
-//     <>
-//       <style>
-//         {`
-// /* --- Base Layout --- */
-// .vision-section {
-//   position: relative;
-//   // min-height: 90vh;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   padding: 3rem 1rem;
-//   text-align: center;
-//   overflow: hidden;
-//   transition: background 0.6s ease, color 0.6s ease;
-// }
-
-// /* ================================
-//    🌤 LIGHT MODE
-// ================================ */
-// :root .vision-section,
-// html:not([data-theme="dark"]) .vision-section {
-//   background: #f8f9fb;
-//   color: #1a1a1a;
-// }
-
-// :root .vision-section::before,
-// html:not([data-theme="dark"]) .vision-section::before {
-//   content: "";
-//   position: absolute;
-//   inset: 0;
-//   background-image:
-//     linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-//     linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
-//   background-size: 2rem 2rem;
-//   opacity: 0.4;
-//   z-index: 0;
-// }
-
-// :root .vision-title,
-// html:not([data-theme="dark"]) .vision-title {
-//   background: linear-gradient(to right, #f6a709, #f77102, #e6333f);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-// }
-
-// :root .vision-subtitle,
-// html:not([data-theme="dark"]) .vision-subtitle {
-//   color: #555;
-// }
-
-// :root .glow-underline,
-// html:not([data-theme="dark"]) .glow-underline {
-//   background: linear-gradient(to right, #f6a709, #f77102, #e6333f);
-//   box-shadow: none;
-// }
-
-// /* ================================
-//    🌑 DARK MODE (DataFactz Style)
-// ================================ */
-// html[data-theme="dark"] .vision-section {
-//   background: radial-gradient(
-//       circle at 20% 20%,
-//       rgba(255, 140, 0, 0.18),
-//       transparent 60%
-//     ),
-//     radial-gradient(
-//       circle at 80% 80%,
-//       rgba(255, 69, 0, 0.25),
-//       transparent 70%
-//     ),
-//     linear-gradient(180deg, #070707 0%, #0b0b0d 100%);
-//   color: #ffffff;
-// }
-
-// html[data-theme="dark"] .vision-section::before {
-//   content: "";
-//   position: absolute;
-//   inset: 0;
-//   background-image:
-//     linear-gradient(to right, rgba(255, 165, 0, 0.15) 1px, transparent 1px),
-//     linear-gradient(to bottom, rgba(255, 140, 0, 0.15) 1px, transparent 1px);
-//   background-size: 60px 60px;
-//   opacity: 0.35;
-//   animation: moveGrid 40s linear infinite;
-//   z-index: 0;
-// }
-
-// html[data-theme="dark"] .vision-section::after {
-//   content: "";
-//   position: absolute;
-//   inset: 0;
-//   background:
-//     radial-gradient(circle at 70% 30%, rgba(255, 140, 0, 0.35), transparent 60%),
-//     radial-gradient(circle at 30% 70%, rgba(255, 69, 0, 0.2), transparent 60%);
-//   filter: blur(120px);
-//   z-index: 1;
-// }
-
-// html[data-theme="dark"] .vision-title {
-//   background: linear-gradient(to right, #ffa500, #ff6a00, #ff3c00);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-// }
-
-// html[data-theme="dark"] .vision-subtitle {
-//   color: #d3d3d3;
-// }
-
-// html[data-theme="dark"] .glow-underline {
-//   background: linear-gradient(to right, #ffa500, #ff3c00);
-//   box-shadow: 0 0 25px rgba(255, 140, 0, 0.9);
-// }
-
-// /* ================================
-//    ✨ Shared Styles
-// ================================ */
-// .vision-content {
-//   position: relative;
-//   z-index: 2;
-//   max-width: 900px;
-//   margin: 0 auto;
-//   animation: fadeInUp 1.6s ease forwards;
-// }
-
-// .vision-title {
-//   font-size: 2.2rem;
-//   font-weight: 600;
-//   margin-bottom: 1.2rem;
-// }
-
-// .vision-subtitle {
-//   font-size: 1.25rem;
-//   line-height: 1.8;
-//   max-width: 720px;
-//   margin: 0 auto 2rem;
-// }
-
-// .glow-underline {
-//   width: 90px;
-//   height: 3px;
-//   margin: 1.5rem auto;
-//   border-radius: 3px;
-// }
-
-// /* Animations */
-// @keyframes fadeInUp {
-//   from { opacity: 0; transform: translateY(30px); }
-//   to { opacity: 1; transform: translateY(0); }
-// }
-
-// @keyframes moveGrid {
-//   from { background-position: 0 0; }
-//   to { background-position: 120px 120px; }
-// }
-//         `}
-//       </style>
-
-//       <section className="vision-section">
-//         <Container>
-//           <div className="vision-content">
-//             <h1 className="vision-title">Our Vision</h1>
-//             <p className="vision-subtitle">
-//               Empowering organizations through <strong>AI-driven</strong> and{" "}
-//               <strong>cloud-native</strong> innovation — shaping a smarter,
-//               connected, and more sustainable digital future.
-//             </p>
-//             <div className="glow-underline"></div>
-//             <p
-//               className="mt-5"
-//               style={{
-//                 color: "var(--vision-footer-color, #666)",
-//                 fontSize: "1rem",
-//                 letterSpacing: "0.5px",
-//               }}
-//             >
-//               <strong>NextMetaForce</strong> — Transforming ideas into
-//               intelligent outcomes.
-//             </p>
-//           </div>
-//         </Container>
+//     <section className="aboutussection ">
+//       {/* Updated Vision Section */}
+//       <section className="vision-wrap-new">
+//         <div className="vision-content">
+//           <h2 className="vision-main-new">Our Vision</h2>
+//           <p className="vision-sub-new">
+//             Empowering innovation through creativity, technology and
+//             collaboration to build a better digital future.
+//           </p>
+//         </div>
 //       </section>
-//       {/* <OldAboutUs /> */}
-//     </>
+//       <style>{`
+//     .aboutussection {
+//       font-family: Arial, sans-serif;
+//       color: #000;
+//     }
+
+//     /* NEW Vision Styles */
+//     .vision-wrap-new {
+//       position: relative;
+//       // background-color: #f9fafb;
+//       padding: 120px 20px;
+//       text-align: center;
+//       overflow: hidden;
+
+//       /* Subtle grid pattern background */
+//       background-image:
+//         linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+//         linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+//       background-size: 30px 30px;
+//       background-position: center center;
+//     }
+
+//     /* Gradient overlay at bottom */
+//     .vision-wrap-new::before {
+//       content: '';
+//       position: absolute;
+//       bottom: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 150px;
+//       background: linear-gradient(to top, #c1e4ee, transparent);
+//       z-index: 0; /* Stays behind text */
+//     }
+
+//     /* Content container with stacking context */
+//     .vision-content {
+//       position: relative;
+//       z-index: 1;
+//     }
+
+//     /* Heading styles (UPDATED FOR MORE IMPACT) */
+//     .vision-main-new {
+//       font-size: 2.2rem; /* Larger font size */
+//       font-weight: 600; /* Bolder */
+//       color: #002d62; /* A deep, rich blue */
+//       margin-bottom: 25px; /* More space */
+//       text-transform: uppercase; /* Make it all caps for impact */
+//       letter-spacing: 2px; /* Add some letter spacing */
+//       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+//     }
+
+//     /* Subtitle styles (UPDATED FOR MORE IMPACT) */
+//     .vision-sub-new {
+//       font-size: 1.35rem; /* Slightly larger */
+//       color: #2c3e50; /* Darker, more serious tone */
+//       max-width: 1200px; /* Wider subtitle */
+//       margin: 0 auto;
+//       line-height: 1.7; /* Improved readability */
+//       font-weight: 500; /* A bit heavier than normal */
+//     }
+
+//     /* Section heading */
+//     .section-heading {
+//       font-size:1.5rem;
+//       color: #000;
+//       font-weight: 600;
+//       display: inline-block;
+//       text-transform: uppercase;
+//       margin-bottom: 16px;
+//       position: relative;
+//     }
+//     .section-heading::after {
+//       content: "";
+//       position: absolute;
+//       width: 50%;
+//       height: 3px;
+//       background: linear-gradient(90deg,#009dff,#0055ff);
+//       bottom: -8px;
+//       left: 25%;
+//       border-radius: 2px;
+//     }
+
+// //     /* Who we are - founders */
+// //     // .who-desc { max-width: 900px; margin: 0 auto 30px; color: #333; line-height: 1.6; }
+// //     .founders-row { margin-top: 10px; }
+// //     .founder-card {
+// //       border-radius: 12px;
+// //       overflow: hidden;
+// //       box-shadow: 0 8px 24px rgba(18, 35, 75, 0.06);
+// //       transition: transform .28s ease, box-shadow .28s ease;
+// //     }
+// //     .founder-card:hover { transform: translateY(-8px); box-shadow: 0 14px 34px rgba(18,35,75,0.12); }
+// //     .founder-img { height: 280px; object-fit: cover; }
+// //     .founder-name { color: #1a237e; font-weight:600; margin-top:12px; }
+// //     .founder-bio { color: #333; font-size: 0.95rem; }
+
+// //     /* What we do */
+// //     .what-wrap { padding: 50px 12px; }
+// //     .what-card {
+// //       border-radius: 12px;
+// //       padding: 18px;
+// //       transition: transform .25s ease, box-shadow .25s ease;
+// //       box-shadow: 0 6px 20px rgba(11, 36, 71, 0.06);
+// //     }
+// //     .what-card:hover { transform: translateY(-6px); box-shadow: 0 14px 34px rgba(11,36,71,0.12); }
+
+// //     /* NEW: Icon with circle presentation for What We Do */
+// //     .card-icon-wrapper {
+// //       margin-bottom: 15px; /* Space below icon */
+// //       display: flex;
+// //       justify-content: center; /* Center the circle */
+// //     }
+// //     .card-icon-circle {
+// //       width: 70px; /* Size of the circle */
+// //       height: 70px;
+// //       border-radius: 50%; /* Makes it a circle */
+// //       background-color: #eaf8ff; /* Light background for the icon */
+// //       display: flex;
+// //       align-items: center;
+// //       justify-content: center;
+// //       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+// //       transition: all 0.3s ease;
+// //     }
+// //     .what-card:hover .card-icon-circle {
+// //       background: linear-gradient(45deg, #007bff, #00c6ff); /* A nice blue-to-light-blue gradient */
+// //       transform: scale(1.08); /* Slightly more pronounced scale for emphasis */
+// //       box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3); /* Add a blue glow shadow */
+// //     }
+// //     .what-card:hover .card-icon-circle svg {
+// //       color: #fff !important; /* Change icon color to white on hover */
+// //     }
+
+// //     .what-title { color: #1a237e; font-weight:600; margin-bottom:8px; }
+// //     .what-desc { color: #333; font-size: 0.95rem; line-height:1.5; }
+
+// //     /* fade in */
+// //     // .fade-item { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+// //     // .fade-item.visible { opacity: 1; transform: translateY(0); }
+
+// //     /* Core values as horizontal cards */
+// //     .values-wrap { padding: 40px 12px;
+// //     //  background: #f8fbff;
+// //       }
+// //     .values-row { align-items: center; }
+// //     .value-card {
+// //       padding: 20px 16px;
+// //       // background: #eaf1f8;
+// //       border-radius: 12px;
+// //       display: flex;
+// //       flex-direction: column;
+// //       align-items: center;
+// //       justify-content: flex-start;
+// //       transition: transform .22s ease, box-shadow .22s ease;
+// //       box-shadow: 0 6px 18px rgba(11,36,71,0.05);
+// //     }
+// //     .value-card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(11,36,71,0.1); }
+
+// //     /* NEW: Icon with circle presentation for Core Values */
+// //     .value-icon-wrapper {
+// //       margin-bottom: 12px;
+// //       display: flex;
+// //       justify-content: center;
+// //     }
+// //     .value-icon-circle {
+// //       width: 60px; /* Slightly smaller circle for values */
+// //       height: 60px;
+// //       border-radius: 50%;
+// //       // background-color: #eaf1f8; /* Match card background initially */
+// //       display: flex;
+// //       align-items: center;
+// //       justify-content: center;
+// //       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+// //       transition: all 0.2s ease;
+// //     }
+// //     .value-card:hover .value-icon-circle {
+// //       background: linear-gradient(45deg, #0056b3, #0088cc); /* A slightly deeper blue gradient */
+// //       transform: scale(1.15); /* A little more scale for values */
+// //       box-shadow: 0 6px 20px rgba(0, 86, 179, 0.25); /* Add a blue glow shadow */
+// //     }
+// //     .value-card:hover .value-icon-circle svg {
+// //       color: #fff !important; /* White icon on hover */
+// //     }
+
+// //     .value-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: #1a237e; }
+// //     .value-desc { font-size: 0.95rem; color: #333; line-height: 1.5; }
+
+// // /* Promise */
+// //     .promise-wrap { padding: 20px 12px; }
+// //     .promise-text { max-width: 900px; margin: 0 auto; font-style: italic; color: #333; line-height: 1.7; }
+
+//     /* responsive adjustments */
+//     @media (max-width: 991px) {
+//       .vision-main-new { font-size: 2.2rem; padding: 0 10px; } /* Adjusted for new larger size */
+//       .vision-sub-new { font-size: 1rem; padding: 0 10px; } /* Adjusted for new larger size */
+//       .founder-img { height: 220px; }
+//     }
+//     @media (max-width: 768px) {
+//       .founders-row { gap: 18px; }
+//       .founder-card { width: 100%; }
+//     }
+//     @media (max-width: 576px) {
+//       .vision-main-new { font-size: 2.2rem; } /* Adjusted for new larger size */
+//       .vision-sub-new { font-size: 1rem; } /* Adjusted for new larger size */
+//       .vision-wrap-new { padding: 80px 15px; }
+//       .card-icon-circle { width: 60px; height: 60px; }
+//       .value-icon-circle { width: 50px; height: 50px; }
+//     }
+//   `}</style>
+//     </section>
 //   );
-// }
-
-// import React from "react";
-// import { Container } from "react-bootstrap";
-
-// export default function VisionSection() {
-//   return (
-//     <>
-//       <style>
-//         {`
-// /* --- Base Layout --- */
-// .vision-section {
-//   position: relative;
-//   // min-height: 100vh;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   padding: 4rem 1.5rem;
-//   text-align: center;
-//   overflow: hidden;
-//   transition: background 0.6s ease, color 0.6s ease;
-// }
-
-// /* ================================
-//    🌤 LIGHT MODE
-// ================================ */
-// :root .vision-section,
-// html:not([data-theme="dark"]) .vision-section {
-//   background: #f8f9fb;
-//   color: #1a1a1a;
-// }
-
-// :root .vision-section::before,
-// html:not([data-theme="dark"]) .vision-section::before {
-//   content: "";
-//   position: absolute;
-//   inset: 0;
-//   background-image:
-//     linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-//     linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
-//   background-size: 2rem 2rem;
-//   opacity: 0.4;
-//   z-index: 0;
-// }
-
-// :root .vision-title,
-// html:not([data-theme="dark"]) .vision-title {
-//   background: linear-gradient(to right, #f6a709, #f77102, #e6333f);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-// }
-
-// :root .vision-subtitle,
-// html:not([data-theme="dark"]) .vision-subtitle {
-//   color: #555;
-// }
-
-// :root .glow-underline,
-// html:not([data-theme="dark"]) .glow-underline {
-//   background: linear-gradient(to right, #f6a709, #f77102, #e6333f);
-//   box-shadow: none;
-// }
-
-// /* ================================
-//    🌑 DARK MODE (DataFactz Style)
-// ================================ */
-// html[data-theme="dark"] .vision-section {
-//   background: radial-gradient(
-//       circle at 20% 20%,
-//       rgba(255, 140, 0, 0.18),
-//       transparent 60%
-//     ),
-//     radial-gradient(
-//       circle at 80% 80%,
-//       rgba(255, 69, 0, 0.25),
-//       transparent 70%
-//     ),
-//     linear-gradient(180deg, #070707 0%, #0b0b0d 100%);
-//   color: #ffffff;
-// }
-
-// html[data-theme="dark"] .vision-section::before {
-//   content: "";
-//   position: absolute;
-//   inset: 0;
-//   background-image:
-//     linear-gradient(to right, rgba(255, 165, 0, 0.15) 1px, transparent 1px),
-//     linear-gradient(to bottom, rgba(255, 140, 0, 0.15) 1px, transparent 1px);
-//   background-size: 60px 60px;
-//   opacity: 0.35;
-//   animation: moveGrid 40s linear infinite;
-//   z-index: 0;
-// }
-
-// html[data-theme="dark"] .vision-section::after {
-//   content: "";
-//   position: absolute;
-//   inset: 0;
-//   background:
-//     radial-gradient(circle at 70% 30%, rgba(255, 140, 0, 0.35), transparent 60%),
-//     radial-gradient(circle at 30% 70%, rgba(255, 69, 0, 0.2), transparent 60%);
-//   filter: blur(120px);
-//   z-index: 1;
-// }
-
-// html[data-theme="dark"] .vision-title {
-//   background: linear-gradient(to right, #ffa500, #ff6a00, #ff3c00);
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-// }
-
-// html[data-theme="dark"] .vision-subtitle {
-//   color: #d3d3d3;
-// }
-
-// html[data-theme="dark"] .glow-underline {
-//   background: linear-gradient(to right, #ffa500, #ff3c00);
-//   box-shadow: 0 0 25px rgba(255, 140, 0, 0.9);
-// }
-
-// /* ================================
-//    ✨ Shared Styles
-// ================================ */
-// .vision-content {
-//   position: relative;
-//   z-index: 2;
-//   max-width: 1000px;
-//   margin: 0 auto;
-//   animation: fadeInUp 1.6s ease forwards;
-//   padding: 1rem;
-// }
-
-// .vision-title {
-//   font-size: clamp(2rem, 4vw, 2.2rem);
-//   font-weight: 600;
-//   margin-bottom: 1.2rem;
-//   line-height: 1.2;
-//   letter-spacing: 0.5px;
-// }
-
-// .vision-subtitle {
-//   font-size: clamp(1rem, 1.6vw, 1.3rem);
-//   line-height: 1.6;
-//   max-width: 850px;
-//   margin: 0 auto 2rem;
-//   padding: 0 0.5rem;
-//   text-wrap: balance;
-// }
-
-// .glow-underline {
-//   width: 100px;
-//   height: 3px;
-//   margin: 1.2rem auto 2rem;
-//   border-radius: 3px;
-// }
-
-// .vision-footer {
-//   font-size: clamp(0.9rem, 1.5vw, 1rem);
-//   letter-spacing: 0.6px;
-//   color: var(--vision-footer-color, #666);
-// }
-
-// /* Animations */
-// @keyframes fadeInUp {
-//   from { opacity: 0; transform: translateY(30px); }
-//   to { opacity: 1; transform: translateY(0); }
-// }
-
-// @keyframes moveGrid {
-//   from { background-position: 0 0; }
-//   to { background-position: 120px 120px; }
-// }
-//         `}
-//       </style>
-
-//       <section className="vision-section">
-//         <Container>
-//           <div className="vision-content">
-//             <h1 className="vision-title">Our Vision</h1>
-//             <p className="vision-subtitle">
-//               Empowering organizations through <strong>AI-driven</strong> and{" "}
-//               <strong>cloud-native</strong> innovation shaping a smarter,
-//               connected and more sustainable digital future.
-//             </p>
-//             <div className="glow-underline"></div>
-//             <p className="vision-footer">
-//               <strong>NextMetaForce</strong> — Transforming ideas into
-//               intelligent outcomes.
-//             </p>
-//           </div>
-//         </Container>
-//       </section>
-//     </>
-//   );
-// }
+// };
+// export default AboutUs;
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import {
+  // Existing Fa Icons (keep if used elsewhere or still relevant for certain items)
+  FaUsers,
+  FaCogs,
+  FaRocket, // Keeping for general use if needed, but not for "What We Do" primary now
+  FaShieldAlt, // Keeping for general use if needed, but not for "What We Do" primary now
+  FaBalanceScale, // Keeping for general use if needed, but not for "What We Do" primary now
 
-export default function VisionSection() {
+  // Specific Fa Icons for "What We Do"
+  FaHandshake, // CRM Transformation, Client-Centricity
+  FaLightbulb, // Digital Consulting, Integrity & Innovation
+  FaCloudUploadAlt, // Industry Cloud Enablement
+  FaRobot, // Next-Gen Technology Enablement
+  FaLifeRing, // Managed Services & Support
+  FaIndustry, // Manufacturing & Automotive Cloud
+  FaMoneyBillWave, // Financial Services Cloud
+  FaSignal, // Telecom Cloud
+  FaHeartbeat, // Health Cloud
+  FaHandsHelping, // Nonprofit Cloud
+  FaLandmark, // Public Sector Cloud
+
+  // Specific Fa Icons for "Core Values"
+  FaUserGraduate, // Employee Empowerment
+  FaLeaf, // Work-Life Harmony
+  FaBullseye, // Precision & Purpose
+} from "react-icons/fa";
+
+import founder1 from "../assets/1.jpg";
+import founder2 from "../assets/2.jpg";
+import founder3 from "../assets/3.jpg";
+import ValuesGallery from "./OurValues";
+import { motion } from "framer-motion";
+const AboutUs = () => {
+  const founders = [
+    {
+      name: "Founder Name 1",
+      image: founder1,
+      bio: "Visionary leader with deep CRM & digital transformation experience.",
+    },
+    {
+      name: "Founder Name 2",
+      image: founder2,
+      bio: "Enterprise strategy expert focused on scalable solutions and delivery.",
+    },
+    {
+      name: "Founder Name 3",
+      image: founder3,
+      bio: "Operator & client-success leader championing measurable outcomes.",
+    },
+  ];
+
+  const whatWeDoCards = [
+    {
+      icon: <FaHandshake size={28} color="#f94144" />, // Updated Icon
+      title: "CRM Transformation",
+      desc: "End-to-end strategy, implementation, and optimization across Salesforce, Oracle, and Microsoft Dynamics platforms.",
+    },
+    {
+      icon: <FaLightbulb size={28} color="#f3722c" />, // Updated Icon
+      title: "Digital Consulting & Implementation",
+      desc: "Business-aligned roadmaps, platform integration, and scalable architecture for cloud-native and legacy environments.",
+    },
+    {
+      icon: <FaCloudUploadAlt size={28} color="#f9c74f" />, // Updated Icon
+      title: "Industry Cloud Enablement",
+      desc: "Tailored solutions across verticals — Manufacturing, Financial Services, Telecom, Health, Nonprofit, Public Sector.",
+    },
+    {
+      icon: <FaRobot size={28} color="#90be6d" />, // Updated Icon
+      title: "Next-Gen Technology Enablement",
+      desc: "AI, automation, smart city frameworks, and emerging tech to future-proof operations.",
+    },
+    {
+      icon: <FaLifeRing size={28} color="#577590" />, // Updated Icon
+      title: "Managed Services & Support",
+      desc: "SLA-driven support, performance monitoring, and continuous improvement for long-term success.",
+    },
+    {
+      icon: <FaIndustry size={28} color="#2b7a78" />, // Existing, good fit
+      title: "Manufacturing & Automotive Cloud",
+      desc: "Industry-specific cloud solutions for manufacturing, supply-chain and automotive operations.",
+    },
+    {
+      icon: <FaMoneyBillWave size={28} color="#3a86ff" />, // Existing, good fit
+      title: "Financial Services Cloud",
+      desc: "Compliance-ready cloud workflows and customer 360 for banking & financial services.",
+    },
+    {
+      icon: <FaSignal size={28} color="#ff6b6b" />, // Existing, good fit
+      title: "Telecom Cloud",
+      desc: "Network-aware, scalable cloud solutions for telecom providers and operators.",
+    },
+    {
+      icon: <FaHeartbeat size={28} color="#ef476f" />, // Existing, good fit
+      title: "Health Cloud",
+      desc: "Secure patient-centric cloud solutions enabling interoperability and care workflows.",
+    },
+    {
+      icon: <FaHandsHelping size={28} color="#06d6a0" />, // Existing, good fit
+      title: "Nonprofit Cloud",
+      desc: "Mission-driven cloud tools for fundraising, programs, and constituent engagement.",
+    },
+    {
+      icon: <FaLandmark size={28} color="#9b5de5" />, // Existing, good fit
+      title: "Public Sector Cloud",
+      desc: "Governance-first cloud solutions for public sector, municipalities and agencies.",
+    },
+  ];
+
+  const coreValues = [
+    {
+      icon: <FaLightbulb color="#f94144" size={28} />, // Forward Thinking
+      title: "Forward Thinking",
+      desc: "We embrace innovation and anticipate change to stay ahead in a fast-evolving world.",
+    },
+    {
+      icon: <FaShieldAlt color="#f3722c" size={28} />, // Integrity
+      title: "Integrity",
+      desc: "We act with honesty, transparency, and accountability in all we do.",
+    },
+    {
+      icon: <FaHandshake color="#f9c74f" size={28} />, // Client–Centric
+      title: "Client–Centric",
+      desc: "Our clients’ success drives every decision and every solution we create.",
+    },
+    {
+      icon: <FaUserGraduate color="#90be6d" size={28} />, // People First
+      title: "People First",
+      desc: "We value, empower, and nurture our people to reach their full potential.",
+    },
+    {
+      icon: <FaUsers color="#577590" size={28} />, // Teamwork
+      title: "Teamwork",
+      desc: "Collaboration and trust fuel our shared success and collective growth.",
+    },
+  ];
+
+  const [visible, setVisible] = React.useState([]);
+  const elementsRef = React.useRef([]);
+
+  React.useEffect(() => {
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const i = elementsRef.current.indexOf(entry.target);
+            if (i !== -1) {
+              setVisible((prev) => {
+                const copy = [...prev];
+                copy[i] = true;
+                return copy;
+              });
+            }
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    // Filter out nulls if any refs are not set yet
+    elementsRef.current.filter(Boolean).forEach((el) => obs.observe(el));
+
+    return () => {
+      elementsRef.current.filter(Boolean).forEach((el) => obs.unobserve(el));
+      obs.disconnect();
+    };
+  }, []);
+
   return (
-    <>
-      <style>
-        {`
-/* --- Base Layout --- */
-.vision-section {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 1rem;
-  text-align: center;
-  overflow: hidden;
-  transition: background 0.6s ease, color 0.6s ease;
-}
-
-/* ================================
-   🌤 LIGHT MODE
-================================ */
-:root .vision-section,
-html:not([data-theme="dark"]) .vision-section {
-  background: #f8f9fb;
-  color: #1a1a1a;
-}
-
-:root .vision-section::before,
-html:not([data-theme="dark"]) .vision-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
-  background-size: 2rem 2rem;
-  opacity: 0.55;
-  z-index: 0;
-}
-
-/* ✨ Light Mode Warm Glows */
-:root .vision-section::after,
-html:not([data-theme="dark"]) .vision-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255, 200, 120, 0.25), transparent 60%),
-    radial-gradient(circle at 80% 70%, rgba(255, 170, 80, 0.18), transparent 60%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.5), transparent 60%);
-  filter: blur(100px);
-  z-index: 1;
-}
-
-:root .vision-title,
-html:not([data-theme="dark"]) .vision-title {
-  background: linear-gradient(to right, #f6a709, #f77102, #e6333f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-:root .vision-subtitle,
-html:not([data-theme="dark"]) .vision-subtitle {
-  color: #555;
-}
-
-:root .glow-underline,
-html:not([data-theme="dark"]) .glow-underline {
-  background: linear-gradient(to right, #f6a709, #f77102, #e6333f);
-  box-shadow: none;
-}
-
-/* ================================
-   🌑 DARK MODE (DataFactz Style)
-================================ */
-html[data-theme="dark"] .vision-section {
-  background: radial-gradient(
-      circle at 20% 20%,
-      rgba(255, 140, 0, 0.18),
-      transparent 60%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(255, 69, 0, 0.25),
-      transparent 70%
-    ),
-    linear-gradient(180deg, #070707 0%, #0b0b0d 100%);
-  color: #ffffff;
-}
-
-html[data-theme="dark"] .vision-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(255, 165, 0, 0.15) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 140, 0, 0.15) 1px, transparent 1px);
-  background-size: 2rem 2rem;
-  opacity: 0.55;
-  animation: moveGrid 40s linear infinite;
-  z-index: 0;
-}
-
-html[data-theme="dark"] .vision-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  // background: 
-  //   radial-gradient(circle at 70% 30%, rgba(255, 140, 0, 0.35), transparent 60%),
-  //   radial-gradient(circle at 30% 70%, rgba(255, 69, 0, 0.2), transparent 60%);
-  background: radial-gradient(circle at 70% 30%, rgb(196 143 77 / 35%), transparent 60%), radial-gradient(circle at 30% 70%, rgba(255, 69, 0, 0.2), transparent 60%);
-  filter: blur(120px);
-  z-index: 1;
-}
-
-html[data-theme="dark"] .vision-title {
-  background: linear-gradient(to right, #ffa500, #ff6a00, #ff3c00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-html[data-theme="dark"] .vision-subtitle {
-  color: #d3d3d3;
-}
-
-html[data-theme="dark"] .glow-underline {
-  background: linear-gradient(to right, #ffa500, #ff3c00);
-  box-shadow: 0 0 25px rgba(255, 140, 0, 0.9);
-}
-
-/* ================================
-   ✨ Shared Styles
-================================ */
-.vision-content {
-  position: relative;
-  z-index: 2;
-  max-width: 850px;
-  margin: 0 auto;
-  animation: fadeInUp 1.6s ease forwards;
-}
-
-.vision-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1.2rem;
-  line-height: 1.2;
-}
-
-.vision-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
-  line-height: 1.7;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  color: inherit;
-}
-
-.glow-underline {
-  width: 90px;
-  height: 3px;
-  margin: 1.5rem auto;
-  border-radius: 3px;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes moveGrid {
-  from { background-position: 0 0; }
-  to { background-position: 120px 120px; }
-}
-        `}
-      </style>
-
-      <section className="vision-section">
-        <Container>
-          <div className="vision-content">
-            <h1 className="vision-title">Our Vision</h1>
-            <p className="vision-subtitle">
-              Empowering organizations through <strong>AI-driven</strong> and{" "}
-              <strong>cloud-native</strong> innovation — shaping a smarter,
-              connected, and more sustainable digital future.
-            </p>
-            <div className="glow-underline"></div>
-            <p
-              className="mt-5"
-              style={{
-                color: "var(--vision-footer-color)",
-                fontSize: "1rem",
-                letterSpacing: "0.5px",
-              }}
-            >
-              <strong>NextMetaForce</strong> — Where Innovation meets purpose.
-            </p>
-          </div>
-        </Container>
+    <section className="aboutussection ">
+      {/* Updated Vision Section */}
+      <section className="vision-wrap-new">
+        <div className="vision-content">
+          <h2 className="vision-main-new">Our Vision</h2>
+          <p className="vision-sub-new">
+            Empowering innovation through creativity, technology and
+            collaboration to build a better digital future.
+          </p>
+        </div>
       </section>
-    </>
+      <style>{`
+    .aboutussection {
+      font-family: Arial, sans-serif;
+      color: #000;
+    }
+
+    /* NEW Vision Styles */
+    .vision-wrap-new {
+      position: relative;
+      // background-color: #f9fafb;
+      padding: 120px 20px;
+      text-align: center;
+      overflow: hidden;
+
+      /* Subtle grid pattern background */
+      background-image:
+        linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+        linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+      background-size: 30px 30px;
+      background-position: center center;
+    }
+
+    /* Gradient overlay at bottom */
+    .vision-wrap-new::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(to top, #c1e4ee, transparent);
+      z-index: 0; /* Stays behind text */
+    }
+
+    /* Content container with stacking context */
+    .vision-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Heading styles (UPDATED FOR MORE IMPACT) */
+    .vision-main-new {
+      font-size: 2.2rem; /* Larger font size */
+      font-weight: 600; /* Bolder */
+      color: #002d62; /* A deep, rich blue */
+      margin-bottom: 25px; /* More space */
+      text-transform: uppercase; /* Make it all caps for impact */
+      letter-spacing: 2px; /* Add some letter spacing */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    /* Subtitle styles (UPDATED FOR MORE IMPACT) */
+    .vision-sub-new {
+      font-size: 1.35rem; /* Slightly larger */
+      color: #2c3e50; /* Darker, more serious tone */
+      max-width: 1200px; /* Wider subtitle */
+      margin: 0 auto;
+      line-height: 1.7; /* Improved readability */
+      font-weight: 500; /* A bit heavier than normal */
+    }
+
+
+    /* Section heading */
+    .section-heading {
+      font-size:1.5rem;
+      color: #000;
+      font-weight: 600;
+      display: inline-block;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .section-heading::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background: linear-gradient(90deg,#009dff,#0055ff);
+      bottom: -8px;
+      left: 25%;
+      border-radius: 2px;
+    }
+
+//     /* Who we are - founders */
+//     // .who-desc { max-width: 900px; margin: 0 auto 30px; color: #333; line-height: 1.6; }
+//     .founders-row { margin-top: 10px; }
+//     .founder-card {
+//       border-radius: 12px;
+//       overflow: hidden;
+//       box-shadow: 0 8px 24px rgba(18, 35, 75, 0.06);
+//       transition: transform .28s ease, box-shadow .28s ease;
+//     }
+//     .founder-card:hover { transform: translateY(-8px); box-shadow: 0 14px 34px rgba(18,35,75,0.12); }
+//     .founder-img { height: 280px; object-fit: cover; }
+//     .founder-name { color: #1a237e; font-weight:600; margin-top:12px; }
+//     .founder-bio { color: #333; font-size: 0.95rem; }
+
+//     /* What we do */
+//     .what-wrap { padding: 50px 12px; }
+//     .what-card {
+//       border-radius: 12px;
+//       padding: 18px;
+//       transition: transform .25s ease, box-shadow .25s ease;
+//       box-shadow: 0 6px 20px rgba(11, 36, 71, 0.06);
+//     }
+//     .what-card:hover { transform: translateY(-6px); box-shadow: 0 14px 34px rgba(11,36,71,0.12); }
+
+//     /* NEW: Icon with circle presentation for What We Do */
+//     .card-icon-wrapper {
+//       margin-bottom: 15px; /* Space below icon */
+//       display: flex;
+//       justify-content: center; /* Center the circle */
+//     }
+//     .card-icon-circle {
+//       width: 70px; /* Size of the circle */
+//       height: 70px;
+//       border-radius: 50%; /* Makes it a circle */
+//       background-color: #eaf8ff; /* Light background for the icon */
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+//       transition: all 0.3s ease;
+//     }
+//     .what-card:hover .card-icon-circle {
+//       background: linear-gradient(45deg, #007bff, #00c6ff); /* A nice blue-to-light-blue gradient */
+//       transform: scale(1.08); /* Slightly more pronounced scale for emphasis */
+//       box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3); /* Add a blue glow shadow */
+//     }
+//     .what-card:hover .card-icon-circle svg {
+//       color: #fff !important; /* Change icon color to white on hover */
+//     }
+
+//     .what-title { color: #1a237e; font-weight:600; margin-bottom:8px; }
+//     .what-desc { color: #333; font-size: 0.95rem; line-height:1.5; }
+
+//     /* fade in */
+//     // .fade-item { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+//     // .fade-item.visible { opacity: 1; transform: translateY(0); }
+
+//     /* Core values as horizontal cards */
+//     .values-wrap { padding: 40px 12px;
+//     //  background: #f8fbff;
+//       }
+//     .values-row { align-items: center; }
+//     .value-card {
+//       padding: 20px 16px;
+//       // background: #eaf1f8;
+//       border-radius: 12px;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: flex-start;
+//       transition: transform .22s ease, box-shadow .22s ease;
+//       box-shadow: 0 6px 18px rgba(11,36,71,0.05);
+//     }
+//     .value-card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(11,36,71,0.1); }
+
+//     /* NEW: Icon with circle presentation for Core Values */
+//     .value-icon-wrapper {
+//       margin-bottom: 12px;
+//       display: flex;
+//       justify-content: center;
+//     }
+//     .value-icon-circle {
+//       width: 60px; /* Slightly smaller circle for values */
+//       height: 60px;
+//       border-radius: 50%;
+//       // background-color: #eaf1f8; /* Match card background initially */
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+//       transition: all 0.2s ease;
+//     }
+//     .value-card:hover .value-icon-circle {
+//       background: linear-gradient(45deg, #0056b3, #0088cc); /* A slightly deeper blue gradient */
+//       transform: scale(1.15); /* A little more scale for values */
+//       box-shadow: 0 6px 20px rgba(0, 86, 179, 0.25); /* Add a blue glow shadow */
+//     }
+//     .value-card:hover .value-icon-circle svg {
+//       color: #fff !important; /* White icon on hover */
+//     }
+
+//     .value-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; color: #1a237e; }
+//     .value-desc { font-size: 0.95rem; color: #333; line-height: 1.5; }
+
+// /* Promise */
+//     .promise-wrap { padding: 20px 12px; }
+//     .promise-text { max-width: 900px; margin: 0 auto; font-style: italic; color: #333; line-height: 1.7; }
+
+    /* responsive adjustments */
+    @media (max-width: 991px) {
+      .vision-main-new { font-size: 2.2rem; padding: 0 10px; } /* Adjusted for new larger size */
+      .vision-sub-new { font-size: 1rem; padding: 0 10px; } /* Adjusted for new larger size */
+      .founder-img { height: 220px; }
+    }
+    @media (max-width: 768px) {
+      .founders-row { gap: 18px; }
+      .founder-card { width: 100%; }
+    }
+    @media (max-width: 576px) {
+      .vision-main-new { font-size: 2.2rem; } /* Adjusted for new larger size */
+      .vision-sub-new { font-size: 1rem; } /* Adjusted for new larger size */
+      .vision-wrap-new { padding: 80px 15px; }
+      .card-icon-circle { width: 60px; height: 60px; }
+      .value-icon-circle { width: 50px; height: 50px; }
+    }
+  `}</style>
+    </section>
   );
-}
+};
+export default AboutUs;

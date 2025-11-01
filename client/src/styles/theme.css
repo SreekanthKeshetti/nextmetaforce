@@ -94,6 +94,29 @@ html[data-theme="dark"] {
 }
 
 /* ================================
+   Keep "Our Vision" section same in dark mode
+================================ */
+html[data-theme="dark"] .vision-wrap-new {
+  background-image: linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+    linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+html[data-theme="dark"] .vision-wrap-new::before {
+  background: linear-gradient(to top, #c1e4ee, transparent) !important;
+}
+
+html[data-theme="dark"] .vision-main-new {
+  color: #002d62 !important; /* Deep blue heading stays same */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] .vision-sub-new {
+  color: #2c3e50 !important; /* Keep same subtitle tone */
+}
+
+/* ================================
    Lock "Our Vision" section to light-mode design
    (so it looks same in dark mode)
 ================================ */
@@ -116,7 +139,7 @@ html[data-theme="dark"] .vision-main-new {
 
 html[data-theme="dark"] .vision-sub-new {
   color: #2c3e50 !important;
-} */
+}
 
 /* --- Core Beliefs Section Glow Enhancements --- */
 /* html[data-theme="dark"] .belief-card {

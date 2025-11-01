@@ -255,7 +255,7 @@ export default function MyNavbar() {
           }
           // .dropdown-item-custom.active { background: #e0efff; color: ${getActiveColor()}; font-weight: 600; }
         }
-          .navbar-brand img { width: 80px; height: 80px; }
+          .navbar-brand img { width: 100px; height: 100px; }
       `}</style>
 
       <Navbar
