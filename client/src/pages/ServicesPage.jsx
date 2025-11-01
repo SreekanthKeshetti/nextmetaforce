@@ -476,7 +476,7 @@ const ServicesPage = () => {
             // background: linear-gradient(90deg, #009dff86, #0055ffbb);
             // background:#dbdbdb45;
             // background:#b8d1e645;
-            background:#7bb7eaa1;
+            background:var(--Cta-bg);
             padding: 60px 20px;
             text-align: center;
             border-radius: 12px;
@@ -529,52 +529,142 @@ const ServicesPage = () => {
           border-color: #ff6a00;
           }
 
-          /* Hero section styling */
           .hero-section {
-            position: relative;
-            background-image: url(${serviceHero});
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-          }
+      position: relative;
+      background-image: url(${serviceHero});
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
 
-          .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.55);
-            z-index: 1;
-          }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
 
-          .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 1rem;
-          }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+
+              /* Typing animation */
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: none; /* No cursor */
+  // animation: typing 6s steps(80, end) 1;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+    @media (max-width: 992px) {
+      .hero-section {
+        background-position: center top;
+        background-size: cover;
+        min-height: 70vh;
+      }
+        
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        background-position: center;
+        background-size: cover;
+        min-height: 65vh;
+      }
+      .Business-title {
+        font-size: 2rem;
+      }
+      .subTitle {
+        font-size: 1.1rem;
+      }
+      .typing-text{
+  white-space: wrap;
+
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section {
+        background-position: top;
+        background-size: cover;
+        min-height: 60vh;
+      }
+      .Business-title {
+        font-size: 1.7rem;
+      }
+      .subTitle {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+    }
+
+          // /* Hero section styling */
+          // .hero-section {
+          //   position: relative;
+          //   background-image: url(${serviceHero});
+          //   background-size: cover;
+          //   background-position: center center;
+          //   background-repeat: no-repeat;
+          //   min-height: 90vh;
+          //   display: flex;
+          //   align-items: center;
+          //   justify-content: center;
+          //   text-align: center;
+          //   color: white;
+          //   overflow: hidden;
+          // }
+
+          // .hero-overlay {
+          //   position: absolute;
+          //   inset: 0;
+          //   background: rgba(0, 0, 0, 0.55);
+          //   z-index: 1;
+          // }
+
+          // .hero-content {
+          //   position: relative;
+          //   z-index: 2;
+          //   max-width: 800px;
+          //   padding: 0 1rem;
+          // }
 
           /* New background for offerings section */
-          .offerings-background {
-            // background: linear-gradient(135deg, #ffffffff 0%, #f1f2f5ff 100%); /* Soft, techy gradient */
-             background-color: #f9f9f9;
-            padding: 4rem 0; /* Add some padding to make it stand out */
-            margin-bottom: 4rem; /* Space before the next section */
-          }
+          // .offerings-background {
+          //   // background: linear-gradient(135deg, #ffffffff 0%, #f1f2f5ff 100%); /* Soft, techy gradient */
+          //    background-color: #f9f9f9;
+          //   padding: 4rem 0; /* Add some padding to make it stand out */
+          //   margin-bottom: 4rem; /* Space before the next section */
+          // }
 
-          @media (max-width: 768px) {
-            .Business-title {
-              font-size: 2rem;
-            }
-            .hero-section {
-              background-position: center top;
-            }
-          }
+          // @media (max-width: 768px) {
+          //   .Business-title {
+          //     font-size: 2rem;
+          //   }
+          //   .hero-section {
+          //     background-position: center top;
+          //   }
+          // }
         `}
       </style>
 
@@ -584,7 +674,7 @@ const ServicesPage = () => {
           <div className="hero-overlay"></div>
           <div className="hero-content">
             <h1 className="Business-title">Business Services</h1>
-            <p className=" subTitle">
+            <p className=" subTitle typing-text">
               We provide comprehensive solutions to help your business thrive in
               a competitive market.
             </p>
@@ -594,7 +684,6 @@ const ServicesPage = () => {
         {/* Offerings Section */}
         <div className="offerings-background">
           {" "}
-          {/* Added this wrapper div */}
           <div className="container my-5">
             <h2 className="text-center our-title">Our Offerings</h2>
             <p className="text-center mt-3">

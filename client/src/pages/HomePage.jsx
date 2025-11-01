@@ -233,7 +233,7 @@ function HomePage() {
 
         <div className="hero-content">
           <h1 className="hero-title">
-            Redefining possibilities through next- gen tech
+            Redefining possibilities through Next- Gen Tech
           </h1>
           <p className="hero-subtitle typing-text">
             Where Innovation meets purpose.
@@ -295,7 +295,7 @@ function HomePage() {
 
         .hero-title {
           font-weight: 700;
-          font-size: 1.75rem;
+          font-size: 1.5rem;
           margin-bottom: 1rem;
         }
 
@@ -309,15 +309,6 @@ function HomePage() {
           font-size: 1.5rem;
           margin-bottom: 2rem;
           color: #d48223ff;
-        }
-
-        @media (max-width: 768px) {
-          .hero-title {
-            font-size: 2.5rem;
-          }
-          .hero-subtitle {
-            font-size: 1rem;
-          }
         }
         .typing-text {
           display: inline-block;
@@ -345,6 +336,18 @@ function HomePage() {
           100% {
             width: 0;
             opacity: 0;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .hero-title {
+            font-size: 0.7rem;
+          }
+          .hero-subtitle {
+            font-size: 0.8rem;
+          }
+          .typing-text {
+            font-size: 0.8rem;
           }
         }
       `}</style>

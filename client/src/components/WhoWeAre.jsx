@@ -240,8 +240,11 @@ const AboutUs = () => {
         </Row>
 
         <style>{`
+        .section-heading{
+        color:var(--nmf-text);
+        }
     .what-we-do-section .what-intro {
-      color: #444;
+      // color: #444;
       font-size: 1.1rem;
       max-width: 850px;
       margin: 0 auto 35px;
@@ -361,18 +364,16 @@ const AboutUs = () => {
         </Row>
       </Container>
       <style>{`
-    .about-us-section {
-      font-family: Arial, sans-serif;
-      color: #000;
-    background: #ffffff6a
-
-    }
 
     /* Who we are - founders */
     .who-wrap { padding: 30px 20px; 
-    //  background-color: #f9f9f9
+      // background-color: #f9f9f9
      }
-    .who-desc { max-width: 900px; margin: 0 auto 30px; color: #333; line-height: 1.6; }
+    .who-desc { 
+    max-width: 900px;
+    margin: 0 auto 30px; 
+    line-height: 1.6;
+   }
     .founders-row { margin-top: 10px; }
     .founder-card {
       border-radius: 12px;
@@ -382,8 +383,15 @@ const AboutUs = () => {
     }
     .founder-card:hover { transform: translateY(-8px); box-shadow: 0 14px 34px rgba(18,35,75,0.12); }
     .founder-img { height: 280px; object-fit: cover; }
-    .founder-name { color: #1a237e; font-weight:600; margin-top:12px; }
-    .founder-bio { color: #333; font-size: 0.95rem; }
+    .founder-name { 
+    color:var(--founder-name);
+    font-weight:600;
+    margin-top:12px; 
+    }
+    .founder-bio {
+    //  color: #333;
+      font-size: 0.95rem;
+       }
 
     /* What we do */
     .what-wrap { padding: 50px 12px; }
@@ -477,7 +485,12 @@ const AboutUs = () => {
 
 /* Promise */
     .promise-wrap { padding: 20px 12px; }
-    .promise-text { max-width: 900px; margin: 0 auto; font-style: italic; color: #333; line-height: 1.7; }
+    .promise-text {
+     max-width: 900px;
+      margin: 0 auto;
+       font-style: italic;
+        // color: #333;
+         line-height: 1.7; }
 
     /* responsive adjustments */
     @media (max-width: 991px) {

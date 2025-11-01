@@ -511,7 +511,7 @@ const ScrollContactSection = ({
             // background-color: #f5f7fa;
           }
           .contact-box {
-            // background: #fff;
+            background: var(--bg-NewForm);
             box-shadow: 20px 20px 20px 40px rgba(0, 0, 0, 0.08);
             border-radius: 12px;
             padding: 3rem;
@@ -539,7 +539,7 @@ const ScrollContactSection = ({
             font-weight: 500;
           }
           .scroll-contact-section .lead {
-            color: #555;
+            // color: #555;
             font-size: 1.1rem;
           }
 
@@ -604,7 +604,7 @@ const ScrollContactSection = ({
           }
 
           .scroll-contact-section a {
-            color: #000;
+            // color: #000;
             text-decoration: none;
           }
           .scroll-contact-section a:hover {

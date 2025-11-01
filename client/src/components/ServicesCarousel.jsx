@@ -64,8 +64,8 @@ function ServicesCarousel() {
     <>
       <Container className="carousel-container services-carousel-section">
         <h2 className="carousel-heading">
-          <span>Industry leading </span>
-          <span className="gradient-text">digital platforms</span>
+          <span>Industry Leading </span>
+          <span className="gradient-text">Digital Platforms</span>
         </h2>
         <div className="carousel-underline"></div>
 
@@ -153,7 +153,7 @@ function ServicesCarousel() {
 
         .services-carousel-section .service-card .card-body {
           // background: #fff;
-          color: #333;
+          // color: #333;
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
           padding: 15px;
@@ -162,12 +162,12 @@ function ServicesCarousel() {
         .services-carousel-section .service-card .card-title {
           font-size: 1.2rem;
           font-weight: 600;
-          color: #222; /* scoped only to this carousel */
+          // color: #222; /* scoped only to this carousel */
         }
 
         .services-carousel-section .service-card .card-text {
           font-size: 0.95rem;
-          color: #555;
+          // color: #555;
         }
 
         .services-carousel-section .carousel-indicators [data-bs-target] {

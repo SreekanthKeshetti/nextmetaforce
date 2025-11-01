@@ -284,6 +284,13 @@ export default function Chatbot() {
         .form-chat button:hover {
           background: linear-gradient(to right, #1a237e, #42a5f5);
         }
+          html[data-theme="dark"] .chat-popup input,
+html[data-theme="dark"] .chat-popup textarea,
+html[data-theme="dark"] .chat-popup select {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #90caf9 !important;
+}
       `}</style>
 
       <button className="chat-btn" onClick={() => setIsOpen(!isOpen)}>

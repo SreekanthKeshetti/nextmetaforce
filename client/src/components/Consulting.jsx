@@ -200,7 +200,8 @@ function Consulting() {
         .consulting-section {
           // reducing the padding to 50px to redcue the gap between the section
           padding: 50px 0;
-          background-color: #f9f9f9;
+          // background-color: #f9f9f9;
+          background-color: var(--bg-consulting);
           position: relative;
           overflow: hidden;
         }
@@ -218,6 +219,7 @@ function Consulting() {
           border-radius: 15px;
           overflow: hidden;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+          margin: 10px;
         }
 
         .consulting-image {
@@ -246,7 +248,7 @@ function Consulting() {
           font-family: "Montserrat", sans-serif;
           font-size: 1.5rem;
           font-weight: 600;
-          color: #222;
+          color: var(--consulting-Heading);
           position: relative;
           margin-bottom: 25px;
           display: inline-block;
@@ -266,7 +268,7 @@ function Consulting() {
           font-family: "Poppins", sans-serif;
           font-size: 1.1rem;
           line-height: 1.7;
-          color: #555;
+          color: var(--consulting-text);
           margin-bottom: 30px;
         }
 

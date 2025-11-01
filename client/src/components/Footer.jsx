@@ -7,7 +7,7 @@ function Footer() {
       <style>
         {`
         .footer {
-          // background-color: #f5f7f8ff;
+          background-color: var(--bg-footer)!important;
           color: var(--text-light);
           padding: 60px 0;
           font-family: "Inter", sans-serif;
@@ -40,7 +40,7 @@ function Footer() {
         }
 
         .footer ul li a {
-          color: #000;
+          color: var(--footer-text);
           text-decoration: none;
           transition: color 0.3s ease;
         }
@@ -99,13 +99,13 @@ function Footer() {
               <div className="contact-info">
                 <p>
                   <i className="fa-solid fa-envelope"></i>
-                  <a href="mailto:info@nextmetaforce.com">
-                    info@nextmetaforce.com
+                  <a href="mailto:info@nextmetaforce.in">
+                    info@nextmetaforce.in
                   </a>
                 </p>
                 <p>
                   <i className="fa-solid fa-phone"></i>
-                  <a href="tel:+1234567890">+1 (234) 567-890</a>
+                  <a href="tel:+1234567890">+91 7093693648</a>
                 </p>
               </div>
             </Col>
@@ -119,7 +119,7 @@ function Footer() {
               <h5>Services</h5>
               <ul>
                 <li>
-                  <a href="/services#managed-it">Managed IT Services</a>
+                  <a href="/services#managed-it">Digital Transformation</a>
                 </li>
                 <li>
                   <a href="/services#consulting">IT Consultancy</a>
@@ -180,6 +180,9 @@ function Footer() {
                 </li>
                 <li>
                   <a href="/contact">Contact Us</a>
+                </li>
+                <li>
+                  <a href="/careers">Careers</a>
                 </li>
               </ul>
             </Col>
@@ -247,7 +250,7 @@ function Footer() {
           </Row>
 
           <hr className="mt-5 mb-3 border-secondary" />
-          <div className="text-center text-secondary">
+          <div className="text-center">
             <p>
               &copy; {new Date().getFullYear()} NextMetaForce. All rights
               reserved.

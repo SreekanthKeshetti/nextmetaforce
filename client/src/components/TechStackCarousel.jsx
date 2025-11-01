@@ -301,7 +301,7 @@ export default function TechnologyPractice() {
         .section-title {
           font-size: 1.5rem;
           font-weight: 500;
-          color: #222;
+         color:var(--consulting-text);
           text-transform: uppercase;
           position: relative;
           margin-bottom: 1.2rem;
@@ -444,7 +444,7 @@ export default function TechnologyPractice() {
         `}
       </style>
 
-      <section className="py-5 bg-light">
+      <section className="py-5">
         <Container>
           <motion.div
             className="text-center mb-5"

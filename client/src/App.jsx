@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       {/* <MyNavbar /> */}
-      {/* <ThemeToggle /> */}
+      <ThemeToggle />
       <CustomCursor />
       <NewNavbar />
       <Routes>

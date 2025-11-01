@@ -28,7 +28,7 @@ function AboutUsPage() {
           .hero-section {
             position: relative;
             width: 100%;
-            height: 90vh;
+            height: 100vh;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -46,7 +46,7 @@ function AboutUsPage() {
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(30, 29, 29, 0.5);
             z-index: 0;
           }
 

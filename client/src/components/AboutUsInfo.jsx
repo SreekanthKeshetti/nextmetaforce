@@ -8,7 +8,8 @@ const AboutUsInfo = () => {
         {`
         /* === About Us Section === */
         .aboutus-section {
-          // background: linear-gradient(135deg, #f4f8ff 0%, #ffffff 100%);
+          //  background: linear-gradient(135deg, #f4f8ff 0%, #ffffff 100%);
+          background:var(--bg-NewForm);
           border-radius:5px;
           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
           
@@ -34,7 +35,7 @@ const AboutUsInfo = () => {
         .aboutus-heading {
           font-size: 1.5rem;
           font-weight: 600;
-          color: #0a0a0a;
+          // color: #0a0a0a;
           margin-bottom: 1.5rem;
           position: relative;
           display: block;
@@ -55,7 +56,7 @@ const AboutUsInfo = () => {
 
 
         .aboutus-text {
-          color: #333;
+          // color: #333;
           font-size: 1.05rem;
           line-height: 1.8;
           margin-bottom: 1.5rem;

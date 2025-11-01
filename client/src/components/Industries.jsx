@@ -60,7 +60,7 @@ export default function Industries() {
     <>
       <style>{`
         .customer-carousel {
-        background:#7bb7eaa1;
+        background:var( --Industires-Carousel);
           // background: linear-gradient(to right, #64b5f6, #3949ab);
           // background-color: #eeeef03e;
            padding: 30px 0;

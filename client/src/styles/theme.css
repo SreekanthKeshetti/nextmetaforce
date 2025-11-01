@@ -25,25 +25,108 @@
   --nmf-input-border: rgba(15, 23, 36, 0.12);
   /* --nmf-container: red; */
   /* --bg-secondary: #a4bcd4ff; */
+  --bg-consulting: #f9f9f9;
+  --consulting-Heading: #222;
+  --consulting-text: #555;
+  --bg-NewForm: #fff;
+  --bg-footer: #fff;
+  --footer-text: #000;
+  --founder-name: #1a237e;
+  --Cta-bg: #7bb7eaa1;
+  --Case-Study-bg: linear-gradient(180deg, #f8fbff 0%, #eef3ff 100%);
+  --Case-Study-cardbg: #fff;
+  --Case-Study-title: #1a237e;
+  --Case-CardShadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --Industires-Carousel: #7bb7eaa1;
+  --bg-contact: #fcfbf9ff;
+  --bg-ContactCard: white;
+  --Contact-Text: black;
+  --bg-worldmap: #ffffff;
+  --Belief-Cards: white;
+  --Careers-Text: black;
+  --Career-Card: white;
+  --Career-text: black;
+  --Career-title: black;
+  --vision-footer-color: black;
 }
 
 /* Dark theme overrides */
 html[data-theme="dark"] {
-  --nmf-bg: linear-gradient(90deg, #d5e1ef, #1a41f3); /* deep navy */
+  /* --nmf-bg: linear-gradient(90deg, #d5e1ef, #1a41f3);  */
   /* --bg-secondary: #161b22; */
-  --nmf-surface: #93aeec; /* darker card surfaces */
-  --nmf-muted-surface: #0b1320;
+  --nmf-bg: #0a0a0a;
+
+  --nmf-surface: #393939; /* darker card surfaces */
+  --nmf-muted-surface: #353636;
   --nmf-text: white; /* light text */
   --nmf-muted-text: white;
   --nmf-primary: #66a3ff; /* lighter blue accent */
   --nmf-border: rgba(255, 255, 255, 0.06);
   --nmf-card-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
-  --nmf-form-bg: #94b0e8;
   --nmf-inset: rgba(255, 255, 255, 0.02);
   --nmf-link: var(--nmf-primary);
   --nmf-input-border: rgba(255, 255, 255, 0.08);
   /* --nmf-container: green; */
+  --bg-consulting: #111111;
+  --consulting-Heading: white;
+  --consulting-text: white;
+  --bg-NewForm: #88878726;
+  --nmf-form-bg: #393939;
+  --bg-footer: #2a2929;
+  --footer-text: #fff;
+  --founder-name: #fff;
+  --Cta-bg: #393939;
+  --Case-Study-bg: linear-gradient(180deg, #0c0c0c 0%, #0a0a0a 100%);
+  --Case-Study-cardbg: #88878726;
+  --Case-Study-title: #fff;
+  --Case-CardShadow: 0 8px 24px #6c757d;
+  --Industires-Carousel: #7bb7eaa1;
+  --bg-contact: black;
+  --bg-ContactCard: #88878726;
+  --Contact-Text: white;
+  --bg-worldmap: #ffffff;
+  --Belief-Cards: white;
+  --Careers-Text: white;
+  --Career-Card: #393939;
+  --Career-text: white;
+  --Career-title: #9da3dd;
+  --vision-footer-color: white;
 }
+
+/* ================================
+   Lock "Our Vision" section to light-mode design
+   (so it looks same in dark mode)
+================================ */
+/* html[data-theme="dark"] .vision-wrap-new {
+  background-color: #ffffff !important;
+  background-image: linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+    linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+  color: #000000 !important;
+  filter: none !important;
+}
+
+html[data-theme="dark"] .vision-wrap-new::before {
+  background: linear-gradient(to top, #c1e4ee, transparent) !important;
+}
+
+html[data-theme="dark"] .vision-main-new {
+  color: #002d62 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] .vision-sub-new {
+  color: #2c3e50 !important;
+} */
+
+/* --- Core Beliefs Section Glow Enhancements --- */
+/* html[data-theme="dark"] .belief-card {
+  background: rgba(57, 57, 57, 0.8);
+  box-shadow: 0 8px 32px rgba(255, 140, 0, 0.08);
+}
+
+html[data-theme="dark"] .icon-circle {
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.15);
+} */
 
 /* Apply global page background & text */
 html,

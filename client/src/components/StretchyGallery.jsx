@@ -66,7 +66,7 @@ export default function StretchGallery() {
 
         .gallery-header h3 {
           font-size: 1.1rem;
-          color: #333;
+          // color: #333;
           margin-bottom: 0.5rem;
         }
 
@@ -82,13 +82,13 @@ export default function StretchGallery() {
 
         .gallery-header h2 {
           font-size: 1.5rem;
-          color: #1a1a1a;
+          // color: #1a1a1a;
           margin-bottom: 1rem;
         }
 
         .gallery-header p {
           font-size: 1.1rem;
-          color: #555;
+          // color: #555;
           max-width: 800px;
           margin: 0 auto;
           line-height: 1.6;
