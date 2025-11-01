@@ -16,8 +16,10 @@ export default function MyNavbar() {
     { path: "/services", label: "Digital Transformation" },
     { path: "/services", label: "Software Development" },
     { path: "/services", label: "IT Consulting" },
-    { path: "/services", label: "Artificial Intelligence" },
-    { path: "/services", label: "View All Services →", viewAll: true },
+    { path: "/services", label: "Cloud AI" },
+    { path: "/services", label: "Training&Enablement" },
+    { path: "/services", label: "Advanced technologies" },
+    // { path: "/services", label: "View All Services →", viewAll: true },
   ];
 
   // Handle resize, scroll, click outside
