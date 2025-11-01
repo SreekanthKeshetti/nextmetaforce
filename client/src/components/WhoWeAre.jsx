@@ -174,13 +174,14 @@ const AboutUs = () => {
       <Container className="who-wrap">
         <Row className="text-center mb-3">
           <Col>
-            <h2 className="section-heading">Who We Are</h2>
+            <h3 className="section-heading">Who We Are</h3>
             <p className="who-desc">
               NextMetaForce is a strategic technology partner specializing in
-              CRM implementation, digital consulting, and next-generation
-              solutions. We help businesses evolve through intelligent design,
-              agile execution, and continuous support — always aligned with
-              measurable outcomes and human impact.
+              CRM implementation, digital consulting and
+              &nbsp;&nbsp;&nbsp;next-generation solutions. We help businesses
+              evolve through intelligent design, agile execution&nbsp; and
+              continuous support — always aligned with measurable outcomes and
+              human impact.
             </p>
           </Col>
         </Row>
@@ -208,7 +209,7 @@ const AboutUs = () => {
       <Container className="what-wrap what-we-do-section">
         <Row className="text-center mb-4">
           <Col>
-            <h2 className="section-heading">What We Do</h2>
+            <h3 className="section-heading">What We Do</h3>
             <p className="what-intro">
               We deliver enterprise transformation through CRM, Cloud, and
               Next-Gen Technology — helping organizations innovate, integrate,
@@ -245,7 +246,7 @@ const AboutUs = () => {
         }
     .what-we-do-section .what-intro {
       // color: #444;
-      font-size: 1.1rem;
+      font-size: 1.1rem !important;
       max-width: 850px;
       margin: 0 auto 35px;
       line-height: 1.6;

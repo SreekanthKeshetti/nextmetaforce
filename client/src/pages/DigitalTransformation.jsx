@@ -1,6 +1,7 @@
 import React from "react";
 import digitalImg from "../assets/Digital1.jpg"; // adjust path if needed
 import { FaDigitalTachograph } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const DigitalTransformation = () => {
   return (
@@ -39,27 +40,49 @@ const DigitalTransformation = () => {
           color: #f1f1f1;
         }
         .container.py-5 { max-width: 1100px; }
+                        .service-button {
+          display: inline-block;
+          background-color: transparent;
+          border: 2px solid #ff6a00;
+          color: #ff6a00;
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 12px 28px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          border-radius: 30px;
+          transition: all 0.3s ease-in-out;
+          text-decoration: none;
+        }
+
+        .service-button:hover {
+          background-color: #ff6a00;
+          color: white !important;
+          border-color: #ff6a00;
+        }
+
+
       `}</style>
 
       {/* Hero */}
       <div className="service-hero">
         <div className="hero-content">
           <h1 className="Business-title">Digital Transformation</h1>
-          <p className="lead mt-3">
+          {/* <p className="lead mt-3">
             Empowering your business through technology evolution.
-          </p>
+          </p> */}
         </div>
       </div>
 
       {/* Page content (unchanged) */}
       <div className="container py-5">
-        {/* <div className="text-center mb-4">
-          <FaDigitalTachograph size={50} color="#f4b400" />
+        <div className="text-center mb-4">
+          {/* <FaDigitalTachograph size={50} color="#f4b400" /> */}
           <h2 className="mt-3">Digital Transformation</h2>
-          <p className="text-muted">
+          <p className="">
             Empowering your business through technology evolution.
           </p>
-        </div> */}
+        </div>
 
         <div className="mb-4">
           <h4>Our Expertise:</h4>
@@ -91,6 +114,11 @@ const DigitalTransformation = () => {
           to us at{" "}
           <a href="mailto:info@nextmetaforce.in">info@nextmetaforce.in</a>.
         </p>
+      </div>
+      <div className="text-center my-5">
+        <Link to="/services" className="btn service-button">
+          ← Back to Services
+        </Link>
       </div>
     </>
   );

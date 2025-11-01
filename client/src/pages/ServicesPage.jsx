@@ -556,7 +556,17 @@ const ServicesPage = () => {
       z-index: 2;
       max-width: 800px;
       padding: 0 1rem;
+                  transform: translateY(30px);
+            animation: fadeInUp 1.2s ease forwards;
+
+      
     }
+             @keyframes fadeInUp {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
 
               /* Typing animation */
 .typing-text {

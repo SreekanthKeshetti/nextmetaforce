@@ -1,6 +1,7 @@
 import React from "react";
 import softwareImg from "../assets/SoftwareDevelopment.jpg";
 import { FaCode } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SoftwareDevelopment = () => {
   return (
@@ -42,6 +43,28 @@ const SoftwareDevelopment = () => {
         }
         .Business-title { font-size: 2.5rem; font-weight: 600; }
         .lead { font-size: 1.05rem; color: #f1f1f1; }
+                        .service-button {
+          display: inline-block;
+          background-color: transparent;
+          border: 2px solid #ff6a00;
+          color: #ff6a00;
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 12px 28px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          border-radius: 30px;
+          transition: all 0.3s ease-in-out;
+          text-decoration: none;
+        }
+
+        .service-button:hover {
+          background-color: #ff6a00;
+          color: white !important;
+          border-color: #ff6a00;
+        }
+
+
       `}</style>
 
       {/* Hero */}
@@ -59,7 +82,7 @@ const SoftwareDevelopment = () => {
         <div className="text-center mb-4">
           {/* <FaCode size={50} color="#34a853" /> */}
           <h2 className="mt-3">Software Development and Implementation</h2>
-          <p className="text-muted">
+          <p className="">
             From visionary concept to robust, scalable software.
           </p>
         </div>
@@ -101,6 +124,11 @@ const SoftwareDevelopment = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="text-center my-5">
+        <Link to="/services" className="btn service-button">
+          ← Back to Services
+        </Link>
       </div>
     </>
   );

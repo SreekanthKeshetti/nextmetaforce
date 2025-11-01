@@ -81,6 +81,19 @@ export default function HeroSection() {
             align-items: center;
             position: relative;
             overflow: hidden;
+            
+          }
+
+          .hero-content{
+                      transform: translateY(30px);
+            animation: fadeInUp 1.2s ease forwards;
+
+          }
+             @keyframes fadeInUp {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
           }
 
           /* Dark overlay for better text visibility */
@@ -152,11 +165,13 @@ export default function HeroSection() {
 
       <div className="hero-section">
         <Container>
-          <h1 className="title">Our Solutions</h1>
-          <p className="subtitle">
-            Empowering businesses with innovative IT solutions tailored to your
-            needs.
-          </p>
+          <div className="hero-content">
+            <h1 className="title">Our Solutions</h1>
+            <p className="subtitle">
+              Empowering businesses with innovative IT solutions tailored to
+              your needs.
+            </p>
+          </div>
         </Container>
       </div>
     </>

@@ -1,6 +1,7 @@
 import React from "react";
 import trainingImg from "../assets/ITTraining.jpg";
 import { FaChalkboardTeacher } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const TrainingEnablement = () => {
   return (
@@ -37,6 +38,28 @@ const TrainingEnablement = () => {
         .service-hero .hero-content { position: relative; z-index:2; padding:2rem; }
         .Business-title { font-size: 2.5rem; font-weight: 600; }
         .lead { font-size: 1.05rem; color: #f1f1f1; }
+                        .service-button {
+          display: inline-block;
+          background-color: transparent;
+          border: 2px solid #ff6a00;
+          color: #ff6a00;
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 12px 28px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          border-radius: 30px;
+          transition: all 0.3s ease-in-out;
+          text-decoration: none;
+        }
+
+        .service-button:hover {
+          background-color: #ff6a00;
+          color: white !important;
+          border-color: #ff6a00;
+        }
+
+
       `}</style>
 
       <div className="service-hero">
@@ -50,9 +73,7 @@ const TrainingEnablement = () => {
         <div className="text-center mb-4">
           {/* <FaChalkboardTeacher size={50} color="#9c27b0" /> */}
           <h2 className="mt-3">Training and Enablement</h2>
-          <p className="text-muted">
-            Transform your workforce from users to innovators.
-          </p>
+          <p className="">Transform your workforce from users to innovators.</p>
         </div>
 
         <div className="mt-4">
@@ -81,6 +102,11 @@ const TrainingEnablement = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="text-center my-5">
+        <Link to="/services" className="btn service-button">
+          ← Back to Services
+        </Link>
       </div>
     </>
   );

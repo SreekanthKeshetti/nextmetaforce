@@ -422,7 +422,7 @@ html:not([data-theme="dark"]) .vision-section::before {
     linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
   background-size: 2rem 2rem;
-  opacity: 0.4;
+  opacity: 0.55;
   z-index: 0;
 }
 
@@ -483,8 +483,8 @@ html[data-theme="dark"] .vision-section::before {
   background-image: 
     linear-gradient(to right, rgba(255, 165, 0, 0.15) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 140, 0, 0.15) 1px, transparent 1px);
-  background-size: 60px 60px;
-  opacity: 0.35;
+  background-size: 2rem 2rem;
+  opacity: 0.55;
   animation: moveGrid 40s linear infinite;
   z-index: 0;
 }
@@ -528,7 +528,7 @@ html[data-theme="dark"] .glow-underline {
 }
 
 .vision-title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
   line-height: 1.2;

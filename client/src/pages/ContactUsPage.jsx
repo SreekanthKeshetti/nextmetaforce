@@ -835,7 +835,16 @@ function ContactUsPage() {
   margin-left: 8vw; /* slightly closer to left */
   margin-top: 3vh;  /* move content slightly down */
   // animation: fadeInLeft 1s ease forwards;
+              transform: translateY(30px);
+            animation: fadeInUp 1.2s ease forwards;
+
 }
+             @keyframes fadeInUp {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
 
 .contact-hero-section {
   background-image: url('${contactImage}');

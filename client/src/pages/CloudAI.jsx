@@ -1,6 +1,7 @@
 import React from "react";
 import cloudImg from "../assets/CloudandAI.webp";
 import { FaCloud } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CloudAI = () => {
   return (
@@ -37,12 +38,34 @@ const CloudAI = () => {
         .service-hero .hero-content { position: relative; z-index:2; padding:2rem; }
         .Business-title { font-size: 2.5rem; font-weight: 600; }
         .lead { font-size: 1.05rem; color: #f1f1f1; }
+                        .service-button {
+          display: inline-block;
+          background-color: transparent;
+          border: 2px solid #ff6a00;
+          color: #ff6a00;
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 12px 28px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          border-radius: 30px;
+          transition: all 0.3s ease-in-out;
+          text-decoration: none;
+        }
+
+        .service-button:hover {
+          background-color: #ff6a00;
+          color: white !important;
+          border-color: #ff6a00;
+        }
+
+
       `}</style>
 
       <div className="service-hero">
         <div className="hero-content">
           <h1 className="Business-title">Cloud and AI</h1>
-          <p className="lead mt-3">Intelligent Scale for an Automated World.</p>
+          {/* <p className="lead mt-3">Intelligent Scale for an Automated World.</p> */}
         </div>
       </div>
 
@@ -50,9 +73,7 @@ const CloudAI = () => {
         <div className="text-center mb-4">
           {/* <FaCloud size={50} color="#00bcd4" /> */}
           <h2 className="mt-3">Cloud and AI</h2>
-          <p className="text-muted">
-            Harness the combined power of Cloud and AI.
-          </p>
+          <p className="">Harness the combined power of Cloud and AI.</p>
         </div>
 
         <div className="mt-4">
@@ -80,6 +101,11 @@ const CloudAI = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="text-center my-5">
+        <Link to="/services" className="btn service-button">
+          ← Back to Services
+        </Link>
       </div>
     </>
   );
