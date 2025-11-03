@@ -70,7 +70,7 @@ export default function HeroSection() {
       <style>
         {`
           .hero-section {
-            background-image: url(${backgroundImage});
+            background-image: url("https://t3.ftcdn.net/jpg/16/38/07/94/240_F_1638079492_OFbF7dFP5zEYsTJEvwuzKi4niLv5DXR3.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

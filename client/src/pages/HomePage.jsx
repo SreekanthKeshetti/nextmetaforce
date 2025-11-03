@@ -308,13 +308,13 @@ function HomePage() {
           font-weight: 500;
           font-size: 1.5rem;
           margin-bottom: 2rem;
-          color: #d48223ff;
+          color: #d36633d5;
         }
         .typing-text {
           display: inline-block;
-          font-weight: 500;
+          font-weight: 600;
           font-size: 1.5rem;
-          color: #d48223;
+          color: #d36633d5;
           white-space: nowrap;
           overflow: hidden;
           animation: typingLoop 7s steps(28, end) infinite;

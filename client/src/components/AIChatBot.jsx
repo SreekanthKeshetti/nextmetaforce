@@ -60,7 +60,7 @@ export default function Chatbot() {
       setFlow({ type: "contact-flow", step: "name", topic: opt.id });
     } else if (opt.id === "explore-services") {
       await pushBot(
-        "We offer Web Development, Mobile Apps, UI/UX Design, Cloud & DevOps, and Commerce solutions. Which one interests you?"
+        "We offer Digital Transformation,Software Devlopment,IT Consulting,Cloud AI,Tarining& Enablement Cloud & DevOps, and Web Development. Which one interests you?"
       );
       setFlow({ type: "service-flow", step: "service" });
     } else if (opt.id === "careers") {

@@ -39,12 +39,12 @@ const AboutUs = () => {
       bio: "CEO&Founder",
     },
     {
-      name: "VenkataRaman Balakrishna",
+      name: "Venkatraman Balakrishnan",
       image: founder2,
-      bio: "Director",
+      bio: "Director, CDO",
     },
     {
-      name: "Karthik",
+      name: "Karthik Pusapati",
       image: founder3,
       bio: "Director",
     },
