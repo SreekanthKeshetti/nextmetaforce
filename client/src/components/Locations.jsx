@@ -231,8 +231,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 const locations = [
   {
     country: "India",
-    address:
-      "316 Gowra Palladium, Silpa Gram Craft Village, Hitech City, Hyderabad, Telangana 500081",
+    address: "316 Gowra Palladium, Hitech City, Hyderabad, Telangana 500081",
     phone: "+91 98765 43210",
     email: "info@nextmetaforce.in",
     flag: "🇮🇳",
@@ -240,9 +239,9 @@ const locations = [
   },
   {
     country: "USA",
-    address: "1234 Silicon Ave, San Francisco, CA 94016",
-    phone: "+1 (415) 555-1234",
-    email: "usa.office@company.com",
+    address: "5945 State Bridge Rd, Duluth, GA 30097",
+    phone: "+91 98765 43210",
+    email: "info@nextmetaforce.in",
     flag: "🇺🇸",
     coords: { top: "40%", left: "22%" },
   },

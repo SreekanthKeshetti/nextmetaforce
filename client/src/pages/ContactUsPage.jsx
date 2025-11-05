@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import Locations from "../components/Locations";
 
 function ContactUsPage() {
   const [formData, setFormData] = useState({
@@ -389,6 +390,7 @@ function ContactUsPage() {
           {toastMessage}
         </div>
       )}
+      <Locations />
     </>
   );
 }

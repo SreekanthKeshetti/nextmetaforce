@@ -170,7 +170,7 @@ export default function Industries() {
                     src={story.image}
                     alt={story.title}
                     className="img-fluid"
-                    loading="lazy" /* lazy loading */
+                    // loading="lazy" /* lazy loading */
                     width="400" /* helps faster layout paint */
                     height="250"
                   />
