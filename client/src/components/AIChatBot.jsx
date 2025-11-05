@@ -187,12 +187,35 @@ export default function Chatbot() {
   return (
     <>
       <style>{`
+        // .chat-btn {
+        //   position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px;
+        //   border-radius: 50%; background: linear-gradient(to right, #42a5f5, #1a237e);
+        //   color: white; border: none; cursor: pointer; font-size: 28px;
+        //   box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: transform 0.2s ease; z-index: 1001;
+        // }
         .chat-btn {
-          position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px;
-          border-radius: 50%; background: linear-gradient(to right, #42a5f5, #1a237e);
-          color: white; border: none; cursor: pointer; font-size: 28px;
-          box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: transform 0.2s ease; z-index: 1001;
-        }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #42a5f5, #1a237e);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-btn .chat-icon {
+  font-size: 20px; /* control emoji size here */
+}
+
         .chat-btn:hover { transform: scale(1.1); }
         .chat-popup {
           position: fixed; bottom: 90px; right: 20px; width: 360px; max-height: 400px;
@@ -222,7 +245,7 @@ export default function Chatbot() {
           box-shadow: 0 0 8px rgba(255,255,255,0.5);
         }
         .chat-body {
-          flex: 1; padding: 0.75rem; overflow-y: auto;
+          flex: 1; padding: 0.60rem; overflow-y: auto;
           display: flex; flex-direction: column; gap: 0.5rem; background: #f5f7fa;
         }
         .message-user {
@@ -294,9 +317,8 @@ html[data-theme="dark"] .chat-popup select {
       `}</style>
 
       <button className="chat-btn" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "✖" : "💬"}
+        <span className="chat-icon">{isOpen ? "✖" : "💬"}</span>
       </button>
-
       {isOpen && (
         <div className="chat-popup">
           <div className="chat-header">

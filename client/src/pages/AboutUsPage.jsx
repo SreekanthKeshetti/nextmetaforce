@@ -1,8 +1,6 @@
 import React from "react";
 import Lists from "../components/Lists";
 import AboutUsInfo from "../components/AboutUsInfo";
-import Testimonial from "../components/Testimonial";
-import StretchyGallery from "../components/StretchyGallery";
 import NewForm from "../components/NewForm";
 import backgroundImage from "../assets/building.jpg";
 import AboutUs from "../components/AboutUs";
@@ -91,15 +89,11 @@ function AboutUsPage() {
         `}</style>
       </div>
 
-      {/* Rest of the page */}
       <AboutUs />
       <WhoWeAre />
-      {/* <Lists /> */}
       <AboutUsInfo />
       <ValuesGallery />
 
-      {/* <StretchyGallery /> */}
-      {/* <Testimonial /> */}
       <NewForm />
     </>
   );

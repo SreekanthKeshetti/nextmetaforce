@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import multer from "multer";
+import path from "path";
+import fs from "fs";
 
 dotenv.config();
 
@@ -9,6 +12,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// 🗂️ Multer setup for file uploads
+const upload = multer({ dest: "uploads/" });
+
+// 💌 Nodemailer transporter setup
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -17,7 +24,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Contact form 1 (ScrollContactSection)
+// 📨 Contact form 1 (ScrollContactSection)
 app.post("/api/contact-scroll", async (req, res) => {
   const { name, email, phoneNumber, company, subject, message } = req.body;
 
@@ -46,7 +53,7 @@ app.post("/api/contact-scroll", async (req, res) => {
   }
 });
 
-// Contact form 2 (ContactUsPage)
+// 📨 Contact form 2 (ContactUsPage)
 app.post("/api/contact-page", async (req, res) => {
   const { firstName, lastName, email, country, message } = req.body;
 
@@ -73,6 +80,8 @@ app.post("/api/contact-page", async (req, res) => {
     res.status(500).json({ success: false, message: "Error sending email" });
   }
 });
+
+// 💬 Chatbot form
 app.post("/api/chatbot", async (req, res) => {
   const { name, email, datetime, topic } = req.body;
 
@@ -95,6 +104,52 @@ app.post("/api/chatbot", async (req, res) => {
   } catch (err) {
     console.error("Error sending mail:", err);
     res.status(500).json({ success: false, message: "Error sending email" });
+  }
+});
+
+// 🧑‍💼 Career form (with resume upload)
+app.post("/api/career-apply", upload.single("resume"), async (req, res) => {
+  const { fullName, email, phone, message, jobTitle } = req.body;
+  const resumeFile = req.file;
+
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_TO,
+    subject: `🧑‍💼 New Job Application - ${jobTitle}`,
+    text: `
+      📄 New Job Application Received
+
+      Job Title: ${jobTitle}
+      Name: ${fullName}
+      Email: ${email}
+      Phone: ${phone}
+      Message: ${message || "N/A"}
+
+      Submitted At: ${new Date().toLocaleString()}
+    `,
+    attachments: resumeFile
+      ? [
+          {
+            filename: resumeFile.originalname,
+            path: resumeFile.path,
+          },
+        ]
+      : [],
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res
+      .status(200)
+      .json({ success: true, message: "Application sent successfully" });
+
+    // Delete temp file after sending
+    if (resumeFile) fs.unlinkSync(resumeFile.path);
+  } catch (err) {
+    console.error("Error sending career application:", err);
+    res
+      .status(500)
+      .json({ success: false, message: "Error sending application" });
   }
 });
 

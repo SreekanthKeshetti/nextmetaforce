@@ -244,7 +244,7 @@ function Footer() {
                   <i className="fab fa-instagram"></i>
                 </a>
                 <a
-                  href="https://wa.me/1234567890"
+                  href="https://api.whatsapp.com/send?phone=917093693648&text=Hi%20Nextmetaforce!%20I%27d%20like%20to%20learn%20more%20about%20your%20services."
                   target="_blank"
                   aria-label="WhatsApp"
                   rel="noopener noreferrer"

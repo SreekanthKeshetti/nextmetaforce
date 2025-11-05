@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Locations from "../components/Locations";
+import ConatctUsImage from "../assets/contact.jpg";
 
 function ContactUsPage() {
   const [formData, setFormData] = useState({
@@ -75,7 +76,7 @@ function ContactUsPage() {
    HERO SECTION
 ============================ */
 .contact-hero-section {
-  background-image: url('https://t4.ftcdn.net/jpg/04/80/12/53/240_F_480125320_Y2fVhlrxL9nTKs8rXJEjwdNmWY1Fnfxj.jpg');
+  background-image: url(${ConatctUsImage});
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -181,8 +182,8 @@ function ContactUsPage() {
 }
 
 .questions-heading {
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 500;
   margin-top: 0.5rem;
   color: var(--Contact-Text, #000);
 }
@@ -256,12 +257,12 @@ function ContactUsPage() {
       {/* HERO SECTION */}
       <div className="contact-hero-section">
         <div className="hero-content">
-          <h1 className="hero-heading">Get in touch</h1>
+          {/* <h1 className="hero-heading">Get in touch</h1>
           <p className="hero-subheading">
             Thanks for your interest in <strong>Nextmetaforce</strong>.<br />
             Let us connect over phone or email and we’ll connect you with the
             right person.
-          </p>
+          </p> */}
         </div>
       </div>
 

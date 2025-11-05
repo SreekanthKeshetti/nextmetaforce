@@ -1,4 +1,4 @@
-.nmf-theme-toggle {
+/* .nmf-theme-toggle {
   position: fixed;
   top: 50%;
   left: 0;
@@ -8,8 +8,8 @@
 }
 
 .nmf-toggle-btn {
-  width: 56px;
-  height: 56px;
+  width: 30px;
+  height: 36px;
   border: none;
   border-top-right-radius: 28px;
   border-bottom-right-radius: 28px;
@@ -33,13 +33,57 @@
   --toggle-fg: #0b0b0b;
 }
 
-/* dark overrides (applied when data-theme="dark" on <html>) */
 html[data-theme="dark"] .nmf-toggle-btn {
   --toggle-bg: #111827;
   --toggle-fg: #f3f4f6;
 }
 
-/* subtle glow when hovering */
 .nmf-toggle-btn:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+} */
+.nmf-theme-toggle {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1080;
+  padding: 6px 6px 6px 2px;
+}
+
+.nmf-toggle-btn {
+  width: 36px; /* you can adjust width */
+  height: 36px; /* adjust height */
+  border: none;
+  border-top-right-radius: 28px;
+  border-bottom-right-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.15);
+  transition: transform 0.2s ease, background-color 0.25s ease, color 0.25s ease;
+  background: var(--toggle-bg);
+  color: var(--toggle-fg);
+}
+
+.nmf-toggle-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* icon size control */
+.nmf-toggle-btn .nmf-icon {
+  font-size: 16px; /* smaller icon size */
+}
+
+/* light theme */
+:root {
+  --toggle-bg: #ffffff;
+  --toggle-fg: #0b0b0b;
+}
+
+/* dark theme overrides */
+html[data-theme="dark"] .nmf-toggle-btn {
+  --toggle-bg: #111827;
+  --toggle-fg: #f3f4f6;
 }
