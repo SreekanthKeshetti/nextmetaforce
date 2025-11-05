@@ -1,10 +1,10 @@
 // import React from "react";
 // import { Container } from "react-bootstrap";
-// import retailImg from "../assets/Retailimage.jpg";
-// import healthImg from "../assets/health1.jpg";
-// import finImage from "../assets/finance1.jpg";
-// import manfacImage from "../assets/Manufacture.jpg";
-// import mediaImg from "../assets/media1.jpg"; // Placeholder for Media vertical image
+// import retailImg from "../assets/Retailimage.webp";
+// import healthImg from "../assets/health1.webp";
+// import finImage from "../assets/finance1.webp";
+// import manfacImage from "../assets/Manufacture.webp";
+// import mediaImg from "../assets/media1.webp"; // Placeholder for Media vertical image
 
 // const caseStudies = [
 //   {
@@ -349,11 +349,11 @@
 //   );
 // }
 import React from "react";
-import retailImg from "../assets/Retailimage.jpg";
-import healthImg from "../assets/health1.jpg";
-import finImage from "../assets/finance1.jpg";
-import manfacImage from "../assets/Manufacture.jpg";
-import mediaImg from "../assets/media1.jpg";
+import retailImg from "../assets/Retailimage.webp";
+import healthImg from "../assets/health1.webp";
+import finImage from "../assets/finance1.webp";
+import manfacImage from "../assets/Manufacture.webp";
+import mediaImg from "../assets/media1.webp";
 
 const caseStudies = [
   {

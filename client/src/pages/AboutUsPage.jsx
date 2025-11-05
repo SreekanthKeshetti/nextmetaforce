@@ -2,7 +2,7 @@ import React from "react";
 import Lists from "../components/Lists";
 import AboutUsInfo from "../components/AboutUsInfo";
 import NewForm from "../components/NewForm";
-import backgroundImage from "../assets/building.jpg";
+import backgroundImage from "../assets/building.webp";
 import AboutUs from "../components/AboutUs";
 import ValuesGallery from "../components/OurValues";
 import WhoWeAre from "../components/WhoWeAre";

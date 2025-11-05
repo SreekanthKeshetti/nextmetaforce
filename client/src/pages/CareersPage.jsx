@@ -15,7 +15,7 @@ import {
   Form,
 } from "react-bootstrap";
 import { motion } from "framer-motion";
-import contactImage from "../assets/CareersPageImg.jpg";
+import contactImage from "../assets/CareersPageImg.webp";
 import {
   FaUsers,
   FaLightbulb,

@@ -1,5 +1,5 @@
 import React from "react";
-import trainingImg from "../assets/ITTraining.jpg";
+import trainingImg from "../assets/ITTraining.webp";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

@@ -5,7 +5,7 @@ import "react-phone-input-2/lib/style.css";
 const ScrollContactSection = ({
   heading = "Time to break the ice?",
   description = "We would love to hear from you. Fill the form or email us at",
-  email = "info@nextmetaforce.in",
+  email = "info@nextmetaforce.com",
   phone = null,
 }) => {
   const initialData = {

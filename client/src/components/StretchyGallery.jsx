@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import retailImg from "../assets/retail1.jpg";
-import finImg from "../assets/fin2.jpg";
-import manfacImg from "../assets/Factory.jpg";
-import hospitalImg from "../assets/hospital1.jpg";
-import fashImg from "../assets/fashionImage.jpg";
-import logImg from "../assets/log1.jpg";
+import retailImg from "../assets/retail1.webp";
+import finImg from "../assets/fin2.webp";
+import manfacImg from "../assets/Factory.webp";
+import hospitalImg from "../assets/hospital1.webp";
+import fashImg from "../assets/fashionImage.webp";
+import logImg from "../assets/log1.webp";
 
 const images = [
   {

@@ -145,13 +145,13 @@ function HomePage() {
           font-weight: 500;
           font-size: 1.5rem;
           margin-bottom: 2rem;
-          color: #f46b09ff;
+          color: #f49e09ff;
         }
         .typing-text {
           display: inline-block;
           font-weight: 600;
           font-size: 1.5rem;
-          color: da581bd5;
+          color: #f49e09ff;
           // color: #f46b09ff;
           white-space: nowrap;
           overflow: hidden;
@@ -179,13 +179,13 @@ function HomePage() {
 
         @media (max-width: 768px) {
           .hero-title {
-            font-size: 0.7rem;
+            font-size: 1rem;
           }
           .hero-subtitle {
-            font-size: 0.8rem;
+            font-size: 1rem;
           }
           .typing-text {
-            font-size: 0.8rem;
+            font-size: 1rem;
           }
         }
       `}</style>

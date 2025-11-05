@@ -1,5 +1,5 @@
 import React from "react";
-import digitalImg from "../assets/Digital1.jpg"; // adjust path if needed
+import digitalImg from "../assets/Digital1.webp"; // adjust path if needed
 import { FaDigitalTachograph } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

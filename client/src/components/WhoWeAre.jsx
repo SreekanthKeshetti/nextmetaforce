@@ -27,9 +27,9 @@ import {
   FaBullseye, // Precision & Purpose
 } from "react-icons/fa";
 
-import founder1 from "../assets/1.jpg";
-import founder2 from "../assets/2.jpg";
-import founder3 from "../assets/3.jpg";
+import founder1 from "../assets/1.webp";
+import founder2 from "../assets/2.webp";
+import founder3 from "../assets/3.webp";
 import { motion } from "framer-motion";
 const AboutUs = () => {
   const founders = [

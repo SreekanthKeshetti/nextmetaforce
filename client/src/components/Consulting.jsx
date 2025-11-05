@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import ConsultingImg from "../assets/ConsultingImg.jpg";
+import ConsultingImg from "../assets/ConsultingImg.webp";
 import { Link } from "react-router-dom";
 
 function Consulting() {

@@ -3,11 +3,11 @@ import Slider from "react-slick";
 import { Container, Row, Col } from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import healthServiceImg from "../assets/healthService.jpg";
-import financeServiceImg from "../assets/finService.jpg";
-import logisticServiceImg from "../assets/logisticService.jpg";
-import manfacServiceImg from "../assets/manfacService.jpg";
-import retailServiceImg from "../assets/retailService.jpg";
+import healthServiceImg from "../assets/healthServiceImage.webp";
+import financeServiceImg from "../assets/finService.webp";
+import logisticServiceImg from "../assets/logisticService.webp";
+import manfacServiceImg from "../assets/manfacService.webp";
+import retailServiceImg from "../assets/retailService.webp";
 
 const stories = [
   {

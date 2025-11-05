@@ -1,5 +1,5 @@
 import React from "react";
-import softwareImg from "../assets/SoftwareDevelopment.jpg";
+import softwareImg from "../assets/SoftwareDevelopment.webp";
 import { FaCode } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

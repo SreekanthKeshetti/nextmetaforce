@@ -1,5 +1,5 @@
 import React from "react";
-import commitment from "../assets/commitment1.jpg";
+import commitment from "../assets/commitment1.webp";
 
 const AboutUsInfo = () => {
   return (

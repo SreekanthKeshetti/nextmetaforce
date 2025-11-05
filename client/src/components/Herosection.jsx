@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import SolutionImg from "../assets/SolutionImg.jpg";
+import SolutionImg from "../assets/SolutionImg.webp";
 
 export default function HeroSection() {
   return (

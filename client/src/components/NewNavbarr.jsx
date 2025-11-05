@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 
 export default function MyNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -81,7 +81,7 @@ export default function MyNavbar() {
   const getHoverColor = () => "#679ef0ff"; // Bootstrap primary blue
   // const getActiveColor = () => "#f1b96eff"; // Active page color
   // const getActiveColor = () => "#d48223ff";
-  const getActiveColor = () => "#f46b09e0";
+  const getActiveColor = () => " #f49e09ff";
 
   return (
     <>

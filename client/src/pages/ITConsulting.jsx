@@ -1,5 +1,5 @@
 import React from "react";
-import consultingImg from "../assets/IT&Recruitment.jpg";
+import consultingImg from "../assets/IT&Recruitment.webp";
 import { FaUserTie } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import advancedImg from "../assets/cloudAi.webp";
+import advancedImg from "../assets/CloudAI.webp";
 import { FaCube } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

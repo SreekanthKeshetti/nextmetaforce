@@ -99,8 +99,8 @@ function Footer() {
               <div className="contact-info">
                 <p>
                   <i className="fa-solid fa-envelope"></i>
-                  <a href="mailto:info@nextmetaforce.in">
-                    info@nextmetaforce.in
+                  <a href="mailto:info@nextmetaforce.com">
+                    info@nextmetaforce.com
                   </a>
                 </p>
                 <p>

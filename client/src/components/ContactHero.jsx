@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import contactImage from "../assets/Contact.jpg";
+import contactImage from "../assets/Contact.webp";
 
 export default function ContactHero() {
   return (

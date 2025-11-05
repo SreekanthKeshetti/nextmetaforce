@@ -1,5 +1,6 @@
 import React from "react";
-import cloudImg from "../assets/CloudandAI.webp";
+import cloudImg from "../assets/CloudAI.webp";
+
 import { FaCloud } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

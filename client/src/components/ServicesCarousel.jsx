@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Carousel, Row, Col, Card } from "react-bootstrap";
-import salesForce from "../assets/salesForce.jpg";
-import microsoftAzure from "../assets/Azure.jpg";
-import oracle from "../assets/oracle.jpg";
-import microSoftDyamincs from "../assets/Dynamicsimages.jpeg";
-import Aws from "../assets/AWS1.png";
+import salesForce from "../assets/salesForce.webp";
+import microsoftAzure from "../assets/Azure.webp";
+import oracle from "../assets/oracle.webp";
+import microSoftDyamincs from "../assets/Dynamicsimages.webp";
+import Aws from "../assets/AWS1.webp";
 import Devops from "../assets/Devops1.webp";
 
 const services = [
