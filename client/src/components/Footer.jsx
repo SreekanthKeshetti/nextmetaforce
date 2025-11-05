@@ -95,7 +95,7 @@ function Footer() {
           <Row>
             {/* Column 1: Company Info */}
             <Col md={3} sm={6} className="text-md-start text-center">
-              <p className="company-name">NextMetaForce</p>
+              <p className="company-name">Nextmetaforce</p>
               <div className="contact-info">
                 <p>
                   <i className="fa-solid fa-envelope"></i>

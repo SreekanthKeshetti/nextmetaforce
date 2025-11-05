@@ -371,11 +371,13 @@ const ServicesPage = () => {
         {`
           .Business-title {
             font-size: 2.5rem;
+            font-weight:600;
           }
 
           .our-title {
             font-size: 1.6rem;
             position: relative;
+            font-weight:600;
           }
 
           .our-title::after {

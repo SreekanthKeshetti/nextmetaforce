@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import contactImage from "../assets/Contact.jpg";
-import LocationsMap from "../components/Locations";
 
 function ContactUsPage() {
   const [formData, setFormData] = useState({
@@ -31,7 +29,7 @@ function ContactUsPage() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -47,7 +45,6 @@ function ContactUsPage() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         });
-
         if (response.ok) {
           setToastMessage("Form submitted successfully!");
           setFormData({
@@ -64,7 +61,6 @@ function ContactUsPage() {
         console.error(error);
         alert("Error sending email!");
       }
-
       setSubmitting(false);
       setTimeout(() => setToastMessage(""), 3000);
     }
@@ -77,7 +73,6 @@ function ContactUsPage() {
 /* ============================
    HERO SECTION
 ============================ */
-
 .contact-hero-section {
   background-image: url('https://t4.ftcdn.net/jpg/04/80/12/53/240_F_480125320_Y2fVhlrxL9nTKs8rXJEjwdNmWY1Fnfxj.jpg');
   background-size: cover;
@@ -125,26 +120,18 @@ function ContactUsPage() {
   opacity: 0.95;
 }
 
-/* Mobile Fix: Keep text over image */
+/* Mobile Fix */
 @media (max-width: 768px) {
   .contact-hero-section {
-    width: 100%;
     min-height: 80vh;
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
     text-align: center;
     padding: 40px 20px;
   }
 
   .hero-content {
-    position: relative;
-    z-index: 2;
-    color: white;
     background: rgba(0, 0, 0, 0.4);
     padding: 20px;
     border-radius: 12px;
@@ -152,35 +139,32 @@ function ContactUsPage() {
 
   .hero-heading {
     font-size: 1.8rem;
-    font-weight: 600;
-  }
-
-  .hero-subheading {
-    font-size: 1rem;
-    line-height: 1.5;
   }
 }
 
 /* ============================
-   CONTACT FORM SECTION
+   CONTACT FORM + MAP SECTION
 ============================ */
 .bg-custom-gray {
-  background-color: var(--bg-contact);
+  background-color: var(--bg-contact, #f8f9fa);
 }
 
 .contact-card {
+  display: flex; /* ✅ needed to align form + map side by side */
+  flex-wrap: wrap;
   border-radius: 1rem;
-  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-  padding: 2rem;
-  background-color: var(--bg-ContactCard);
+  overflow: hidden;
+  background-color: var(--bg-ContactCard, #fff);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Left column */
 .send-message-underline-wrapper {
   font-weight: 500;
   padding-bottom: 8px;
   position: relative;
   display: inline-block;
-  color: var(--Contact-Text);
+  color: var(--Contact-Text, #000);
 }
 
 .send-message-underline-wrapper::after {
@@ -199,22 +183,16 @@ function ContactUsPage() {
   font-size: 1.75rem;
   font-weight: 600;
   margin-top: 0.5rem;
-  color: var(--Contact-Text);
+  color: var(--Contact-Text, #000);
 }
 
-.help-text {
-  color: var(--Contact-Text);
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-top: 0.25rem;
-}
-
+/* Form styling */
 .form-control-futuristic {
   border: 1px solid #ced4da;
   border-radius: 8px;
   padding: 10px 12px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .form-control-futuristic:focus {
@@ -223,23 +201,53 @@ function ContactUsPage() {
   outline: none;
 }
 
+/* Button */
 .button-fixed {
   background: linear-gradient(to right, #64b5f6, #3949ab);
   color: white;
   border-radius: 8px;
   transition: all 0.3s ease;
+  border: none;
 }
 
 .button-fixed:hover {
   background: linear-gradient(to right, #3949ab, #64b5f6);
-  color: #fff;
 }
 
+/* Toast */
 .toast-message {
   position: fixed;
   bottom: 30px;
   right: 30px;
   z-index: 1000;
+}
+
+/* ============================
+   MAP STYLING
+============================ */
+.contact-map {
+  flex: 1;
+  height: 100%;
+  min-height: 400px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0 1rem 1rem 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .contact-card {
+    flex-direction: column;
+  }
+
+  .contact-map iframe {
+    border-radius: 0 0 1rem 1rem;
+    min-height: 350px;
+  }
 }
 `}
       </style>
@@ -256,24 +264,17 @@ function ContactUsPage() {
         </div>
       </div>
 
-      {/* CONTACT FORM SECTION */}
+      {/* CONTACT FORM + MAP SECTION */}
       <div className="py-5 bg-custom-gray">
         <Container>
           <Row className="contact-card mx-0">
-            {/* Left Text */}
-            <Col
-              lg={4}
-              className="d-flex flex-column justify-content-start p-4"
-            >
+            {/* Left: Contact Form */}
+            <Col lg={6} md={12} className="p-4">
               <h5 className="send-message-underline-wrapper mb-2">
                 Send Us a Message
               </h5>
-              <h3 className="questions-heading">Have questions?</h3>
-              <p className="help-text">We’re here to help.</p>
-            </Col>
+              <h3 className="questions-heading mb-4">Have questions?</h3>
 
-            {/* Right Form */}
-            <Col lg={8} className="p-4">
               <Form onSubmit={handleSubmit} noValidate>
                 <Row className="mb-3 g-3">
                   <Col md={6}>
@@ -362,6 +363,23 @@ function ContactUsPage() {
                 </div>
               </Form>
             </Col>
+
+            {/* Right: Map */}
+            <Col
+              lg={6}
+              md={12}
+              className="p-0 d-flex align-items-stretch justify-content-center"
+            >
+              <iframe
+                title="Nextmetaforce Office Location"
+                src="https://www.google.com/maps?q=316,+3rd+floor,+Gowra+Palladium,+Silpa+Gram+Craft+Village,+HITEC+City,+Hyderabad,+Telangana+500081&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: "0", borderRadius: "0 1rem 1rem 0" }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </Col>
           </Row>
         </Container>
       </div>
@@ -371,8 +389,6 @@ function ContactUsPage() {
           {toastMessage}
         </div>
       )}
-
-      <LocationsMap />
     </>
   );
 }

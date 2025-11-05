@@ -1099,7 +1099,7 @@ html[data-theme="dark"] .hero-beliefs-section::after {
   background: linear-gradient(to right, #f6a709, #f77102, #e6333f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 0.5px;
   font-weight: 600;
   position: relative;
@@ -1214,7 +1214,7 @@ html[data-theme="dark"] .icon-circle.red { background: rgba(255,69,58,0.18); }
 
       <section className="hero-beliefs-section text-center">
         <Container className="position-relative">
-          <h1 className="fw-normal mb-3 text-gradient">Our Core Beliefs</h1>
+          <h1 className=" mb-3 text-gradient">Our Core Beliefs</h1>
           <p
             className="lead mb-5 text-secondary"
             style={{ maxWidth: "720px", margin: "0 auto" }}
@@ -1254,7 +1254,7 @@ html[data-theme="dark"] .icon-circle.red { background: rgba(255,69,58,0.18); }
             “We’re not chasing the next trend – we’re creating the next force.{" "}
           </p>
           <p className="quote-text">
-            <strong>NextMetaForce</strong> – Empowering the human side of
+            <strong>Nextmetaforce</strong> – Empowering the human side of
             transformation.”
           </p>
         </Container>

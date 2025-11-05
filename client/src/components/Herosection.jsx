@@ -70,7 +70,7 @@ export default function HeroSection() {
       <style>
         {`
           .hero-section {
-            background-image: url("https://t3.ftcdn.net/jpg/16/38/07/94/240_F_1638079492_OFbF7dFP5zEYsTJEvwuzKi4niLv5DXR3.jpg");
+            background-image: url("https://plus.unsplash.com/premium_photo-1679517155620-8048e22078b1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c29sdXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -116,8 +116,8 @@ export default function HeroSection() {
           }
 
           .title {
-            font-weight: 700;
-            font-size: 2.8rem;
+            font-weight: 600;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
           }
 

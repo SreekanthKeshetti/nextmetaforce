@@ -270,7 +270,8 @@ function HomePage() {
           height: 100%;
           object-fit: cover;
           z-index: 0;
-          filter: brightness(0.6);
+          filter: brightness(0.8);
+          // increased the brightness from 0.6 to 0.8 and add the gird bg
         }
 
         .grid-overlay {
@@ -281,7 +282,7 @@ function HomePage() {
           height: 100%;
           background: url("https://cdn.ranosys.com/wp-content/uploads/2024/10/grid-slide.png")
             repeat;
-          mix-blend-mode: overlay;
+          // mix-blend-mode: overlay;
           z-index: 1;
           pointer-events: none;
         }
@@ -308,13 +309,14 @@ function HomePage() {
           font-weight: 500;
           font-size: 1.5rem;
           margin-bottom: 2rem;
-          color: #d36633d5;
+          color: #f46b09ff;
         }
         .typing-text {
           display: inline-block;
           font-weight: 600;
           font-size: 1.5rem;
-          color: #d36633d5;
+          color: da581bd5;
+          // color: #f46b09ff;
           white-space: nowrap;
           overflow: hidden;
           animation: typingLoop 7s steps(28, end) infinite;

@@ -522,7 +522,7 @@ export default function CaseStudy() {
         }
 
         .case-title {
-          font-size: 2rem;
+          font-size: 1.8rem;
           font-weight: 700;
           // color: #0d2d62;
           color:var(--Case-Study-title);

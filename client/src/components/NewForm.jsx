@@ -520,7 +520,6 @@ const ScrollContactSection = ({
             font-family: "Montserrat", sans-serif;
             font-weight: 600;
             font-size: 1rem;
-            text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 0.5rem;
           }

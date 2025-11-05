@@ -620,7 +620,6 @@ const AboutUs = () => {
       font-weight: 600; /* Bolder */
       color: #002d62; /* A deep, rich blue */
       margin-bottom: 25px; /* More space */
-      text-transform: uppercase; /* Make it all caps for impact */
       letter-spacing: 2px; /* Add some letter spacing */
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     }
@@ -642,7 +641,6 @@ const AboutUs = () => {
       color: #000;
       font-weight: 600;
       display: inline-block;
-      text-transform: uppercase;
       margin-bottom: 16px;
       position: relative;
     }

@@ -80,7 +80,8 @@ export default function MyNavbar() {
   const getLinkColor = () => (scrolled ? "#333" : "#fff");
   const getHoverColor = () => "#679ef0ff"; // Bootstrap primary blue
   // const getActiveColor = () => "#f1b96eff"; // Active page color
-  const getActiveColor = () => "#d48223ff";
+  // const getActiveColor = () => "#d48223ff";
+  const getActiveColor = () => "#f46b09e0";
 
   return (
     <>

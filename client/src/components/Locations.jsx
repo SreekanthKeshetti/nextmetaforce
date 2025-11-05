@@ -236,7 +236,7 @@ const locations = [
     phone: "+91 98765 43210",
     email: "info@nextmetaforce.in",
     flag: "🇮🇳",
-    coords: { top: "52%", left: "72%" },
+    coords: { top: "52%", left: "70%" },
   },
   {
     country: "USA",

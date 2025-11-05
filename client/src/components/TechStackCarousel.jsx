@@ -302,7 +302,6 @@ export default function TechnologyPractice() {
           font-size: 1.5rem;
           font-weight: 500;
          color:var(--consulting-text);
-          text-transform: uppercase;
           position: relative;
           margin-bottom: 1.2rem;
         }
@@ -453,7 +452,7 @@ export default function TechnologyPractice() {
             viewport={{ once: true }}
             variants={sectionVariants}
           >
-            <h2 className="section-title">OUR TECHNOLOGY PRACTICE AREAS</h2>
+            <h2 className="section-title">Our Technology Practice Areas</h2>
           </motion.div>
 
           <motion.div

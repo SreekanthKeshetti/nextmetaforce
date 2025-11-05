@@ -33,7 +33,7 @@ const AboutUsInfo = () => {
 
         /* Heading with underline */
         .aboutus-heading {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           font-weight: 600;
           // color: #0a0a0a;
           margin-bottom: 1.5rem;
@@ -107,7 +107,7 @@ const AboutUsInfo = () => {
           {/* Left Column: Text */}
           <div className="col-lg-6">
             <div className="aboutus-content">
-              <h2 className="aboutus-heading">Our Commitment to Excellence</h2>
+              <h2 className="aboutus-heading">Our Commitment To Excellence</h2>
               <p className="aboutus-text">
                 We are a leading IT company specializing in innovative solutions
                 that drive business growth and efficiency. Our team of experts
@@ -123,7 +123,7 @@ const AboutUsInfo = () => {
                 goal.
               </p>
               <button type="button" className="btn custom-black-btn">
-                CONTACT US
+                Contact Us
               </button>
             </div>
           </div>
