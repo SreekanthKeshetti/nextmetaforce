@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Locations from "../components/Locations";
-import ConatctUsImage from "../assets/contact.jpg";
+import ConatctUsImage from "../assets/contactImg.jpg";
 
 function ContactUsPage() {
   const [formData, setFormData] = useState({
