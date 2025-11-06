@@ -86,6 +86,21 @@ function AboutUsPage() {
             // line-height: 1.7;
             // letter-spacing: 0.3px;
           }
+
+          @media (max-width: 480px) {
+            .hero-section {
+              background-position: top;
+              background-size: cover;
+              min-height: 60vh;
+            }
+            .aboutus-heading-unique {
+              font-size: 1.7rem;
+            }
+            .aboutus-subtext {
+              font-size: 1rem;
+              padding: 0 10px;
+            }
+          }
         `}</style>
       </div>
 

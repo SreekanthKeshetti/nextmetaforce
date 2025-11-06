@@ -85,7 +85,7 @@ export default function HeroSection() {
           @media (max-width: 576px) {
             .hero-section {
               min-height: 70vh;
-              background-position: top center;
+              background-position: 30% center;
               background-size: cover;
             }
 

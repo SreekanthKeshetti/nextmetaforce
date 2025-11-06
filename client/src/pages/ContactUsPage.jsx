@@ -125,16 +125,15 @@ function ContactUsPage() {
 /* Mobile Fix */
 @media (max-width: 768px) {
   .contact-hero-section {
-    min-height: 80vh;
     background-size: cover;
-    background-position: center;
+    background-position: 20% center;
     justify-content: center;
     text-align: center;
     padding: 40px 20px;
   }
 
   .hero-content {
-    background: rgba(0, 0, 0, 0.4);
+    // background: rgba(0, 0, 0, 0.4);
     padding: 20px;
     border-radius: 12px;
   }
@@ -143,6 +142,7 @@ function ContactUsPage() {
     font-size: 1.8rem;
   }
 }
+
 
 /* ============================
    CONTACT FORM + MAP SECTION
@@ -251,6 +251,7 @@ function ContactUsPage() {
     min-height: 350px;
   }
 }
+  
 `}
       </style>
 

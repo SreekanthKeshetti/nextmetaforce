@@ -301,10 +301,10 @@ const ServicesPage = () => {
         min-height: 65vh;
       }
       .Business-title {
-        font-size: 2rem;
+        font-size: 1.1rem;
       }
       .subTitle {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
       }
       .typing-text{
   white-space: wrap;
@@ -319,10 +319,10 @@ const ServicesPage = () => {
         min-height: 60vh;
       }
       .Business-title {
-        font-size: 1.7rem;
+        font-size: 1.1rem;
       }
       .subTitle {
-        font-size: 1rem;
+        font-size: 0.85rem;
         padding: 0 10px;
       }
     }
