@@ -93,6 +93,7 @@ function ServiceCards() {
             color: white; 
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            will-change: transform, box-shadow;           
           }
 
           .card-overlay {

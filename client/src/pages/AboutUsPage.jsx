@@ -1,5 +1,4 @@
 import React from "react";
-import Lists from "../components/Lists";
 import AboutUsInfo from "../components/AboutUsInfo";
 import NewForm from "../components/NewForm";
 import backgroundImage from "../assets/building.webp";
