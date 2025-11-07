@@ -543,7 +543,7 @@ His unique blend of expertise and business acumen enables him to bridge the gap 
       name: "Karthik Pusapati",
       image: founder3,
       bio: "Director",
-      linkedin: "https://www.linkedin.com/in/karthik-pusapati/",
+      linkedin: "",
       description:
         "Karthik Pusapati oversees operations and client engagement, ensuring seamless delivery and long-term partnerships built on trust and excellence.",
     },
@@ -684,6 +684,9 @@ His unique blend of expertise and business acumen enables him to bridge the gap 
 
       <style>{`
         /* Restore your original Who We Are paddings */
+        .section-heading{
+         color:var(--nmf-text);
+        }
         .who-wrap {
           padding: 60px 20px;
         }
