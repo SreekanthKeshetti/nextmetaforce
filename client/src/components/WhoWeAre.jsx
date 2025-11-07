@@ -515,9 +515,9 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Modal, Button } from "react-bootstrap";
 import { FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
-import founder1 from "../assets/1.webp";
+import founder1 from "../assets/venkat.png";
 import founder2 from "../assets/2.webp";
-import founder3 from "../assets/3.webp";
+import founder3 from "../assets/karthik.png";
 
 const AboutUs = () => {
   const founders = [
@@ -525,15 +525,17 @@ const AboutUs = () => {
       name: "Venkat Kazipeta",
       image: founder1,
       bio: "Founder & CEO",
-      linkedin: "https://www.linkedin.com/in/venkat-kazipeta/",
-      description:
-        "Venkat Kazipeta leads NextMetaForce with a vision to deliver strategic technology transformations. With over two decades of leadership experience, he drives innovation across CRM, Cloud, and Next-Gen solutions.",
+      linkedin: "https://www.linkedin.com/in/venkat-kazipeta-2531b512/",
+      description: `Venkat Kazipeta is a founding member of Nextmetaforce, bringing over two decades of experience in the IT industry and a deep passion for CRM and emerging technologies.\n
+His leadership is instrumental in shaping the company’s strategic direction, driving innovation, and delivering transformative solutions powered by AI and a global delivery model.\n
+Prior to founding Nextmetaforce, Venkat held senior roles at Infosys, where he led the delivery of Salesforce, MS Dynamics, and Siebel projects for Fortune 500 clients.\n
+His unique blend of expertise and business acumen enables him to bridge the gap between innovation and real-world impact.`,
     },
     {
       name: "Venkatraman Balakrishnan",
       image: founder2,
       bio: "Director, CDO",
-      linkedin: "https://www.linkedin.com/in/venkatraman-balakrishnan/",
+      linkedin: "https://www.linkedin.com/in/venkatramanbalakrishnan/",
       description:
         "Venkatraman Balakrishnan focuses on data-driven digital strategies and enterprise innovation. He brings deep expertise in digital consulting and cloud architecture.",
     },
@@ -666,7 +668,14 @@ const AboutUs = () => {
 
               {/* Bio Section */}
               <div className="founder-modal-body">
-                <p>{selectedFounder.description}</p>
+                {selectedFounder.description.split("\n").map((line, idx) => (
+                  <p
+                    key={idx}
+                    style={{ marginBottom: "0.5rem", lineHeight: 1.7 }}
+                  >
+                    {line}
+                  </p>
+                ))}
               </div>
             </div>
           )}
@@ -698,8 +707,14 @@ const AboutUs = () => {
           box-shadow: 0 14px 34px rgba(18, 35, 75, 0.12);
         }
         .founder-img {
-          height: 280px;
-          object-fit: cover;
+          // height: 280px;
+          // object-fit:cover;
+          width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center 10%;  /* ✅ centers but keeps more head visible */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
         }
         .founder-name {
           color: var(--founder-name);
@@ -716,6 +731,7 @@ const AboutUs = () => {
           border-radius: 50px; /* capsule shape */
   padding: 6px 18px; /* more balanced padding */
           transition: all 0.3s ease;
+          border-color:var(--Career-text)
         }
         .view-bio-btn:hover {
           background-color: #0a66c2;
@@ -771,18 +787,18 @@ const AboutUs = () => {
 .founder-modal-name {
   font-weight: 700;
   font-size: 1.1rem;
-  color: #000;
+  color: var(--Career-text);
 }
 
 .founder-modal-role {
   // color: #ff6600;
-  color:#1a237e;
+  color:var(--Case-Study-title);
   font-weight: 600;
   font-size: 0.95rem;
 }
 
 .founder-modal-body p {
-  color: #444;
+  color:var(--Career-text);
   font-size: 0.95rem;
   line-height: 1.7;
   margin-bottom: 0;
