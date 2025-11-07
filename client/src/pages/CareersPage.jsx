@@ -15,7 +15,7 @@ import {
   Form,
 } from "react-bootstrap";
 import { motion } from "framer-motion";
-import contactImage from "../assets/CareersPageImg.webp";
+import careerImage from "../assets/CareersPageImg.webp";
 import {
   FaUsers,
   FaLightbulb,
@@ -226,7 +226,7 @@ const CareersPage = () => {
         }
 
         .careers-hero {
-          background-image: url('${contactImage}');
+          background-image: url('${careerImage}');
           background-size: cover;
           background-position: center;
           height: 90vh;
@@ -266,6 +266,7 @@ const CareersPage = () => {
           transition: all 0.3s ease-in-out;
           border: 1px solid #e9f1ff;
           background-color: var(--Career-Card);
+          color:
         }
 
         .value-card:hover {
@@ -322,6 +323,14 @@ const CareersPage = () => {
           font-size:1rem;
           font-weight:600;
           }
+          .careerText{
+           color:var(--Career-text);
+}
+            .careerTitle{
+             
+  color:var(--Career-title);
+
+            }
 
           
       `}
@@ -363,8 +372,8 @@ const CareersPage = () => {
                     className="value-card text-center p-4 shadow-sm rounded-4 h-100"
                   >
                     <div className="mb-3">{item.icon}</div>
-                    <h5 className="fw-semibold">{item.title}</h5>
-                    <p className="small">{item.text}</p>
+                    <h5 className="fw-semibold careerTitle">{item.title}</h5>
+                    <p className="small careerText">{item.text}</p>
                   </motion.div>
                 </Col>
               ))}

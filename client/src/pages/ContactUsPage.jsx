@@ -143,7 +143,6 @@ function ContactUsPage() {
   }
 }
 
-
 /* ============================
    CONTACT FORM + MAP SECTION
 ============================ */
@@ -251,7 +250,7 @@ function ContactUsPage() {
     min-height: 350px;
   }
 }
-  
+
 `}
       </style>
 
@@ -398,3 +397,212 @@ function ContactUsPage() {
 }
 
 export default ContactUsPage;
+// import React, { useState } from "react";
+// import { Container, Row, Col, Form, Button } from "react-bootstrap";
+// import Locations from "../components/Locations";
+// import ConatctUsImage from "../assets/contactImg.webp";
+
+// function ContactUsPage() {
+//   const [formData, setFormData] = useState({
+//     firstName: "",
+//     lastName: "",
+//     email: "",
+//     country: "",
+//     message: "",
+//   });
+//   const [submitting, setSubmitting] = useState(false);
+//   const [errors, setErrors] = useState({});
+//   const [toastMessage, setToastMessage] = useState("");
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData((prev) => ({ ...prev, [name]: value }));
+//   };
+
+//   const validateForm = () => {
+//     const newErrors = {};
+//     if (!formData.firstName.trim())
+//       newErrors.firstName = "First Name is required.";
+//     if (!formData.lastName.trim())
+//       newErrors.lastName = "Last Name is required.";
+//     if (!formData.email.trim()) newErrors.email = "Email is required.";
+//     else if (!/\S+@\S+\.\S+/.test(formData.email))
+//       newErrors.email = "Email is invalid.";
+//     if (!formData.country.trim()) newErrors.country = "Country is required.";
+//     if (!formData.message.trim()) newErrors.message = "Message is required.";
+//     return newErrors;
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     const validationErrors = validateForm();
+//     setErrors(validationErrors);
+
+//     if (Object.keys(validationErrors).length === 0) {
+//       setSubmitting(true);
+//       try {
+//         const response = await fetch("http://localhost:5000/api/contact-page", {
+//           method: "POST",
+//           headers: { "Content-Type": "application/json" },
+//           body: JSON.stringify(formData),
+//         });
+//         if (response.ok) {
+//           setToastMessage("Form submitted successfully!");
+//           setFormData({
+//             firstName: "",
+//             lastName: "",
+//             email: "",
+//             country: "",
+//             message: "",
+//           });
+//         } else {
+//           alert("Failed to send email!");
+//         }
+//       } catch (error) {
+//         console.error(error);
+//         alert("Error sending email!");
+//       }
+//       setSubmitting(false);
+
+//       // Hide toast after 3 seconds
+//       setTimeout(() => setToastMessage(""), 3000);
+//     }
+//   };
+
+//   return (
+//     <>
+//       {/* HERO SECTION + styles omitted for brevity */}
+
+//       {/* CONTACT FORM + MAP SECTION */}
+//       <div className="py-5 bg-custom-gray">
+//         <Container>
+//           <Row className="contact-card mx-0">
+//             {/* Left: Contact Form */}
+//             <Col lg={6} md={12} className="p-4">
+//               <h5 className="send-message-underline-wrapper mb-2">
+//                 Send Us a Message
+//               </h5>
+//               <h3 className="questions-heading mb-4">Have questions?</h3>
+
+//               <Form onSubmit={handleSubmit} noValidate>
+//                 <Row className="mb-3 g-3">
+//                   <Col md={6}>
+//                     <Form.Control
+//                       type="text"
+//                       placeholder="First Name"
+//                       name="firstName"
+//                       value={formData.firstName}
+//                       onChange={handleChange}
+//                       isInvalid={!!errors.firstName}
+//                       className="form-control-futuristic"
+//                     />
+//                     <Form.Control.Feedback type="invalid">
+//                       {errors.firstName}
+//                     </Form.Control.Feedback>
+//                   </Col>
+//                   <Col md={6}>
+//                     <Form.Control
+//                       type="text"
+//                       placeholder="Last Name"
+//                       name="lastName"
+//                       value={formData.lastName}
+//                       onChange={handleChange}
+//                       isInvalid={!!errors.lastName}
+//                       className="form-control-futuristic"
+//                     />
+//                     <Form.Control.Feedback type="invalid">
+//                       {errors.lastName}
+//                     </Form.Control.Feedback>
+//                   </Col>
+//                 </Row>
+
+//                 <Row className="mb-3 g-3">
+//                   <Col md={6}>
+//                     <Form.Control
+//                       type="email"
+//                       placeholder="Email"
+//                       name="email"
+//                       value={formData.email}
+//                       onChange={handleChange}
+//                       isInvalid={!!errors.email}
+//                       className="form-control-futuristic"
+//                     />
+//                     <Form.Control.Feedback type="invalid">
+//                       {errors.email}
+//                     </Form.Control.Feedback>
+//                   </Col>
+//                   <Col md={6}>
+//                     <Form.Control
+//                       type="text"
+//                       placeholder="Country"
+//                       name="country"
+//                       value={formData.country}
+//                       onChange={handleChange}
+//                       isInvalid={!!errors.country}
+//                       className="form-control-futuristic"
+//                     />
+//                     <Form.Control.Feedback type="invalid">
+//                       {errors.country}
+//                     </Form.Control.Feedback>
+//                   </Col>
+//                 </Row>
+
+//                 <Form.Control
+//                   as="textarea"
+//                   rows={4}
+//                   placeholder="Your message"
+//                   name="message"
+//                   value={formData.message}
+//                   onChange={handleChange}
+//                   isInvalid={!!errors.message}
+//                   className="form-control-futuristic mb-3"
+//                 />
+//                 <Form.Control.Feedback type="invalid">
+//                   {errors.message}
+//                 </Form.Control.Feedback>
+
+//                 <div className="d-flex justify-content-end">
+//                   <Button
+//                     type="submit"
+//                     className="px-5 py-2 button-fixed"
+//                     disabled={submitting}
+//                   >
+//                     {submitting ? "Sending…" : "Send Message"}
+//                   </Button>
+//                 </div>
+//               </Form>
+//             </Col>
+
+//             {/* Right: Map */}
+//             <Col
+//               lg={6}
+//               md={12}
+//               className="p-0 d-flex align-items-stretch justify-content-center"
+//             >
+//               <iframe
+//                 title="Nextmetaforce Office Location"
+//                 src="https://www.google.com/maps?q=316,+3rd+floor,+Gowra+Palladium,+Silpa+Gram+Craft+Village,+HITEC+City,+Hyderabad,+Telangana+500081&output=embed"
+//                 width="100%"
+//                 height="100%"
+//                 style={{ border: "0", borderRadius: "0 1rem 1rem 0" }}
+//                 allowFullScreen=""
+//                 loading="lazy"
+//               ></iframe>
+//             </Col>
+//           </Row>
+//         </Container>
+//       </div>
+
+//       {/* Toast message */}
+//       {toastMessage && (
+//         <div className="toast-message alert alert-success" role="alert">
+//           {toastMessage}
+//         </div>
+//       )}
+
+//       <Locations />
+//     </>
+//   );
+// }
+
+// export default ContactUsPage;

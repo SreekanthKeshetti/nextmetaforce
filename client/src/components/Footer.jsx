@@ -260,6 +260,7 @@ function Footer() {
             <p>
               &copy; {new Date().getFullYear()} NextMetaForce. All rights
               reserved.
+              <p>Privacy Policy &nbsp;&nbsp;•Terms of Service </p>
             </p>
           </div>
         </Container>
