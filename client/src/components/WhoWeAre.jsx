@@ -533,7 +533,8 @@ His unique blend of expertise and business acumen enables him to bridge the gap 
     },
     {
       name: "Venkatraman Balakrishnan",
-      image: founder2,
+      image:
+        "https://static.vecteezy.com/system/resources/thumbnails/043/361/860/small/hand-drawnman-avatar-profile-icon-for-social-networks-forums-and-dating-sites-user-avatar-profile-placeholder-anonymous-user-male-no-photo-web-template-default-user-picture-profile-male-symbol-free-vector.jpg",
       bio: "Director, CDO",
       linkedin: "https://www.linkedin.com/in/venkatramanbalakrishnan/",
       description:

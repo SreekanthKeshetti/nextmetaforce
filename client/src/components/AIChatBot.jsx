@@ -172,7 +172,7 @@ export default function Chatbot() {
   const submitFlow = async (data, topic) => {
     setSubmitting(true);
     try {
-      await fetch("http://localhost:5000/api/chatbot", {
+      await fetch("https://nextmetaserver.onrender.com/api/chatbot", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...data, topic }),

@@ -190,10 +190,14 @@ const CareersPage = () => {
       formData.append("jobTitle", selectedJob?.title);
       if (applyForm.resume) formData.append("resume", applyForm.resume);
 
-      const res = await fetch("http://localhost:5000/api/career-apply", {
-        method: "POST",
-        body: formData,
-      });
+      // replacing http://localhost:5000/ with https://nextmetaserver.onrender.com
+      const res = await fetch(
+        "https://nextmetaserver.onrender.com/api/career-apply",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const data = await res.json();
       if (data.success) {

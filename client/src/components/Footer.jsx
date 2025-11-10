@@ -257,11 +257,11 @@ function Footer() {
 
           <hr className="mt-5 mb-3 border-secondary" />
           <div className="text-center">
-            <p>
+            <div>
               &copy; {new Date().getFullYear()} NextMetaForce. All rights
               reserved.
               <p>Privacy Policy &nbsp;&nbsp;•Terms of Service </p>
-            </p>
+            </div>
           </div>
         </Container>
       </footer>
