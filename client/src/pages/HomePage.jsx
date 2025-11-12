@@ -4,6 +4,7 @@ import Consulting from "../components/Consulting";
 import ServiceCards from "../components/ServiceCards";
 import ServicesCarousel from "../components/ServicesCarousel";
 import NewForm from "../components/NewForm";
+import posterImg from "../assets/poster.png";
 
 function HomePage() {
   const heroRef = useRef(null);
@@ -31,7 +32,8 @@ function HomePage() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="none"
+          poster={posterImg}
         >
           {/* 🎥 Use Cloudinary CDN URL for fast load */}
           <source
@@ -104,7 +106,7 @@ function HomePage() {
 
         .hero-title {
           font-weight: 700;
-          font-size: 1.5rem;
+          font-size: 1.9rem;
           margin-bottom: 1rem;
         }
 
@@ -150,10 +152,10 @@ function HomePage() {
             font-size: 1rem;
           }
         }
-        .hero-content h1,
-        .hero-content p {
-          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-        }
+        // .hero-content h1,
+        // .hero-content p {
+        //   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        // }
       `}</style>
     </>
   );

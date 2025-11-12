@@ -112,7 +112,7 @@ const DigitalTransformation = () => {
         <p>
           To explore how we can support your transformation journey, reach out
           to us at{" "}
-          <a href="mailto:info@nextmetaforce.in">info@nextmetaforce.in</a>.
+          <a href="mailto:info@nextmetaforce.in">info@nextmetaforce.com</a>.
         </p>
       </div>
       <div className="text-center my-5">

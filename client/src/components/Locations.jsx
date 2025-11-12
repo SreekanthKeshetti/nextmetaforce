@@ -6,7 +6,7 @@ const locations = [
   {
     country: "India",
     address: "316 Gowra Palladium, Hitech City, Hyderabad, Telangana 500081",
-    phone: "+91 98765 43210",
+    phone: "+91 7093693648",
     email: "info@nextmetaforce.com",
     flag: "🇮🇳",
     coords: { top: "52%", left: "70%" },
@@ -14,19 +14,19 @@ const locations = [
   {
     country: "USA",
     address: "5945 State Bridge Rd, Duluth, GA 30097",
-    phone: "+91 98765 43210",
+    phone: "",
     email: "info@nextmetaforce.com",
     flag: "🇺🇸",
     coords: { top: "40%", left: "22%" },
   },
-  {
-    country: "Australia",
-    address: "45 George St, Sydney, NSW 2000",
-    phone: "+61 2 9876 5432",
-    email: "info@nextmetaforce.com",
-    flag: "🇦🇺",
-    coords: { top: "75%", left: "82%" },
-  },
+  // {
+  //   country: "Australia",
+  //   address: "45 George St, Sydney, NSW 2000",
+  //   phone: "+61 2 9876 5432",
+  //   email: "info@nextmetaforce.com",
+  //   flag: "🇦🇺",
+  //   coords: { top: "75%", left: "82%" },
+  // },
 ];
 
 const Locations = () => {
@@ -171,7 +171,7 @@ const Locations = () => {
           {/* Office Cards */}
           <Row className="g-4 mb-5">
             {locations.map((loc, index) => (
-              <Col md={4} sm={12} key={index}>
+              <Col md={6} sm={12} key={index}>
                 <Card
                   className={`h-100 shadow-sm border-0 rounded-3 ${
                     active === index ? "highlight-card" : ""
@@ -182,10 +182,16 @@ const Locations = () => {
                     <Card.Title className="fw-bold">{loc.country}</Card.Title>
                     <Card.Text>
                       <p className="mb-1">{loc.address}</p>
-                      <p className="mb-1">
+                      {/* <p className="mb-1">
                         <FaPhoneAlt className="me-2 text-primary" />
                         {loc.phone}
-                      </p>
+                      </p> */}
+                      {loc.phone && (
+                        <p className="mb-1">
+                          <FaPhoneAlt className="me-2 text-primary" />
+                          {loc.phone}
+                        </p>
+                      )}
                       <p className="mb-0">
                         <FaEnvelope className="me-2 text-danger" />
                         {loc.email}
