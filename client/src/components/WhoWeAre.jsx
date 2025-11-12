@@ -516,7 +516,7 @@ import { Container, Row, Col, Card, Modal, Button } from "react-bootstrap";
 import { FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 import founder1 from "../assets/venkat.png";
-import founder2 from "../assets/2.webp";
+import founder2 from "../assets/Bala.png";
 import founder3 from "../assets/karthik.png";
 
 const AboutUs = () => {
@@ -533,12 +533,12 @@ His unique blend of expertise and business acumen enables him to bridge the gap 
     },
     {
       name: "Venkatraman Balakrishnan",
-      image:
-        "https://static.vecteezy.com/system/resources/thumbnails/043/361/860/small/hand-drawnman-avatar-profile-icon-for-social-networks-forums-and-dating-sites-user-avatar-profile-placeholder-anonymous-user-male-no-photo-web-template-default-user-picture-profile-male-symbol-free-vector.jpg",
+      image: founder2,
       bio: "Director, CDO",
       linkedin: "https://www.linkedin.com/in/venkatramanbalakrishnan/",
-      description:
-        "Venkatraman Balakrishnan focuses on data-driven digital strategies and enterprise innovation. He brings deep expertise in digital consulting and cloud architecture.",
+      description: `Venkatraman has over 23 years of experience in technology and business management. His career is distinguished by a unique blend of technical expertise and strategic business acumen. He has a Production Engineering degree from the University of Madras, an MBA in General Management from Sri Sathya Sai Institute of Higher Learning, and a Post Graduate Certification in Business Management from XLRI, Jamshedpur.
+Since 2011, he has been in the Salesforce ecosystem. He has successfully led complex global implementations in roles spanning Solution Architect, Project Manager and Program Manager. His international exposure includes significant tenures living and working in Germany and the United States.
+He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B2B Commerce Cloud and CG Cloud. He has also spent time with Salesforce as a Product Manager for the Salesforce Starter suite, where he was chartered with driving its roadmap to improve user adoption.`,
     },
     {
       name: "Karthik Pusapati",
@@ -573,11 +573,21 @@ His unique blend of expertise and business acumen enables him to bridge the gap 
           {founders.map((f, idx) => (
             <Col key={idx} md={4} className="d-flex">
               <Card className="founder-card w-100 text-center border-0">
-                <Card.Img
+                {/* <Card.Img
                   variant="top"
                   src={f.image}
                   alt={f.name}
                   className="founder-img"
+                /> */}
+                <Card.Img
+                  variant="top"
+                  src={f.image}
+                  alt={f.name}
+                  className={`founder-img ${
+                    f.name === "Venkatraman Balakrishnan"
+                      ? "founder-img-bala"
+                      : ""
+                  }`}
                 />
                 <Card.Body>
                   <Card.Title className="founder-name">{f.name}</Card.Title>
@@ -720,6 +730,10 @@ His unique blend of expertise and business acumen enables him to bridge the gap 
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
         }
+  .founder-img-bala {
+  object-position: center 25%; /* Moves image down slightly so face is centered */
+}
+
         .founder-name {
           color: var(--founder-name);
           font-weight: 600;
