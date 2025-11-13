@@ -541,7 +541,7 @@ Since 2011, he has been in the Salesforce ecosystem. He has successfully led com
 He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B2B Commerce Cloud and CG Cloud. He has also spent time with Salesforce as a Product Manager for the Salesforce Starter suite, where he was chartered with driving its roadmap to improve user adoption.`,
     },
     {
-      name: "Karthik Pusapati",
+      name: "Karthik Shabarinadh",
       image: founder3,
       bio: "Director",
       linkedin: "",
@@ -573,13 +573,13 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
           {founders.map((f, idx) => (
             <Col key={idx} md={4} className="d-flex">
               <Card className="founder-card w-100 text-center border-0">
-                {/* <Card.Img
+                <Card.Img
                   variant="top"
                   src={f.image}
                   alt={f.name}
                   className="founder-img"
-                /> */}
-                <Card.Img
+                />
+                {/* <Card.Img
                   variant="top"
                   src={f.image}
                   alt={f.name}
@@ -588,7 +588,7 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
                       ? "founder-img-bala"
                       : ""
                   }`}
-                />
+                /> */}
                 <Card.Body>
                   <Card.Title className="founder-name">{f.name}</Card.Title>
                   <Card.Text className="founder-bio">{f.bio}</Card.Text>
@@ -724,15 +724,14 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
           // height: 280px;
           // object-fit:cover;
           width: 100%;
-  height: 280px;
+  width: 100%;
+  height: 80%;
   object-fit: cover;
-  object-position: center 10%;  /* ✅ centers but keeps more head visible */
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  object-position: center top;
         }
-  .founder-img-bala {
-  object-position: center 25%; /* Moves image down slightly so face is centered */
-}
+//   .founder-img-bala {
+//   object-position: center 25%; /* Moves image down slightly so face is centered */
+// }
 
         .founder-name {
           color: var(--founder-name);
@@ -831,7 +830,7 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
 
         @media (max-width: 991px) {
           .founder-img {
-            height: 220px;
+            height: 80%;
           }
         }
         @media (max-width: 768px) {
