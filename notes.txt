@@ -1,0 +1,1064 @@
+import React from "react";
+import { Container } from "react-bootstrap"; // Keeping Container for content width, but won't rely on its breakpoints directly
+import SolutionImg from "../assets/SolutionImg.webp";
+
+export default function HeroSection() {
+  return (
+    <>
+      <style>
+        {`
+          /* ============================
+             HERO SECTION - SOLUTIONS PAGE
+          ============================ */
+          .hero-section {
+            background-image: url(${SolutionImg});
+            background-size: cover;
+            background-position: center center /* Default: center the image */
+            background-repeat: no-repeat;
+            background-attachment: scroll; /* Prevents mobile background jumpiness */
+
+            /* --- KEY CHANGE FOR RESPONSIVENESS --- */
+            /* Control height using padding-top for an intrinsic aspect ratio.
+               Adjust '50%' to match the desired aspect ratio of your SolutionImg.webp
+               on larger screens. Smaller % for wider image, larger % for squarer. */
+            height: 0;
+            padding-top: 50%; /* Example: For a balanced wide-screen aspect ratio */
+            overflow: hidden; /* Crucial for padding-top hack */
+            position: relative; /* Needed for absolute positioning of content and overlay */
+            width: 100%;
+
+            /* Optional: Ensures a minimum visible height on very wide desktop screens */
+            min-height: 350px;
+          }
+
+          /* Dark overlay for better text visibility */
+          .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            // background: rgba(0, 0, 0, 0.55); /* Re-enabled for readability */
+            z-index: 0;
+          }
+
+          .hero-content {
+            position: absolute; /* Position content absolutely within the padded area */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex; /* Use flexbox to center content */
+            flex-direction: column;
+            justify-content: center; /* Vertically center content */
+            align-items: center; /* Horizontally center content */
+            text-align: center;
+            color: #fff; /* Ensure text is white */
+            padding: 20px; /* Padding inside the content box */
+            z-index: 1; /* Keep content above overlay */
+
+            /* Animation */
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease forwards;
+          }
+             @keyframes fadeInUp {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .hero-section .container {
+            /* The Bootstrap Container is still useful for max-width of text */
+            max-width: 1140px; /* Or use 'var(--bs-breakpoint-lg, 960px)' if you want to explicitly use BS variables */
+            width: 100%;
+          }
+
+
+          .title {
+            font-weight: 600;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+          }
+
+          .subtitle {
+            font-size: 1.25rem;
+            color: #f5f5f5;
+            max-width: 800px;
+            margin: 0 auto;
+          }
+
+          /* ============================
+             RESPONSIVE ADJUSTMENTS
+          ============================ */
+
+          /* Medium screens (tablets, small desktops) - equivalent to Bootstrap 'md' or 'lg' down to here */
+          @media (max-width: 992px) {
+            .hero-section {
+              /* Adjust padding-top for medium screens.
+                 Often, a slightly taller aspect ratio (larger padding-top) looks better. */
+              padding-top: 65%; /* Example: A more vertical aspect ratio */
+              background-position: center; /* Re-center if needed */
+              min-height: 300px; /* Adjust min-height if necessary */
+            }
+
+            .title {
+              font-size: 2.2rem;
+            }
+
+            .subtitle {
+              font-size: 1.1rem;
+            }
+          }
+
+          /* Small screens (most mobile phones) - consistent with your ContactUsPage now */
+          @media (max-width: 768px) {
+            .hero-section {
+              /* Further adjust padding-top for phones.
+                 This is where it usually needs to be significantly taller to prevent horizontal cropping. */
+              padding-top: 75%; /* Example: Even taller, closer to a 4:3 ratio */
+              background-position: center; /* Re-center if needed, or adjust to focus area */
+              min-height: 250px; /* Adjust min-height if necessary */
+            }
+
+            .title {
+              font-size: 2rem;
+            }
+
+            .subtitle {
+              font-size: 1rem;
+              padding: 0 1rem; /* Add horizontal padding to subtitle on small screens */
+            }
+          }
+
+          /* Very small screens (e.g., small mobile phones) - consistent with your ContactUsPage */
+          @media (max-width: 480px) {
+            .hero-section {
+              /* For very narrow screens, you might need an even taller aspect ratio
+                 to ensure enough vertical space and minimize horizontal cropping. */
+              padding-top: 55%; /* Example: Closer to a 1:1 or slightly taller ratio */
+              background-position: center; /* Re-center, or focus on a critical part */
+              min-height: 200px; /* Adjust min-height if necessary */
+            }
+
+            .title {
+              font-size: 1.6rem;
+            }
+
+            .subtitle {
+              font-size: 0.9rem;
+              padding: 0 0.5rem;
+            }
+          }
+        `}
+      </style>
+
+      <div className="hero-section">
+        {/* The Bootstrap Container is used here purely for its max-width behavior on the text */}
+        <Container>
+          <div className="hero-content">
+            {/* <h1 className="title">Our Solutions</h1>
+            <p className="subtitle">
+              Empowering businesses with innovative IT solutions tailored to
+              your needs.
+            </p> */}
+          </div>
+        </Container>
+      </div>
+    </>
+  );
+}
+////////////////////////
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import Locations from "../components/Locations";
+import ConatctUsImage from "../assets/contactImg.webp";
+
+function ContactUsPage() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    country: "",
+    message: "",
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [toastMessage, setToastMessage] = useState("");
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.firstName) newErrors.firstName = "First Name is required.";
+    if (!formData.lastName) newErrors.lastName = "Last Name is required.";
+    if (!formData.email) {
+      newErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email address is invalid.";
+    }
+    if (!formData.country) newErrors.country = "Country is required.";
+    if (!formData.message) newErrors.message = "Message is required.";
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationErrors = validateForm();
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      setSubmitting(true);
+      try {
+        const response = await fetch("http://localhost:5000/api/contact-page", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+        if (response.ok) {
+          setToastMessage("Form submitted successfully!");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            country: "",
+            message: "",
+          });
+        } else {
+          alert("Failed to send email!");
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Error sending email!");
+      }
+      setSubmitting(false);
+      setTimeout(() => setToastMessage(""), 3000);
+    }
+  };
+
+  return (
+    <>
+      <style>
+        {`
+/* ============================
+   HERO SECTION
+============================ */
+// .contact-hero-section {
+//   background-image: url(${ConatctUsImage});
+//   background-size: contain;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   height: 90vh;
+//   position: relative;
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
+//   color: white;
+//   overflow: hidden;
+//   width: 100%;
+// }
+
+// .hero-content {
+//   position: relative;
+//   z-index: 1;
+//   text-align: left;
+//   max-width: 650px;
+//   margin-left: 8vw;
+//   margin-top: 3vh;
+//   opacity: 0;
+//   transform: translateY(30px);
+//   animation: fadeInUp 1.2s ease forwards;
+// }
+
+// @keyframes fadeInUp {
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// .hero-heading {
+//   font-size: 2rem;
+//   font-weight: 500;
+//   margin-bottom: 16px;
+// }
+
+// .hero-subheading {
+//   font-size: 1rem;
+//   font-weight: 400;
+//   line-height: 1.6;
+//   opacity: 0.95;
+// }
+
+// /* Mobile Fix */
+// @media (max-width: 768px) {
+//   .contact-hero-section {
+//     background-image: url(${ConatctUsImage});
+
+//     min-height: 80vh;
+//     background-size: cover;
+//     background-position: center center;
+//     justify-content: center;
+//     text-align: center;
+//     padding: 40px 20px;
+//   }
+
+//   .hero-content {
+//     background: rgba(0, 0, 0, 0.4);
+//     padding: 20px;
+//     border-radius: 12px;
+//   }
+
+//   .hero-heading {
+//     font-size: 1.8rem;
+//   }
+// }
+/* ============================
+   HERO SECTION - MODIFIED
+============================ */
+.contact-hero-section {
+  background-image: url(${ConatctUsImage});
+  background-size: cover; /* Use cover to ensure it fills the space */
+  background-position: center center; /* Keep center by default */
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  overflow: hidden;
+  width: 100%;
+
+  /* --- Key Change for Responsiveness --- */
+  /* Instead of a fixed height, use padding-top for an intrinsic aspect ratio.
+     This ensures the image "breathes" with the screen size.
+     For a 16:9 image, padding-top would be (9 / 16 * 100%) = 56.25%
+     Adjust this value based on the actual aspect ratio of your 'contactImg.webp'
+     or what looks best to you. A value like 40% to 60% usually works well.
+  */
+  padding-top: 56.25%; /* Example: For a 16:9 image aspect ratio. */
+  height: 0; /* Set height to 0 so padding controls the height */
+  /* min-height: 450px; /* Optional: Set a minimum height on larger screens to ensure visibility, adjust as needed */
+}
+
+.hero-content {
+  position: absolute; /* Position absolutely within the padding-controlled parent */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Use flex to align content within the absolute container */
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center; /* Center content vertically */
+  text-align: left;
+  max-width: 650px;
+  margin-left: 8vw;
+  padding: 20px; /* Add some padding inside for content */
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-heading {
+  font-size: 2.5rem; /* Increased for better visibility */
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.hero-subheading {
+  font-size: 1.1rem; /* Increased for better visibility */
+  font-weight: 400;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .contact-hero-section {
+    /* Adjust padding-top for mobile to suit a more vertical aspect ratio */
+    padding-top: 75%; /* Example: For a 4:3 aspect ratio (3 / 4 * 100% = 75%) */
+    /* You might want a different background-position for mobile if the image needs shifting */
+    background-position: center bottom; /* Example: Focus on the bottom half of the image */
+  }
+
+  .hero-content {
+    margin-left: 0;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    // background: rgba(0, 0, 0, 0.4); /* Add a slightly darker overlay for readability */
+    padding: 30px 20px;
+    border-radius: 12px;
+    max-width: 90%; /* Adjust max-width for better mobile fit */
+  }
+
+  .hero-heading {
+    font-size: 1.8rem;
+  }
+  .hero-subheading {
+    font-size: 0.9rem;
+  }
+}
+
+/* Add a smaller breakpoint for very small phones if needed */
+@media (max-width: 480px) {
+  .contact-hero-section {
+    padding-top: 60%; /* For a 1:1 aspect ratio on very small screens */
+    background-position: center center;
+  }
+  .hero-heading {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============================
+   CONTACT FORM + MAP SECTION
+============================ */
+/* ... (rest of your CSS remains the same) ... */
+/* ============================
+   CONTACT FORM + MAP SECTION
+============================ */
+.bg-custom-gray {
+  background-color: var(--bg-contact, #f8f9fa);
+}
+
+.contact-card {
+  display: flex; /* ✅ needed to align form + map side by side */
+  flex-wrap: wrap;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: var(--bg-ContactCard, #fff);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Left column */
+.send-message-underline-wrapper {
+  font-weight: 500;
+  padding-bottom: 8px;
+  position: relative;
+  display: inline-block;
+  color: var(--Contact-Text, #000);
+}
+
+.send-message-underline-wrapper::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #009dff, #0055ff);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+
+.questions-heading {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: var(--Contact-Text, #000);
+}
+
+/* Form styling */
+.form-control-futuristic {
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.form-control-futuristic:focus {
+  border-color: #0055ff;
+  box-shadow: 0 0 10px rgba(0, 157, 255, 0.4);
+  outline: none;
+}
+
+/* Button */
+.button-fixed {
+  background: linear-gradient(to right, #64b5f6, #3949ab);
+  color: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.button-fixed:hover {
+  background: linear-gradient(to right, #3949ab, #64b5f6);
+}
+
+/* Toast */
+.toast-message {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+/* ============================
+   MAP STYLING
+============================ */
+.contact-map {
+  flex: 1;
+  height: 100%;
+  min-height: 400px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0 1rem 1rem 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .contact-card {
+    flex-direction: column;
+  }
+
+  .contact-map iframe {
+    border-radius: 0 0 1rem 1rem;
+    min-height: 350px;
+  }
+}
+`}
+      </style>
+
+      {/* HERO SECTION */}
+      <div className="contact-hero-section">
+        <div className="hero-content">
+          {/* <h1 className="hero-heading">Get in touch</h1>
+          <p className="hero-subheading">
+            Thanks for your interest in <strong>Nextmetaforce</strong>.<br />
+            Let us connect over phone or email and we’ll connect you with the
+            right person.
+          </p> */}
+        </div>
+      </div>
+
+      {/* CONTACT FORM + MAP SECTION */}
+      <div className="py-5 bg-custom-gray">
+        <Container>
+          <Row className="contact-card mx-0">
+            {/* Left: Contact Form */}
+            <Col lg={6} md={12} className="p-4">
+              <h5 className="send-message-underline-wrapper mb-2">
+                Send Us a Message
+              </h5>
+              <h3 className="questions-heading mb-4">Have questions?</h3>
+
+              <Form onSubmit={handleSubmit} noValidate>
+                <Row className="mb-3 g-3">
+                  <Col md={6}>
+                    <Form.Control
+                      type="text"
+                      placeholder="First Name"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      isInvalid={!!errors.firstName}
+                      className="form-control-futuristic"
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.firstName}
+                    </Form.Control.Feedback>
+                  </Col>
+                  <Col md={6}>
+                    <Form.Control
+                      type="text"
+                      placeholder="Last Name"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      isInvalid={!!errors.lastName}
+                      className="form-control-futuristic"
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.lastName}
+                    </Form.Control.Feedback>
+                  </Col>
+                </Row>
+
+                <Row className="mb-3 g-3">
+                  <Col md={6}>
+                    <Form.Control
+                      type="email"
+                      placeholder="Email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      isInvalid={!!errors.email}
+                      className="form-control-futuristic"
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.email}
+                    </Form.Control.Feedback>
+                  </Col>
+                  <Col md={6}>
+                    <Form.Control
+                      type="text"
+                      placeholder="Country"
+                      name="country"
+                      value={formData.country}
+                      onChange={handleChange}
+                      isInvalid={!!errors.country}
+                      className="form-control-futuristic"
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.country}
+                    </Form.Control.Feedback>
+                  </Col>
+                </Row>
+
+                <Form.Control
+                  as="textarea"
+                  rows={4}
+                  placeholder="Please send your message here"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  isInvalid={!!errors.message}
+                  className="form-control-futuristic mb-3"
+                />
+                <Form.Control.Feedback type="invalid">
+                  {errors.message}
+                </Form.Control.Feedback>
+
+                <div className="d-flex justify-content-end">
+                  <Button
+                    type="submit"
+                    className="px-5 py-2 button-fixed"
+                    disabled={submitting}
+                  >
+                    {submitting ? "Sending…" : "Send Message"}
+                  </Button>
+                </div>
+              </Form>
+            </Col>
+
+            {/* Right: Map */}
+            <Col
+              lg={6}
+              md={12}
+              className="p-0 d-flex align-items-stretch justify-content-center"
+            >
+              <iframe
+                title="Nextmetaforce Office Location"
+                src="https://www.google.com/maps?q=316,+3rd+floor,+Gowra+Palladium,+Silpa+Gram+Craft+Village,+HITEC+City,+Hyderabad,+Telangana+500081&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: "0", borderRadius: "0 1rem 1rem 0" }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
+      {toastMessage && (
+        <div className="toast-message alert alert-success" role="alert">
+          {toastMessage}
+        </div>
+      )}
+      <Locations />
+    </>
+  );
+}
+
+export default ContactUsPage;
+
+
+poster: home
+import React, { useState, useRef, useEffect } from "react";
+import videoBackground from "../assets/video.mp4";
+import posterImage from "../assets/poster.png";
+import ServicesSection from "../components/ServicesSection";
+import Consulting from "../components/Consulting";
+import ServiceCards from "../components/ServiceCards";
+import ServicesCarousel from "../components/ServicesCarousel";
+import NewForm from "../components/NewForm";
+
+function HomePage() {
+  const heroRef = useRef(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="hero-section" ref={heroRef}>
+        {/* 🖼 Poster (shows immediately) */}
+        <img
+          src={posterImage}
+          alt="Hero Poster"
+          className={`video-poster ${isVideoLoaded ? "hidden" : "visible"}`}
+        />
+
+        {/* 🎥 Background Video */}
+        <video
+          className={`video-background ${isVideoLoaded ? "loaded" : ""}`}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+          onLoadedData={() => setIsVideoLoaded(true)}
+        >
+          <source src={videoBackground} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Optional Overlay Grid */}
+        <div className="grid-overlay"></div>
+
+        {/* Hero Content */}
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Redefining possibilities through Next-Gen Tech
+          </h1>
+          <p className="hero-subtitle typing-text">
+            Where Innovation meets purpose.
+          </p>
+        </div>
+      </section>
+
+      <ServicesSection />
+      <Consulting />
+      <ServiceCards />
+      <ServicesCarousel />
+      <NewForm />
+
+      {/* 💅 Styles */}
+      <style jsx="true">{`
+        .hero-section {
+          position: relative;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          text-align: center;
+        }
+
+        /* Poster visible immediately */
+        .video-poster {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 0;
+          // transition: opacity 0.6s ease-in-out;
+        }
+
+        .video-poster.visible {
+          opacity: 1;
+        }
+
+        .video-poster.hidden {
+          opacity: 0;
+        }
+
+        /* Video fades in after load */
+        .video-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 1;
+          filter: brightness(0.8);
+          opacity: 0;
+          // transition: opacity 1s ease-in-out;
+        }
+
+        .video-background.loaded {
+          opacity: 1;
+        }
+
+        .grid-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          pointer-events: none;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 3;
+          color: white;
+          padding: 0 20px;
+        }
+
+        .hero-title {
+          font-weight: 700;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+          font-weight: 500;
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+          color: #f49e09ff;
+        }
+
+        .typing-text {
+          display: inline-block;
+          font-weight: 600;
+          font-size: 1.5rem;
+          color: #f49e09ff;
+          white-space: nowrap;
+          overflow: hidden;
+          // animation: typingLoop 7s steps(28, end) infinite;
+        }
+
+        @keyframes typingLoop {
+          0% {
+            width: 0;
+            opacity: 1;
+          }
+          60% {
+            width: 100%;
+            opacity: 1;
+          }
+          80% {
+            opacity: 0;
+          }
+          100% {
+            width: 0;
+            opacity: 0;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .hero-title,
+          .hero-subtitle,
+          .typing-text {
+            font-size: 1rem;
+          }
+        }
+      `}</style>
+    </>
+  );
+}
+
+export default HomePage;
+
+
+
+
+HOme commented without previe netx is webp format .
+import React, { useState, useRef, useEffect } from "react";
+import ServicesSection from "../components/ServicesSection";
+import Consulting from "../components/Consulting";
+import ServiceCards from "../components/ServiceCards";
+import ServicesCarousel from "../components/ServicesCarousel";
+import NewForm from "../components/NewForm";
+
+function HomePage() {
+  const heroRef = useRef(null);
+  const nextSectionRef = useRef(null);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      if (!heroRef.current || !nextSectionRef.current || isAutoScrolling)
+        return;
+
+      const heroHeight = heroRef.current.offsetHeight;
+      const scrollY = window.scrollY;
+      const scrollingDown = scrollY > lastScrollY;
+      lastScrollY = scrollY;
+
+      // Going DOWN — auto-scroll to next section
+      if (
+        scrollingDown &&
+        scrollY > heroHeight * 0.1 &&
+        scrollY < heroHeight * 0.8
+      ) {
+        setIsAutoScrolling(true);
+        nextSectionRef.current.scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => setIsAutoScrolling(false), 1200);
+      }
+
+      // Going UP — auto-scroll back to hero
+      if (
+        !scrollingDown &&
+        scrollY < heroHeight * 0.7 &&
+        scrollY > heroHeight * 0.1
+      ) {
+        setIsAutoScrolling(true);
+        heroRef.current.scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => setIsAutoScrolling(false), 1200);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isAutoScrolling]);
+
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="hero-section" ref={heroRef}>
+        <video
+          className="video-background"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        >
+          {/* 🎥 Use Cloudinary CDN URL for fast load */}
+          <source
+            src="https://res.cloudinary.com/dgysfehjv/video/upload/f_auto,q_auto/v1762416065/video_o5j4jr.webm"
+            type="video/webm"
+          />
+          <source
+            src="https://res.cloudinary.com/dgysfehjv/video/upload/f_auto,q_auto/v1762416065/video_o5j4jr.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+
+        <div className="grid-overlay"></div>
+
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Redefining possibilities through Next-Gen Tech
+          </h1>
+          <p className="hero-subtitle typing-text">
+            Where Innovation meets purpose.
+          </p>
+        </div>
+      </section>
+
+      {/* Manifesto / Next Section */}
+      <div ref={nextSectionRef}>
+        <ServicesSection />
+      </div>
+      <Consulting />
+      <ServiceCards />
+      <ServicesCarousel />
+      <NewForm />
+
+      <style jsx="true">{`
+        .hero-section {
+          position: relative;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          text-align: center;
+        }
+
+        .video-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 0;
+          filter: brightness(0.8);
+        }
+
+        .grid-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          // background: url("https://cdn.ranosys.com/wp-content/uploads/2024/10/grid-slide.png")
+          //   repeat;
+          // mix-blend-mode: overlay;
+          z-index: 1;
+          pointer-events: none;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
+          color: white;
+          padding: 0 20px;
+        }
+
+        .hero-title {
+          font-weight: 700;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+          font-weight: 500;
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+          color: #f49e09ff;
+        }
+
+        .typing-text {
+          display: inline-block;
+          font-weight: 600;
+          font-size: 1.5rem;
+          color: #f49e09ff;
+          white-space: nowrap;
+          overflow: hidden;
+          animation: typingLoop 7s steps(28, end) infinite;
+        }
+
+        @keyframes typingLoop {
+          0% {
+            width: 0;
+            opacity: 1;
+          }
+          60% {
+            width: 100%;
+            opacity: 1;
+          }
+          80% {
+            opacity: 0;
+          }
+          100% {
+            width: 0;
+            opacity: 0;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .hero-title,
+          .hero-subtitle,
+          .typing-text {
+            font-size: 1rem;
+          }
+        }
+      `}</style>
+    </>
+  );
+}
+
+export default HomePage;
+
+

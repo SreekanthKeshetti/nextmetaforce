@@ -515,9 +515,9 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Modal, Button } from "react-bootstrap";
 import { FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
-import founder1 from "../assets/venkat.png";
-import founder2 from "../assets/Bala.png";
-import founder3 from "../assets/karthik.png";
+import founder1 from "../assets/venkat.jpg";
+import founder2 from "../assets/Bala.jpg";
+import founder3 from "../assets/karthik.jpg";
 
 const AboutUs = () => {
   const founders = [

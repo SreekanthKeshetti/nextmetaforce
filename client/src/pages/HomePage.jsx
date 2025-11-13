@@ -4,7 +4,7 @@ import Consulting from "../components/Consulting";
 import ServiceCards from "../components/ServiceCards";
 import ServicesCarousel from "../components/ServicesCarousel";
 import NewForm from "../components/NewForm";
-import posterImg from "../assets/poster.png";
+import posterImg from "../assets/poster.jpg";
 
 function HomePage() {
   const heroRef = useRef(null);
@@ -106,13 +106,13 @@ function HomePage() {
 
         .hero-title {
           font-weight: 700;
-          font-size: 1.9rem;
+          font-size: 1.5rem;
           margin-bottom: 1rem;
         }
 
         .hero-subtitle {
           font-weight: 500;
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           margin-bottom: 2rem;
           color: #f49e09ff;
         }
