@@ -26,7 +26,7 @@ function HomePage() {
     <>
       {/* Hero Section */}
       <section className="hero-section" ref={heroRef}>
-        <video
+        {/* <video
           className="video-background"
           autoPlay
           loop
@@ -35,10 +35,30 @@ function HomePage() {
           preload="none"
           poster={posterImg}
         >
-          {/* 🎥 Use Cloudinary CDN URL for fast load */}
           <source
             src="https://res.cloudinary.com/dgysfehjv/video/upload/f_auto,q_auto/v1762416065/video_o5j4jr.webm"
             type="video/webm"
+          />
+          Your browser does not support the video tag.
+        </video> */}
+        <video
+          className="video-background lazy-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+          poster={posterImg}
+          onCanPlayThrough={(e) => e.target.play()}
+        >
+          {/* 🎥 Use CDN with auto-format + compression */}
+          <source
+            src="https://res.cloudinary.com/dgysfehjv/video/upload/f_auto,q_auto,vc_auto,w_1920/v1762416065/video_o5j4jr.webm"
+            type="video/webm"
+          />
+          <source
+            src="https://res.cloudinary.com/dgysfehjv/video/upload/f_auto,q_auto,vc_auto,w_1920/v1762416065/video_o5j4jr.mp4"
+            type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
