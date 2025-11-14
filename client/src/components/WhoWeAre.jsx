@@ -573,13 +573,13 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
           {founders.map((f, idx) => (
             <Col key={idx} md={4} className="d-flex">
               <Card className="founder-card w-100 text-center border-0">
-                <Card.Img
+                {/* <Card.Img
                   variant="top"
                   src={f.image}
                   alt={f.name}
                   className="founder-img"
-                />
-                {/* <Card.Img
+                /> */}
+                <Card.Img
                   variant="top"
                   src={f.image}
                   alt={f.name}
@@ -588,7 +588,7 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
                       ? "founder-img-bala"
                       : ""
                   }`}
-                /> */}
+                />
                 <Card.Body>
                   <Card.Title className="founder-name">{f.name}</Card.Title>
                   <Card.Text className="founder-bio">{f.bio}</Card.Text>
@@ -721,17 +721,17 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
           box-shadow: 0 14px 34px rgba(18, 35, 75, 0.12);
         }
         .founder-img {
-          // height: 280px;
-          // object-fit:cover;
+          height: 280px;
+          object-fit:cover;
           width: 100%;
-  width: 100%;
-  height: 80%;
-  object-fit: cover;
+  // width: 100%;
+  // height: 80%;
+  // object-fit: cover;
   object-position: center top;
         }
-//   .founder-img-bala {
-//   object-position: center 25%; /* Moves image down slightly so face is centered */
-// }
+  .founder-img-bala {
+  object-position: center 25%; /* Moves image down slightly so face is centered */
+}
 
         .founder-name {
           color: var(--founder-name);
@@ -830,7 +830,7 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
 
         @media (max-width: 991px) {
           .founder-img {
-            height: 80%;
+            height: 500px;
           }
         }
         @media (max-width: 768px) {
@@ -840,6 +840,10 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
           .founder-card {
             width: 100%;
           }
+            .founder-img {
+            height: 300px;
+          }
+            
         }
       `}</style>
     </section>
