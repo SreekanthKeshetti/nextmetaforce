@@ -8,7 +8,7 @@ const locations = [
     address: "316 Gowra Palladium, Hitech City, Hyderabad, Telangana 500081",
     phone: "+91 7093693648",
     email: "info@nextmetaforce.com",
-    flag: "🇮🇳",
+    flag: "https://flagcdn.com/w40/in.png",
     coords: { top: "52%", left: "70%" },
   },
   {
@@ -16,17 +16,18 @@ const locations = [
     address: "5945 State Bridge Rd, Duluth, GA 30097",
     phone: "",
     email: "info@nextmetaforce.com",
-    flag: "🇺🇸",
+    flag: "https://flagcdn.com/w40/us.png",
     coords: { top: "40%", left: "22%" },
   },
-  // {
-  //   country: "Australia",
-  //   address: "45 George St, Sydney, NSW 2000",
-  //   phone: "+61 2 9876 5432",
-  //   email: "info@nextmetaforce.com",
-  //   flag: "🇦🇺",
-  //   coords: { top: "75%", left: "82%" },
-  // },
+  {
+    country: "Australia",
+    address: `Unit 37, 23-33 Napier St
+Parramatta 2150`,
+    phone: "",
+    email: "info@nextmetaforce.com",
+    flag: "https://flagcdn.com/w40/au.png",
+    coords: { top: "75%", left: "82%" },
+  },
 ];
 
 const Locations = () => {
@@ -171,16 +172,25 @@ const Locations = () => {
           {/* Office Cards */}
           <Row className="g-4 mb-5">
             {locations.map((loc, index) => (
-              <Col md={6} sm={12} key={index}>
+              <Col md={4} sm={12} key={index}>
                 <Card
                   className={`h-100 shadow-sm border-0 rounded-3 ${
                     active === index ? "highlight-card" : ""
                   }`}
                 >
                   <Card.Body className="text-center">
-                    <div className="fs-1 mb-2">{loc.flag}</div>
+                    {/* <div className="fs-1 mb-2">{loc.flag}</div> */}
+                    <img
+                      src={loc.flag}
+                      alt={`${loc.country} flag`}
+                      width="24"
+                      height="18"
+                      style={{ borderRadius: "3px" }}
+                    />
                     <Card.Title className="fw-bold">{loc.country}</Card.Title>
-                    <Card.Text>
+                    {/* <Card.Text> */}
+                    {/* Replaced the Card.text tag with div.cardText to get rid of hydration error */}
+                    <div className="card-text">
                       <p className="mb-1">{loc.address}</p>
                       {/* <p className="mb-1">
                         <FaPhoneAlt className="me-2 text-primary" />
@@ -196,7 +206,8 @@ const Locations = () => {
                         <FaEnvelope className="me-2 text-danger" />
                         {loc.email}
                       </p>
-                    </Card.Text>
+                      {/* </Card.Text> */}
+                    </div>
                   </Card.Body>
                 </Card>
               </Col>

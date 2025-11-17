@@ -352,6 +352,16 @@ function Footer() {
           .footer .text-md-start { text-align: center !important; }
           .footer .social-icons a { margin-right: 12px; }
         }
+
+          /* Tablet layout: 2 columns per row */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .col-md-3 {
+        flex: 0 0 auto !important;
+         width: 50% !important;
+    }
+}
+}
+
          
         `}
       </style>

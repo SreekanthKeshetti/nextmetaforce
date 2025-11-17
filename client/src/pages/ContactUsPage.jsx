@@ -134,6 +134,16 @@ function ContactUsPage() {
     text-align: center;
     padding: 40px 20px;
   }
+    / *Tab view correction*/
+    @media (min-width: 768px) {
+  .contact-hero-section {
+    background-size: cover;
+    background-position: 10% center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
 
   .hero-content {
     // background: rgba(0, 0, 0, 0.4);

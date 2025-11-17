@@ -721,13 +721,10 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
           box-shadow: 0 14px 34px rgba(18, 35, 75, 0.12);
         }
         .founder-img {
-          height: 280px;
+          height: 260px;
           object-fit:cover;
           width: 100%;
-  // width: 100%;
-  // height: 80%;
-  // object-fit: cover;
-  object-position: center top;
+          object-position: center top;
         }
   .founder-img-bala {
   object-position: center 25%; /* Moves image down slightly so face is centered */
