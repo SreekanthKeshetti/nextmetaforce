@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import retailImg from "../assets/retail1.webp";
-import finImg from "../assets/fin2.webp";
-import manfacImg from "../assets/Factory.webp";
-import hospitalImg from "../assets/hospital1.webp";
-import fashImg from "../assets/fashionImage.webp";
-import logImg from "../assets/log1.webp";
+// import retailImg from "../assets/retail1.webp";
+// import finImg from "../assets/fin2.webp";
+// import manfacImg from "../assets/Factory.webp";
+// import hospitalImg from "../assets/hospital1.webp";
+// import fashImg from "../assets/fashionImage.webp";
+// import logImg from "../assets/log1.webp";
 
+const retailImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617566/retail1_jobibk.webp";
+const finImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617514/fin2_q2sqsr.webp";
+const manfacImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617552/Factory_gmibvz.webp";
+const hospitalImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617524/hospital1_mvryon.webp";
+const fashImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617511/fashionImage_b0y281.webp";
+const logImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617584/log1_ajxfqx.webp";
 const images = [
   {
     src: retailImg,

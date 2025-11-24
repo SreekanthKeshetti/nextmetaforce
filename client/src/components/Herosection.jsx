@@ -121,9 +121,17 @@
 // Carousel Code
 import React from "react";
 import { Carousel, Container } from "react-bootstrap";
-import SolutionImg1 from "../assets/SolutionImg.webp";
-import SolutionImg2 from "../assets/Agent.png";
-import SolutionImg3 from "../assets/NFT.jpg";
+// import SolutionImg1 from "../assets/SolutionImg.webp";
+// import SolutionImg2 from "../assets/Agent.png";
+// import SolutionImg3 from "../assets/NFT.jpg";
+
+const SolutionImg1 =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617569/SolutionImg_x54jpb.webp";
+
+const SolutionImg2 =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763621605/Agent_vddzwk.png";
+const SolutionImg3 =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763621525/NFT_gg4ycz.jpg";
 
 export default function HeroSection() {
   return (
@@ -132,12 +140,12 @@ export default function HeroSection() {
         {`
           .hero-carousel {
             position: relative;
-            height: 100vh;
+            height: 90vh;
             overflow: hidden;
           }
 
           .hero-carousel .carousel-item {
-            height: 100vh;
+            height: 90vh;
             min-height: 400px;
             background-size:cover;
             background-position: center;

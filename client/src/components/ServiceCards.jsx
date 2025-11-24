@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import image1 from "../assets/1.webp";
-import image2 from "../assets/2.webp";
-import image3 from "../assets/3.webp";
-import image4 from "../assets/4.webp";
-
+// import image1 from "../assets/1.webp";
+// import image2 from "../assets/2.webp";
+// import image3 from "../assets/3.webp";
+// import image4 from "../assets/4.webp";
+const image1 =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617499/1_mu2hby.webp";
+const image3 =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617538/3_xnfp96.webp";
+const image2 =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617515/2_ole93m.webp";
+const image4 =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617554/4_taxzwn.webp";
 const services = [
   {
     id: 1,

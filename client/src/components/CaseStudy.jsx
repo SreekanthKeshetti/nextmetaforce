@@ -349,11 +349,26 @@
 //   );
 // }
 import React from "react";
-import retailImg from "../assets/Retailimage.webp";
-import healthImg from "../assets/health1.webp";
-import finImage from "../assets/finance1.webp";
-import manfacImage from "../assets/Manufacture.webp";
-import mediaImg from "../assets/media1.webp";
+// import retailImg from "../assets/Retailimage.webp";
+// import healthImg from "../assets/health1.webp";
+// import finImage from "../assets/finance1.webp";
+// import manfacImage from "../assets/Manufacture.webp";
+// import mediaImg from "../assets/media1.webp";
+
+const retailImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617566/Retailimage_ho3nj1.webp";
+
+const healthImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617518/health1_wu1sz1.webp";
+
+const finImage =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617515/finance1_f7twzb.webp";
+
+const mediaImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617555/media1_p6fthu.webp";
+
+const manfacImage =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617622/Manufacture_tklxj0.webp";
 
 const caseStudies = [
   {

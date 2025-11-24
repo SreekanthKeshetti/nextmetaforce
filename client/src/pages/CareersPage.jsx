@@ -15,7 +15,7 @@ import {
   Form,
 } from "react-bootstrap";
 import { motion } from "framer-motion";
-import careerImage from "../assets/CareersPageImg.webp";
+// import careerImage from "../assets/CareersPageImg.webp";
 import {
   FaUsers,
   FaLightbulb,
@@ -26,6 +26,9 @@ import {
   FaUserTie,
   FaBriefcase,
 } from "react-icons/fa";
+
+const careerImage =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617504/CareersPageImg_jhgsag.webp";
 
 const CareersPage = () => {
   const values = [

@@ -515,9 +515,16 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Modal, Button } from "react-bootstrap";
 import { FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
-import founder1 from "../assets/venkat.jpg";
-import founder2 from "../assets/Bala.jpg";
-import founder3 from "../assets/karthik.jpg";
+// import founder1 from "../assets/venkat.jpg";
+// import founder2 from "../assets/Bala.jpg";
+// import founder3 from "../assets/karthik.jpg";
+
+const founder1 =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763619255/venkat_snebbx.jpg";
+const founder2 =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763972879/BalaNew_fjgxsn.jpg";
+const founder3 =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763619270/karthik_tvk5te.jpg";
 
 const AboutUs = () => {
   const founders = [
@@ -561,7 +568,7 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
             <h3 className="section-heading">Who We Are</h3>
             <p className="who-desc">
               NextMetaForce is a strategic technology partner specializing in
-              CRM implementation, digital consulting and&nbsp;&nbsp;&nbsp;
+              CRM implementation, digital consulting and&nbsp;&nbsp;
               next-generation solutions. We help businesses evolve through
               intelligent design, agile execution&nbsp; and continuous support —
               always aligned with measurable outcomes and human impact.
@@ -571,7 +578,7 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
 
         <Row className="g-4 justify-content-center founders-row">
           {founders.map((f, idx) => (
-            <Col key={idx} md={4} className="d-flex">
+            <Col key={idx} xs={12} sm={6} lg={3} className="d-flex">
               <Card className="founder-card w-100 text-center border-0">
                 {/* <Card.Img
                   variant="top"
@@ -590,7 +597,9 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
                   }`}
                 />
                 <Card.Body>
-                  <Card.Title className="founder-name">{f.name}</Card.Title>
+                  <Card.Title className="founder-name">
+                    <h6>{f.name}</h6>
+                  </Card.Title>
                   <Card.Text className="founder-bio">{f.bio}</Card.Text>
 
                   <div className="d-flex justify-content-center align-items-center gap-3 mt-3">
@@ -721,14 +730,14 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
           box-shadow: 0 14px 34px rgba(18, 35, 75, 0.12);
         }
         .founder-img {
-          height: 260px;
+          height: 200px;
           object-fit:cover;
           width: 100%;
           object-position: center top;
         }
-  .founder-img-bala {
-  object-position: center 25%; /* Moves image down slightly so face is centered */
-}
+//   .founder-img-bala {
+//   object-position: center 25%; /* Moves image down slightly so face is centered */
+// }
 
         .founder-name {
           color: var(--founder-name);
@@ -827,21 +836,25 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
 
         @media (max-width: 991px) {
           .founder-img {
-            height: 500px;
+            height: 270px;
           }
         }
-        @media (max-width: 768px) {
-          .founders-row {
-            gap: 18px;
-          }
+        @media (max-width: 760px) {
+          
           .founder-card {
             width: 100%;
           }
             .founder-img {
-            height: 300px;
+            height: 270px;
           }
             
         }
+          @media (min-width: 768px) and (max-width: 990px) {
+  .founder-img {
+    height: 270px !important;
+  }
+}
+
       `}</style>
     </section>
   );

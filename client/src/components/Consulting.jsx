@@ -1,8 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import ConsultingImg from "../assets/ConsultingImg.webp";
+// import ConsultingImg from "../assets/ConsultingImg.webp";
 import { Link } from "react-router-dom";
-
+const ConsultingImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763712767/Team_xut71y.jpg";
 function Consulting() {
   return (
     <>

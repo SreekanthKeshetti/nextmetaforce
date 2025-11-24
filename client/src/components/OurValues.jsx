@@ -1,10 +1,21 @@
 import React, { useState } from "react";
-import forwardImg from "../assets/Thinkingforward.webp";
-import integrity from "../assets/Integrity.webp";
-import clientImg from "../assets/ClientCentric.webp";
-import peopleImg from "../assets/peopleFirst.webp";
-import teamworkImg from "../assets/TeamWork.webp";
+// import forwardImg from "../assets/Thinkingforward.webp";
+// import integrity from "../assets/Integrity.webp";
+// import clientImg from "../assets/ClientCentric.webp";
+// import peopleImg from "../assets/peopleFirst.webp";
+// import teamworkImg from "../assets/TeamWork.webp";
 import { Link } from "react-router-dom";
+
+const forwardImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617573/Thinkingforward_ypdd1j.webp";
+const integrity =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617546/Integrity_ilidnh.webp";
+const clientImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617504/ClientCentric_nqno8g.webp";
+const peopleImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617556/peopleFirst_i5vraf.webp";
+const teamworkImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617570/TeamWork_b9f9qs.webp";
 
 const values = [
   {

@@ -1,7 +1,10 @@
 import React from "react";
-import digitalImg from "../assets/Digital1.webp"; // adjust path if needed
+// import digitalImg from "../assets/Digital1.webp"; // adjust path if needed
 import { FaDigitalTachograph } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
+const digitalImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617509/Digital1_k40y5o.webp";
 
 const DigitalTransformation = () => {
   return (

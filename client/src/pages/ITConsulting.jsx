@@ -1,7 +1,10 @@
 import React from "react";
-import consultingImg from "../assets/IT&Recruitment.webp";
+// import consultingImg from "../assets/IT&Recruitment.webp";
 import { FaUserTie } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
+const consultingImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617536/IT_Recruitment_woyydc.webp";
 
 const ITConsulting = () => {
   return (

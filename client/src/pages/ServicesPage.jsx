@@ -11,7 +11,10 @@ import { useNavigate, Link } from "react-router-dom";
 import StretchyGallery from "../components/StretchyGallery";
 import TechStackCarousel from "../components/TechStackCarousel";
 import NewForm from "../components/NewForm";
-import serviceHero from "../assets/SERVICES.webp";
+// import serviceHero from "../assets/SERVICES.webp";
+
+const serviceHero =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617567/SERVICES_s8smjy.webp";
 
 const ServicesPage = () => {
   const navigate = useNavigate();

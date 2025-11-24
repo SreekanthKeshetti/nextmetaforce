@@ -1,12 +1,15 @@
 import React from "react";
 import AboutUsInfo from "../components/AboutUsInfo";
 import NewForm from "../components/NewForm";
-import backgroundImage from "../assets/building.webp";
+// import backgroundImage from "../assets/building.webp";
 import AboutUs from "../components/AboutUs";
 import ValuesGallery from "../components/OurValues";
 import WhoWeAre from "../components/WhoWeAre";
 
 function AboutUsPage() {
+  const backgroundImage =
+    "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617506/building_mscbfl.webp";
+
   return (
     <>
       {/* Hero Section */}

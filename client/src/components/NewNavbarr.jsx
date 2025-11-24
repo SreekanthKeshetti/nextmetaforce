@@ -311,7 +311,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
-import logo from "../assets/logo.webp";
+// import logo from "../assets/logo.webp";
+const logo =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617546/logo_cfgdcf.webp";
 
 export default function MyNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);

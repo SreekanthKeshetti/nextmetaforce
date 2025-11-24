@@ -1,7 +1,10 @@
 import React from "react";
-import advancedImg from "../assets/AIWithCloud.webp";
+// import advancedImg from "../assets/AIWithCloud.webp";
 import { FaCube } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
+const advancedImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617506/CloudAI_ygchhy.webp";
 
 const AdvancedTechnologies = () => {
   return (

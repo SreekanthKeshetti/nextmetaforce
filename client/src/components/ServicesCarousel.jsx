@@ -1,12 +1,24 @@
 import React from "react";
 import { Container, Carousel, Row, Col, Card } from "react-bootstrap";
-import salesForce from "../assets/salesForce.webp";
-import microsoftAzure from "../assets/Azure.webp";
-import oracle from "../assets/oracle.webp";
-import microSoftDyamincs from "../assets/Dynamicsimages.webp";
-import Aws from "../assets/AWS1.webp";
-import Devops from "../assets/Devops1.webp";
+// import salesForce from "../assets/salesForce.webp";
+// import microsoftAzure from "../assets/Azure.webp";
+// import oracle from "../assets/oracle.webp";
+// import microSoftDyamincs from "../assets/Dynamicsimages.webp";
+// import Aws from "../assets/AWS1.webp";
+// import Devops from "../assets/Devops1.webp";
 
+const salesForce =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617567/salesForce_clr1q6.webp";
+const microsoftAzure =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617502/Azure_fzzxhf.webp";
+const Devops =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617508/Devops1_ipkpms.webp";
+const oracle =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617556/oracle_a41lsx.webp";
+const microSoftDyamincs =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617509/Dynamicsimages_jdd8h9.webp";
+const Aws =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617501/AWS1_lsqwys.webp";
 const services = [
   {
     id: 1,

@@ -3,11 +3,22 @@ import Slider from "react-slick";
 import { Container, Row, Col } from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import healthServiceImg from "../assets/healthServiceImage.webp";
-import financeServiceImg from "../assets/finService.webp";
-import logisticServiceImg from "../assets/logisticService.webp";
-import manfacServiceImg from "../assets/manfacService.webp";
-import retailServiceImg from "../assets/retailService.webp";
+// import healthServiceImg from "../assets/healthServiceImage.webp";
+// import financeServiceImg from "../assets/finService.webp";
+// import logisticServiceImg from "../assets/logisticService.webp";
+// import manfacServiceImg from "../assets/manfacService.webp";
+// import retailServiceImg from "../assets/retailService.webp";
+
+const retailServiceImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617653/retailService_iu6sra.webp";
+const manfacServiceImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617570/manfacService_eotpud.webp";
+const healthServiceImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617536/healthServiceImage_ufyugu.webp";
+const financeServiceImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617519/finService_qhua5s.webp";
+const logisticServiceImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617544/log2_c91vz8.webp";
 
 const stories = [
   {

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Locations from "../components/Locations";
-import ConatctUsImage from "../assets/contactImg.webp";
+// import ConatctUsImage from "../assets/contactImg.webp";
+
+const ConatctUsImage =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617507/contactImg_wqgbdl.webp";
 
 function ContactUsPage() {
   const [formData, setFormData] = useState({
@@ -83,7 +86,7 @@ function ContactUsPage() {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 90vh;
+  height: 55vh;
   position: relative;
   display: flex;
   align-items: center;

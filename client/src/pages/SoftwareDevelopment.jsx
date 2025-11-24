@@ -1,7 +1,10 @@
 import React from "react";
-import softwareImg from "../assets/SoftwareDevelopment.webp";
+// import softwareImg from "../assets/SoftwareDevelopment.webp";
 import { FaCode } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
+const softwareImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617569/SoftwareDevelopment_ofysrb.webp";
 
 const SoftwareDevelopment = () => {
   return (

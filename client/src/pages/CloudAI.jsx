@@ -1,6 +1,8 @@
-import cloudImg from "../assets/CloudAIIMAGE.webp";
+// import cloudImg from "../assets/CloudAIIMAGE.webp";
 
 import { Link } from "react-router-dom";
+const cloudImg =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763620423/CloudAllImage_aavpyb.webp";
 
 const CloudAI = () => {
   return (
@@ -18,7 +20,7 @@ const CloudAI = () => {
           // text-align: center;
           // color: #fff;
            background-size: cover;
-            background-position: center center;
+            background-position: center 30% ;
             background-repeat: no-repeat;
             min-height: 100vh;
             display: flex;

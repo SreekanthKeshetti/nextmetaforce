@@ -26,12 +26,17 @@ import {
   FaBullseye, // Precision & Purpose
 } from "react-icons/fa";
 
-import founder1 from "../assets/1.webp";
-import founder2 from "../assets/2.webp";
-import founder3 from "../assets/3.webp";
-import ValuesGallery from "./OurValues";
+// import founder1 from "../assets/1.webp";
+// import founder2 from "../assets/2.webp";
+// import founder3 from "../assets/3.webp";
 import { motion } from "framer-motion";
 const AboutUs = () => {
+  const founder1 =
+    "https://res.cloudinary.com/dgysfehjv/image/upload/v1763619255/venkat_snebbx.jpg";
+  const founder2 =
+    "https://res.cloudinary.com/dgysfehjv/image/upload/v1763619241/Bala_uhsc2b.jpg";
+  const founder3 =
+    "https://res.cloudinary.com/dgysfehjv/image/upload/v1763619270/karthik_tvk5te.jpg";
   const founders = [
     {
       name: "Founder Name 1",

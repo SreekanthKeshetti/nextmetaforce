@@ -1,6 +1,8 @@
 import React from "react";
-import commitment from "../assets/commitment1.webp";
+// import commitment from "../assets/commitment1.webp";
 
+const commitment =
+  "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617524/commitment1_g4ychp.webp";
 const AboutUsInfo = () => {
   return (
     <>
@@ -96,7 +98,7 @@ const AboutUsInfo = () => {
 
         @media (max-width: 768px) {
           .aboutus-heading {
-            font-size: 2rem;
+            font-size: 1.5rem;
           }
         }
         `}

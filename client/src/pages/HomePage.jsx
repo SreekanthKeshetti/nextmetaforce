@@ -4,9 +4,12 @@ import Consulting from "../components/Consulting";
 import ServiceCards from "../components/ServiceCards";
 import ServicesCarousel from "../components/ServicesCarousel";
 import NewForm from "../components/NewForm";
-import posterImg from "../assets/poster.jpg";
+// import posterImg from "../assets/poster.jpg";
+// moving images from local to cdn
 
 function HomePage() {
+  const posterImg =
+    "https://res.cloudinary.com/dgysfehjv/image/upload/v1763617563/poster_qnjynp.png";
   const heroRef = useRef(null);
   useEffect(() => {
     const video = heroRef.current.querySelector("video");

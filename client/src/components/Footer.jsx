@@ -488,7 +488,7 @@ function Footer() {
 
               <div className="social-icons mt-3">
                 <a
-                  href="https://www.linkedin.com/in/sreekanth-keshetti/"
+                  href="https://www.linkedin.com/in/nextmetaforce-consulting-31820b269/"
                   target="_blank"
                   aria-label="LinkedIn"
                   rel="noopener noreferrer"
@@ -504,7 +504,7 @@ function Footer() {
                   <i className="fab fa-facebook"></i>
                 </a>
                 <a
-                  href="https://instagram.com/nextmetaforce"
+                  href="https://www.instagram.com/next_metaforce?igsh=bWxkM2VmNmhhNjE5&utm_source=qr"
                   target="_blank"
                   aria-label="Instagram"
                   rel="noopener noreferrer"
