@@ -550,7 +550,7 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
     {
       name: "Karthik Shabarinadh",
       image: founder3,
-      bio: "Director",
+      bio: "Director, CFO",
       linkedin: "",
       description:
         "Karthik Pusapati oversees operations and client engagement, ensuring seamless delivery and long-term partnerships built on trust and excellence.",
