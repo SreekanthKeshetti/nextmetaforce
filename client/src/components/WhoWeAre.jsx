@@ -552,8 +552,15 @@ He has successfully setup strategic Centers of Excellence (CoE) for Salesforce B
       image: founder3,
       bio: "Director, CFO",
       linkedin: "",
-      description:
-        "Karthik Pusapati oversees operations and client engagement, ensuring seamless delivery and long-term partnerships built on trust and excellence.",
+      description: `Director, Strategic Intelligence & Financial Systems
+
+Karthik Shabarinadh brings over two decades of multidisciplinary experience across capital markets, technology, and strategic risk management. Beginning his journey in 2004, he has successfully navigated multiple market cycles and played a pivotal role in the launch of over 15 IPOs, giving him a deep understanding of financial ecosystems and investor behaviour.
+
+With a B.Tech foundation and a PGP in Insurance and Risk Management from ISB Hyderabad, Karthik blends technical rigor with advanced financial insight. His passion for quantitative systems led him to build sophisticated algorithmic models and intelligence frameworks — including a flagship trading algorithm that was later acquired by EdgePoint.
+
+His career is defined by the ability to convert complex data into clear decision architecture. At a strategic level, Karthik focuses on financial systems design, risk intelligence, market-structure analysis, and scalable decision solutions, helping organisations anticipate volatility and make data-backed, high-clarity choices.
+
+Karthik’s unique combination of engineering depth, risk-management expertise, and high-performance system design positions him as a leader who consistently bridges innovation, execution, and measurable business impact.`,
     },
   ];
 
